@@ -1,0 +1,37 @@
+%% Generated from spec.json - do not edit by hand
+erDiagram
+    PRODUCT {
+        guid productId PK
+        string name
+        enum category
+        string partnerCode
+        number noOfAppsAllowed
+        enum visibility
+        enum billingType
+        string monthlyStripePrice
+        number monthlyPriceUsd
+        string yearlyStripePrice
+        number yearlyPriceUsd
+        longtext shortDescription
+        longtext scriptAzure
+        string scriptAws
+        number oneTimePriceUsd
+    }
+    CUSTOMER {
+        guid customerId PK
+        string name
+        string contactName
+        email email
+        phone phone
+        string stripeCustomerId
+        enum status
+        date customerSince
+        string deactivationReason
+        longtext deactivationNote
+    }
+
+%% Customer.Status (SM-01)
+stateDiagram-v2
+    [*] --> Active : created
+    Active --> Inactive : De-activate (T-01, A-09)
+    Inactive --> Active : Re-activate (T-02, out of scope)

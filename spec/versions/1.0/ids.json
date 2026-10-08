@@ -1,0 +1,343 @@
+{
+  "_purpose": "ID registry. Every ID Nebula has ever issued for this project. IDs are never reissued; removed items change status instead of disappearing.",
+  "project": "nebula-products",
+  "version": "1.0",
+  "ids": {
+    "data_store": [
+      {
+        "id": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+        "kind": "datasource",
+        "status": "active",
+        "since": "1.0",
+        "until": null
+      }
+    ],
+    "forms": [
+      {
+        "id": "e588f7ab-bbbc-4540-93c9-eb7d2fc2b0e6",
+        "screen": "S-01",
+        "role": "main",
+        "file": "ncameo/quzlglsembkgyxy/e588f7ab-bbbc-4540-93c9-eb7d2fc2b0e6.json",
+        "status": "active",
+        "since": "1.0",
+        "until": null
+      },
+      {
+        "id": "67aa70d6-44b1-433a-8430-d4332e394d0f",
+        "screen": "S-01",
+        "role": "card",
+        "file": "ncameo/quzlglsembkgyxy/67aa70d6-44b1-433a-8430-d4332e394d0f.json",
+        "status": "active",
+        "since": "1.0",
+        "until": null
+      },
+      {
+        "id": "ccb72cf7-900b-44a7-afc0-01425d21d515",
+        "screen": "S-02",
+        "role": "main",
+        "file": "ncameo/quzlglsembkgyxy/ccb72cf7-900b-44a7-afc0-01425d21d515.json",
+        "status": "active",
+        "since": "1.0",
+        "until": null
+      }
+    ],
+    "nav": [
+      {
+        "uuid": 1791262684219,
+        "slot_id": "1627dbb5-c58f-4366-b4c6-348dd45499a1",
+        "formid": "e588f7ab-bbbc-4540-93c9-eb7d2fc2b0e6",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "uuid": 1791262684220,
+        "slot_id": "bc56e447-9a43-46f3-91a4-220853650d0d",
+        "formid": "67aa70d6-44b1-433a-8430-d4332e394d0f",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "uuid": 1791262684221,
+        "slot_id": "17fb942a-c6b0-4053-896f-16c5b3344122",
+        "formid": "ccb72cf7-900b-44a7-afc0-01425d21d515",
+        "status": "active",
+        "since": "1.0"
+      }
+    ],
+    "screens": [
+      {
+        "id": "S-01",
+        "title": "Products",
+        "html": "html/screens/S-01-products.html",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "S-02",
+        "title": "Edit product",
+        "html": "html/screens/S-02-edit-product.html",
+        "status": "active",
+        "since": "1.0"
+      }
+    ],
+    "entities": [
+      {
+        "id": "E-01",
+        "name": "Product",
+        "collection": "products",
+        "dab_entity": "Product",
+        "status": "active",
+        "since": "1.0"
+      }
+    ],
+    "fields": [
+      {
+        "id": "F-01.01",
+        "key": "Name",
+        "column": "name",
+        "control": "textbox",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "F-01.02",
+        "key": "Category",
+        "column": "category",
+        "control": "dropdown2",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "F-01.03",
+        "key": "PartnerCode",
+        "column": "partnerCode",
+        "control": "textbox",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "F-01.04",
+        "key": "NoOfAppsAllowed",
+        "column": "noOfAppsAllowed",
+        "control": "number",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "F-01.05",
+        "key": "Visibility",
+        "column": "visibility",
+        "control": "radio",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "F-01.06",
+        "key": "BillingType",
+        "column": "billingType",
+        "control": "radio",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "F-01.07",
+        "key": "MonthlyStripePrice",
+        "column": "monthlyStripePrice",
+        "control": "dropdown2",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "F-01.08",
+        "key": "MonthlyPriceUsd",
+        "column": "monthlyPriceUsd",
+        "control": "number",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "F-01.09",
+        "key": "YearlyStripePrice",
+        "column": "yearlyStripePrice",
+        "control": "dropdown2",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "F-01.10",
+        "key": "YearlyPriceUsd",
+        "column": "yearlyPriceUsd",
+        "control": "number",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "F-01.11",
+        "key": "ShortDescription",
+        "column": "shortDescription",
+        "control": "textarea",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "F-01.12",
+        "key": "ScriptAzure",
+        "column": "scriptAzure",
+        "control": "textarea",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "F-01.13",
+        "key": "ScriptAws",
+        "column": "scriptAws",
+        "control": "textbox",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "F-01.14",
+        "key": "OneTimePriceUsd",
+        "column": "oneTimePriceUsd",
+        "control": "number",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "F-01.15",
+        "key": "ProductId",
+        "column": "productId",
+        "control": "hidden",
+        "status": "active",
+        "since": "1.0"
+      }
+    ],
+    "actions": [
+      {
+        "id": "A-01",
+        "screen": "S-01",
+        "control_key": "addProduct",
+        "tool": "np_create_product",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "A-02",
+        "screen": "S-01",
+        "control_key": "editProduct",
+        "tool": "np_get_product",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "A-03",
+        "screen": "S-01",
+        "control_key": "visibilityFilter",
+        "tool": "np_list_product",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "A-04",
+        "screen": "S-02",
+        "control_key": "saveProduct",
+        "tool": "np_update_product",
+        "status": "active",
+        "since": "1.0"
+      }
+    ],
+    "client_controls": [
+      {
+        "id": "A-05",
+        "screen": "S-02",
+        "control_key": "cancelProduct",
+        "kind": "dismiss",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "A-06",
+        "screen": "S-02",
+        "control_key": "closeProduct",
+        "kind": "dismiss",
+        "status": "active",
+        "since": "1.0"
+      }
+    ],
+    "state_machines": [],
+    "endpoints": [
+      {
+        "id": "EP-001",
+        "tool": "np_create_product",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "EP-002",
+        "tool": "np_update_product",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "EP-003",
+        "tool": "np_get_product",
+        "status": "active",
+        "since": "1.0"
+      },
+      {
+        "id": "EP-004",
+        "tool": "np_list_product",
+        "status": "active",
+        "since": "1.0"
+      }
+    ],
+    "workflows": [],
+    "checks": [],
+    "tools": [
+      {
+        "name": "np_create_product",
+        "status": "active",
+        "since": "1.0",
+        "deprecated_in": null,
+        "remove_in": null
+      },
+      {
+        "name": "np_get_product",
+        "status": "active",
+        "since": "1.0",
+        "deprecated_in": null,
+        "remove_in": null
+      },
+      {
+        "name": "np_list_product",
+        "status": "active",
+        "since": "1.0",
+        "deprecated_in": null,
+        "remove_in": null
+      },
+      {
+        "name": "np_update_product",
+        "status": "active",
+        "since": "1.0",
+        "deprecated_in": null,
+        "remove_in": null
+      }
+    ],
+    "skills": [
+      {
+        "name": "product-management",
+        "status": "active",
+        "since": "1.0"
+      }
+    ],
+    "agents": [
+      {
+        "id": "AG-01",
+        "ncameo_agent_id": null,
+        "status": "active",
+        "since": "1.0"
+      }
+    ],
+    "migrations": []
+  }
+}

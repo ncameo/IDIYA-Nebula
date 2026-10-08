@@ -1,0 +1,333 @@
+{
+  "Type": "Side",
+  "Isdefault": false,
+  "Nav": [
+    {
+      "id": "216485133060",
+      "Title": "iDIY'A",
+      "Breadcrumb": "iDIY'A",
+      "Url": "apps/idiya",
+      "Params": [],
+      "children": [
+        {
+          "id": "211364145773",
+          "Title": "iDIY'A Builder",
+          "Breadcrumb": "iDIY'A Builder",
+          "Url": "apps/idiya-builder",
+          "Params": [
+            {
+              "key": "id",
+              "value": ""
+            }
+          ],
+          "children": [],
+          "Layout": {
+            "Content": [
+              {
+                "id": "558cd850-e4d6-48ca-8705-ade59eb514ee",
+                "Title": "iDIY'A Builder",
+                "formid": "74654f14-375e-43b2-b51b-05dca4e583d2",
+                "access": "write",
+                "width": "12",
+                "formid_node": {
+                  "formid_name": "",
+                  "formid_id": ""
+                }
+              }
+            ]
+          },
+          "uuid": 211364145773,
+          "WebIcon": "fa fa-pencil-square-o",
+          "showinmenu": false,
+          "appid": null,
+          "roles": [],
+          "order": 1
+        }
+      ],
+      "Layout": {
+        "Content": [
+          {
+            "id": "5c991161-6f0d-481b-8969-9904bcc95f92",
+            "Title": "iDIY'A",
+            "formid": "30ceb44a-1d82-4f1f-90b3-74d47c6ed68c",
+            "access": "write",
+            "width": "12",
+            "formid_node": {
+              "formid_name": "",
+              "formid_id": ""
+            }
+          }
+        ]
+      },
+      "uuid": 216485133060,
+      "WebIcon": "fa fa-magic",
+      "showinmenu": true,
+      "appid": null,
+      "roles": [],
+      "order": 1
+    },
+    {
+      "id": "547152869989",
+      "Title": "Subscription",
+      "Breadcrumb": "Subscription",
+      "Url": "apps/subscription",
+      "Params": [],
+      "children": [
+        {
+          "id": "748827779853",
+          "Title": "Invoices",
+          "Breadcrumb": "Invoices",
+          "Url": "apps/subscription-invoices",
+          "Params": [],
+          "children": [],
+          "Layout": {
+            "Content": [
+              {
+                "id": "f6d5fccb-0edf-4231-bbfd-d2245daaf32b",
+                "Title": "Invoices",
+                "formid": "b17d8939-f5a6-463e-b1a0-96b2f07de84f",
+                "access": "write",
+                "width": "12",
+                "formid_node": {
+                  "formid_name": "",
+                  "formid_id": ""
+                }
+              }
+            ]
+          },
+          "uuid": 748827779853,
+          "WebIcon": "fa fa-file-text-o",
+          "showinmenu": false,
+          "appid": null,
+          "roles": [],
+          "order": 1
+        },
+        {
+          "id": "706624685479",
+          "Title": "Payment Methods",
+          "Breadcrumb": "Payment Methods",
+          "Url": "apps/subscription-payment-methods",
+          "Params": [],
+          "children": [],
+          "Layout": {
+            "Content": [
+              {
+                "id": "579bf8de-82a8-45f9-b2ee-34d7042c0d5a",
+                "Title": "Payment Methods",
+                "formid": "533cfb3c-c2d4-4258-ba84-8a29988e4ce6",
+                "access": "write",
+                "width": "12",
+                "formid_node": {
+                  "formid_name": "",
+                  "formid_id": ""
+                }
+              }
+            ]
+          },
+          "uuid": 706624685479,
+          "WebIcon": "fa fa-money",
+          "showinmenu": false,
+          "appid": null,
+          "roles": [],
+          "order": 2
+        }
+      ],
+      "Layout": {
+        "Content": [
+          {
+            "id": "b51e2cfb-d4f0-4102-abbe-bd76310a2622",
+            "Title": "Subscription",
+            "formid": "294a9543-c6ba-473c-afb8-9fd3fa963642",
+            "access": "write",
+            "width": "12",
+            "formid_node": {
+              "formid_name": "",
+              "formid_id": ""
+            }
+          }
+        ]
+      },
+      "uuid": 547152869989,
+      "WebIcon": "fa fa-credit-card",
+      "showinmenu": true,
+      "appid": null,
+      "roles": [],
+      "order": 2
+    },
+    {
+      "id": "433724265612",
+      "Title": "Customer",
+      "Breadcrumb": "Customer",
+      "Url": "apps/customer",
+      "Params": [],
+      "children": [],
+      "Layout": {
+        "Content": [
+          {
+            "id": "b6766ea9-64d3-4c01-b150-a53ca664c735",
+            "Title": "Customer",
+            "formid": "e2f837cb-4d28-42b1-a435-7e928981a20b",
+            "access": "write",
+            "width": "12",
+            "formid_node": {
+              "formid_name": "",
+              "formid_id": ""
+            }
+          }
+        ]
+      },
+      "uuid": 433724265612,
+      "WebIcon": "fa fa-users",
+      "showinmenu": true,
+      "appid": null,
+      "roles": [],
+      "order": 3
+    },
+    {
+      "id": "433175919864",
+      "Title": "Product",
+      "Breadcrumb": "Product",
+      "Url": "apps/product",
+      "Params": [],
+      "children": [],
+      "Layout": {
+        "Content": [
+          {
+            "id": "a7907afb-2dee-4e49-8cec-bfc0349d2172",
+            "Title": "Product",
+            "formid": "e6aa61b9-1517-4f41-9499-742ba08bcad2",
+            "access": "write",
+            "width": "12",
+            "formid_node": {
+              "formid_name": "",
+              "formid_id": ""
+            }
+          }
+        ]
+      },
+      "uuid": 433175919864,
+      "WebIcon": "fa fa-cube",
+      "showinmenu": true,
+      "appid": null,
+      "roles": [],
+      "order": 4
+    },
+    {
+      "id": "479537064055",
+      "Title": "Inquiry",
+      "Breadcrumb": "Inquiry",
+      "Url": "apps/inquiry",
+      "Params": [],
+      "children": [],
+      "Layout": {
+        "Content": [
+          {
+            "id": "2805fe1b-561a-4c7d-b31a-20c3153b3614",
+            "Title": "Inquiry",
+            "formid": "7309b045-a021-4be4-a01e-0b8b9388dbea",
+            "access": "write",
+            "width": "12",
+            "formid_node": {
+              "formid_name": "",
+              "formid_id": ""
+            }
+          }
+        ]
+      },
+      "uuid": 479537064055,
+      "WebIcon": "fa fa-comments",
+      "showinmenu": true,
+      "appid": null,
+      "roles": [],
+      "order": 5
+    },
+    {
+      "id": "314464080044",
+      "Title": "Marketing Leads",
+      "Breadcrumb": "Marketing Leads",
+      "Url": "apps/marketing-leads",
+      "Params": [],
+      "children": [],
+      "Layout": {
+        "Content": [
+          {
+            "id": "e14e2df9-4131-427e-b6cc-607760970bfe",
+            "Title": "Marketing Leads",
+            "formid": "6842c212-b66b-4368-b8bd-576c783755b1",
+            "access": "write",
+            "width": "12",
+            "formid_node": {
+              "formid_name": "",
+              "formid_id": ""
+            }
+          }
+        ]
+      },
+      "uuid": 314464080044,
+      "WebIcon": "fa fa-bullhorn",
+      "showinmenu": true,
+      "appid": null,
+      "roles": [],
+      "order": 6
+    }
+  ],
+  "id": "menu",
+  "updatedate": "2026-09-24T11:35:47.685Z",
+  "Logourl": "/dist/logo-cameo.png",
+  "mobilebackground": [],
+  "webbackground": [],
+  "selectedTheme": "custom",
+  "primary": "#3b81d3",
+  "secondary": "#6c798f",
+  "success": "#79C586",
+  "info": "#E49E21",
+  "warning": "#FFD966",
+  "danger": "#dc3545",
+  "light": "#F7F7F7",
+  "dark": "#343a40",
+  "errorMsg": "#ff0000",
+  "successMsg": "#00a610",
+  "Tab": "Web",
+  "type": "menu",
+  "isGithubCredSaved": null,
+  "ApplicationSettings": "Theme",
+  "claimApi": "",
+  "claimparamlist": [],
+  "claimrawquery": "",
+  "claimdatasource": "",
+  "claimconnection": null,
+  "claimmethod": "",
+  "claimheaders": [],
+  "claimenablerowquery": false,
+  "claimworkflowname": null,
+  "claimmodel": "",
+  "claimquery": "",
+  "claimfunction": null,
+  "claimresponsefield": "",
+  "claimpayload": "",
+  "claimsprocname": "",
+  "claimorderby": "",
+  "claimsetlimit": 0,
+  "claimrealtime": false,
+  "claimdatasourcetype": "",
+  "headerBg": "#3b81d3",
+  "headerTextColor": "#ffffff",
+  "speedMultiplier": 1,
+  "Tab64": "Application Date",
+  "font": ".cameo .custom-sidebar-outer .custom-sidebar .custom-sidebar-body>.row {\n    margin: 0\n}\n\n.cameo .mb-0i {\n    margin-bottom: 0 !important;\n}\n\n.cameo .idiyaBox {\n    min-height: calc(100vh - 100px)\n}\n\n.cameo .market-card .row-p16>div>div {\n    height: 100%\n}\n\n.cameo .market-card .row-p16>div>div .card {\n    cursor: pointer;\n}\n\n.cameo .market-card .row-p16>div>div .card .card-img-top {\n    height: 150px;\n    line-height: 150px;\n    object-fit: cover;\n}\n\n.cameo .market-card .description-h {\n    max-height: 65px;\n    font-size: 14px;\n    color: #666;\n    overflow: hidden;\n}\n\n.cameo .market-card .badge {\n    margin: -10px auto;\n    box-shadow: 0 0 8px 0px #00000050;\n}\n\n.cameo .wb-chat-user {\n    width: 50px;\n    height: 50px;\n    object-fit: contain;\n    margin-right: 16px;\n    object-position: center;\n    border-radius: 50%;\n    background-color: #ededef;\n}\n\n.cameo .wb-chat-msg {\n    border-radius: 0 10px 10px 10px;\n    padding: 7px 10px;\n    background-color: #ededef;\n    position: relative;\n    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);\n}\n\n.cameo .wb-chat-msg::before {\n    content: '';\n    position: absolute;\n    left: -19px;\n    border-right: 10px solid #ededef;\n    border-bottom: 10px solid #ededef;\n    border-left: 10px solid transparent;\n    border-top: 10px solid transparent;\n\n}",
+  "webnotification": true,
+  "azureTextAnalysisEnable": true,
+  "sidebarTextColor": "#3b81d3",
+  "sidebarBg": "#ffffff",
+  "mobileprimary": "#007bff",
+  "mobilesecondary": "#868e96",
+  "mobilesuccess": "#28a745",
+  "mobiledanger": "#dc3545",
+  "mobileinfo": "#17a2b8",
+  "mobilewarning": "#ffc107",
+  "mobilelight": "#f7f7f7",
+  "mobiledark": "#343a40",
+  "mSelectedTheme": "default",
+  "storySettingsEnable": true,
+  "mobilenotification": false
+}

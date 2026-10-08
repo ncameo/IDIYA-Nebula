@@ -1,0 +1,420 @@
+{
+  "Type": "Side",
+  "Logourl": "",
+  "Isdefault": false,
+  "timezone": "",
+  "dateformat": "MM/dd/yyyy hh:mm a",
+  "Nav": [
+    {
+      "Title": "Products",
+      "showinmenu": true,
+      "WebIcon": "fa fa-cube",
+      "activeWebIcon": "fa fa-cube",
+      "Url": "apps/products",
+      "order": 1,
+      "roles": [],
+      "Params": [
+        {
+          "attribute": "row_id",
+          "id": "ccb72cf7-900b-44a7-afc0-01425d21d515",
+          "name": "ProductId",
+          "value": ""
+        }
+      ],
+      "show": "both",
+      "noscroll": false,
+      "mobileicon": null,
+      "Breadcrumb": "",
+      "description": "Browse, filter and open products as cards",
+      "uuid": 1791262684219,
+      "children": [],
+      "Layout": {
+        "Content": [
+          {
+            "id": "1627dbb5-c58f-4366-b4c6-348dd45499a1",
+            "Title": "Products",
+            "formid": "e588f7ab-bbbc-4540-93c9-eb7d2fc2b0e6",
+            "access": "write",
+            "width": null,
+            "DynamicTitle": "",
+            "isBindformWriteMode": false,
+            "showshadow": false,
+            "colclass": "",
+            "panelheaderbg": null,
+            "panelheadercolor": null,
+            "panelbg": "",
+            "panelClass": "",
+            "panelBodyClass": "",
+            "hideheader": false,
+            "Formname": "Products"
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Products — Card",
+      "showinmenu": false,
+      "WebIcon": "fa fa-th-large",
+      "activeWebIcon": "fa fa-th-large",
+      "Url": "apps/products-card",
+      "order": 2,
+      "roles": [],
+      "Params": [
+        {
+          "attribute": "row_id",
+          "id": "ccb72cf7-900b-44a7-afc0-01425d21d515",
+          "name": "ProductId",
+          "value": ""
+        }
+      ],
+      "show": "both",
+      "noscroll": false,
+      "mobileicon": null,
+      "Breadcrumb": "",
+      "description": "Card design used by the Products screen",
+      "uuid": 1791262684220,
+      "children": [],
+      "Layout": {
+        "Content": [
+          {
+            "id": "bc56e447-9a43-46f3-91a4-220853650d0d",
+            "Title": "Products — Card",
+            "formid": "67aa70d6-44b1-433a-8430-d4332e394d0f",
+            "access": "write",
+            "width": null,
+            "DynamicTitle": "",
+            "isBindformWriteMode": false,
+            "showshadow": false,
+            "colclass": "",
+            "panelheaderbg": null,
+            "panelheadercolor": null,
+            "panelbg": "",
+            "panelClass": "",
+            "panelBodyClass": "",
+            "hideheader": false,
+            "Formname": "Products — Card"
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Edit product",
+      "showinmenu": false,
+      "WebIcon": "fa fa-pencil",
+      "activeWebIcon": "fa fa-pencil",
+      "Url": "apps/edit-product",
+      "order": 3,
+      "roles": [],
+      "Params": [
+        {
+          "attribute": "row_id",
+          "id": "ccb72cf7-900b-44a7-afc0-01425d21d515",
+          "name": "ProductId",
+          "value": ""
+        }
+      ],
+      "show": "both",
+      "noscroll": false,
+      "mobileicon": null,
+      "Breadcrumb": "",
+      "description": "Add or edit a product",
+      "uuid": 1791262684221,
+      "children": [],
+      "Layout": {
+        "Content": [
+          {
+            "id": "17fb942a-c6b0-4053-896f-16c5b3344122",
+            "Title": "Edit product",
+            "formid": "ccb72cf7-900b-44a7-afc0-01425d21d515",
+            "access": "write",
+            "width": null,
+            "DynamicTitle": "",
+            "isBindformWriteMode": false,
+            "showshadow": false,
+            "colclass": "",
+            "panelheaderbg": null,
+            "panelheadercolor": null,
+            "panelbg": "",
+            "panelClass": "",
+            "panelBodyClass": "",
+            "hideheader": false,
+            "Formname": "Edit product"
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Customers",
+      "showinmenu": true,
+      "WebIcon": "fa fa-users",
+      "activeWebIcon": "fa fa-users",
+      "Url": "apps/customers",
+      "order": 4,
+      "roles": [],
+      "Params": [
+        {
+          "attribute": "row_id",
+          "id": "6caa76d1-6ae7-4a21-be3f-bcb5243f5891",
+          "name": "CustomerId",
+          "value": ""
+        }
+      ],
+      "show": "both",
+      "noscroll": false,
+      "mobileicon": null,
+      "Breadcrumb": "",
+      "description": "Browse customers and see the selected customer's details",
+      "uuid": 1791286238764,
+      "children": [],
+      "Layout": {
+        "Content": [
+          {
+            "id": "c8892e42-dadf-4af6-bdd3-6341cdcd9028",
+            "Title": "Customers",
+            "formid": "6421b203-cc6c-4acf-ae40-b3c83621641e",
+            "access": "write",
+            "width": null,
+            "DynamicTitle": "",
+            "isBindformWriteMode": false,
+            "showshadow": false,
+            "colclass": "",
+            "panelheaderbg": null,
+            "panelheadercolor": null,
+            "panelbg": "",
+            "panelClass": "",
+            "panelBodyClass": "",
+            "hideheader": false,
+            "Formname": "Customers"
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Customers — Search",
+      "showinmenu": false,
+      "WebIcon": "fa fa-search",
+      "activeWebIcon": "fa fa-search",
+      "Url": "apps/customers-search",
+      "order": 5,
+      "roles": [],
+      "Params": [],
+      "show": "both",
+      "noscroll": false,
+      "mobileicon": null,
+      "Breadcrumb": "",
+      "description": "Search and filter for the Customers list",
+      "uuid": 1791286238765,
+      "children": [],
+      "Layout": {
+        "Content": [
+          {
+            "id": "4184ddb0-004e-4534-a786-f79cfb5a0ab2",
+            "Title": "Customers — Search",
+            "formid": "31ed0d29-1164-44cb-8c5a-a5593bc5ef02",
+            "access": "write",
+            "width": null,
+            "DynamicTitle": "",
+            "isBindformWriteMode": false,
+            "showshadow": false,
+            "colclass": "",
+            "panelheaderbg": null,
+            "panelheadercolor": null,
+            "panelbg": "",
+            "panelClass": "",
+            "panelBodyClass": "",
+            "hideheader": false,
+            "Formname": "Customers — Search"
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Customers — Detail",
+      "showinmenu": false,
+      "WebIcon": "fa fa-id-card",
+      "activeWebIcon": "fa fa-id-card",
+      "Url": "apps/customers-detail",
+      "order": 6,
+      "roles": [],
+      "Params": [
+        {
+          "attribute": "row_id",
+          "id": "6caa76d1-6ae7-4a21-be3f-bcb5243f5891",
+          "name": "CustomerId",
+          "value": ""
+        }
+      ],
+      "show": "both",
+      "noscroll": false,
+      "mobileicon": null,
+      "Breadcrumb": "",
+      "description": "Detail pane of the Customers split view",
+      "uuid": 1791286238766,
+      "children": [],
+      "Layout": {
+        "Content": [
+          {
+            "id": "826d732d-7a31-408a-829c-59c6b40c44b6",
+            "Title": "Customers — Detail",
+            "formid": "6caa76d1-6ae7-4a21-be3f-bcb5243f5891",
+            "access": "write",
+            "width": null,
+            "DynamicTitle": "",
+            "isBindformWriteMode": false,
+            "showshadow": false,
+            "colclass": "",
+            "panelheaderbg": null,
+            "panelheadercolor": null,
+            "panelbg": "",
+            "panelClass": "",
+            "panelBodyClass": "",
+            "hideheader": false,
+            "Formname": "Customers — Detail"
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Customers — Add/Edit",
+      "showinmenu": false,
+      "WebIcon": "fa fa-pencil",
+      "activeWebIcon": "fa fa-pencil",
+      "Url": "apps/customers-addedit",
+      "order": 7,
+      "roles": [],
+      "Params": [
+        {
+          "attribute": "row_id",
+          "id": "fcaac76e-69ab-4852-bedc-a16561ef8823",
+          "name": "CustomerId",
+          "value": ""
+        }
+      ],
+      "show": "both",
+      "noscroll": false,
+      "mobileicon": null,
+      "Breadcrumb": "",
+      "description": "Add or edit a customer",
+      "uuid": 1791286238767,
+      "children": [],
+      "Layout": {
+        "Content": [
+          {
+            "id": "fde5262a-4d15-4706-b51d-b4bfeca632d5",
+            "Title": "Customers — Add/Edit",
+            "formid": "fcaac76e-69ab-4852-bedc-a16561ef8823",
+            "access": "write",
+            "width": null,
+            "DynamicTitle": "",
+            "isBindformWriteMode": false,
+            "showshadow": false,
+            "colclass": "",
+            "panelheaderbg": null,
+            "panelheadercolor": null,
+            "panelbg": "",
+            "panelClass": "",
+            "panelBodyClass": "",
+            "hideheader": false,
+            "Formname": "Customers — Add/Edit"
+          }
+        ]
+      }
+    },
+    {
+      "Title": "De-activate customer",
+      "showinmenu": false,
+      "WebIcon": "fa fa-user-times",
+      "activeWebIcon": "fa fa-user-times",
+      "Url": "apps/deactivate-customer",
+      "order": 8,
+      "roles": [],
+      "Params": [
+        {
+          "attribute": "row_id",
+          "id": "75f2b668-7fab-4ee6-af5a-47a6108db840",
+          "name": "CustomerId",
+          "value": ""
+        }
+      ],
+      "show": "both",
+      "noscroll": false,
+      "mobileicon": null,
+      "Breadcrumb": "",
+      "description": "Confirm de-activating a customer",
+      "uuid": 1791286238768,
+      "children": [],
+      "Layout": {
+        "Content": [
+          {
+            "id": "8a4ffb30-59a2-41da-ae1d-fb5f356f3159",
+            "Title": "De-activate customer",
+            "formid": "75f2b668-7fab-4ee6-af5a-47a6108db840",
+            "access": "write",
+            "width": null,
+            "DynamicTitle": "",
+            "isBindformWriteMode": false,
+            "showshadow": false,
+            "colclass": "",
+            "panelheaderbg": null,
+            "panelheadercolor": null,
+            "panelbg": "",
+            "panelClass": "",
+            "panelBodyClass": "",
+            "hideheader": false,
+            "Formname": "De-activate customer"
+          }
+        ]
+      }
+    }
+  ],
+  "Tab": "Web",
+  "Tab64": "Application Date",
+  "ApplicationSettings": "Theme",
+  "isGithubCredSaved": null,
+  "businessdescription": "You are the CSS theme generator. Explore the website's CSS classes and the properties mentioned in the user prompt. Identify colors and CSS properties from the web and update the provided JSON structure accordingly. Assign CSS properties to the corresponding font-related fields in the JSON. Extract the following visual and style properties from the user-provided website or mobile app name (given in the prompt), and update the corresponding fields in the JSON. Modify only existing fields—do not add new keys. Return the result as valid JSON only (no explanation or additional formatting). All colors and CSS properties must be either valid Bootstrap color names or properly formed hex color codes. Always refer back to the website's CSS as specified in the user prompt. Update the following JSON fields: headerBG: Extract the header background color. headerTextColor: Extract the header text color. sidebarBg: Extract the sidebar background color. sidebarTextColor: Extract the sidebar text color. ColorView: Extract the main theme/view color. primary: Extract the primary color. secondary: Extract the secondary color. success: Extract the success color (used for success messages or notifications). danger: Extract the danger color (used for error states). info: Extract the info color (used for informational highlights). warning: Extract the warning color (used for warnings or alerts). light: Extract the light color (used for light backgrounds). dark: Extract the dark color (used for dark backgrounds or text). errorMsg: Extract the error message text color. successMsg: Extract the success message text color. fontfamily: Extract the font family. bodyTextColor: Extract the body text color. color: Extract the base text color. font: Extract the font styling used for forms and buttons. If the font property is present, update all its CSS class variables and custom properties to visually match the theme's style, color palette, and mood. Ensure that the final output accurately reflects the visual and stylistic elements of the specified website or mobile app. This should always return all .Nebula variables and keep other keys as required. Always send selectedTheme='custom'. keep ColorView is always blank",
+  "speedMultiplier": 1,
+  "primary": "#4f46e5",
+  "secondary": "#475569",
+  "success": "#059669",
+  "danger": "#dc2626",
+  "info": "#2d8fd5",
+  "warning": "#b45309",
+  "light": "#f1f5f9",
+  "dark": "#0b1020",
+  "errorMsg": "#dc2626",
+  "successMsg": "#059669",
+  "selectedTheme": "custom",
+  "mobileprimary": "#4f46e5",
+  "mobilesecondary": "#475569",
+  "mobilesuccess": "#059669",
+  "mobiledanger": "#dc2626",
+  "mobileinfo": "#2d8fd5",
+  "mobilewarning": "#b45309",
+  "mobilelight": "#f1f5f9",
+  "mobiledark": "#0b1020",
+  "mSelectedTheme": "custom",
+  "headerBg": "#ffffff",
+  "headerTextColor": "#0f172a",
+  "sidebarBg": "#0b1020",
+  "sidebarTextColor": "#cbd5e1",
+  "bodyTextColor": "#0f172a",
+  "fontfamily": "-apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif",
+  "claimApi": "",
+  "claimparamlist": [],
+  "claimrawquery": "",
+  "claimdatasource": "",
+  "claimconnection": null,
+  "claimmethod": "",
+  "claimheaders": [],
+  "claimenablerowquery": false,
+  "claimmodel": "",
+  "claimquery": "",
+  "claimresponsefield": "",
+  "claimpayload": "",
+  "claimsprocname": "",
+  "claimorderby": "",
+  "claimsetlimit": 0,
+  "claimrealtime": false,
+  "claimdatasourcetype": "",
+  "font": "/* ════════════════════════════════════════════════════════════════════════\n   Nebula style standard — html.cameo\n   Scope   : every rule starts with `html.cameo` (the platform root class), never a bare tag/class.\n   Fonts   : OS system fonts only. No font imports, no font-face declarations, no external URLs, no CDN.\n   Colours : tokens only (--nc-*); the palette is the first block, change it there.\n   Weights : 600/700 for emphasis; 400 for body text and inactive sidebar items (the one exception).\n   Targets : the class names the Nebula platform really renders (splitview-left-bar, list-card,\n             table-responsive, nav-tabs, pagination, sidebar/nav-item, form-control …).\n   This file is the \"font\" string written to navigation.json / menu.json (together with nothing else).\n════════════════════════════════════════════════════════════════════════ */\n\n/* ── 1. Tokens ── */\nhtml.cameo {\n  --nc-client-font: -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, sans-serif;\n  --nc-font-family: var(--nc-client-font);\n  --nc-font-mono: ui-monospace, \"SF Mono\", Menlo, Consolas, monospace;\n  --nc-body-font-family: var(--nc-font-family);\n  --nc-body-font-size: 0.875rem;\n  --nc-body-font-weight: 400;\n  --nc-body-line-height: 1.5;\n\n  --nc-primary: #4F46E5;\n  --nc-primary-rgb: 79, 70, 229;\n  --nc-primary-hover: #271DD0;\n  --nc-secondary: #475569;\n  --nc-success: #059669;\n  --nc-info: #2D8FD5;\n  --nc-warning: #B45309;\n  --nc-danger: #DC2626;\n  --nc-light: #F1F5F9;\n  --nc-dark: #0B1020;\n\n  --nc-body-bg: #F6F7FB;\n  --nc-body-color: #0F172A;\n  --nc-header-bg: #FFFFFF;\n  --nc-header-color: #0F172A;\n\n  --nc-sidebar-bg: #0B1020;\n  --nc-sidebar-color: #CBD5E1;\n  --nc-sidebar-color-muted: #CBD5E1;\n  --nc-sidebar-active-bg: #1E2442;\n  --nc-sidebar-hover-bg: #1E2442;\n  --nc-sidebar-font: var(--nc-client-font);\n  --nc-sidebar-w: 232px;\n  --nc-topbar-h: 56px;\n  --nc-tr: 160ms cubic-bezier(.16, 1, .3, 1);\n\n  --nc-border-color: #E5E7EF;\n  --nc-border-radius: 0.625rem;\n  --nc-border-radius-sm: 0.375rem;\n  --nc-border-radius-lg: 0.75rem;\n  --nc-border-radius-xl: 1rem;\n  --r-sm: var(--nc-border-radius-sm);\n  --r-md: var(--nc-border-radius);\n  --r-lg: var(--nc-border-radius-lg);\n  --r-xl: var(--nc-border-radius-xl);\n  --r-full: 9999px;\n  --nc-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);\n  --nc-box-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.03);\n\n  --nc-color-surface: #FFFFFF;\n  --nc-color-surface-2: #FAFAFA;\n  --nc-color-surface-3: #F1F5F9;\n  --nc-color-divider: #E7E7EA;\n  --nc-color-accent: var(--nc-primary);\n  --nc-color-success: var(--nc-success);\n  --nc-color-text-muted: #71717A;\n  --nc-color-text-faint: #A1A1AA;\n\n  --nc--card-bg: #FFFFFF;\n  --nc--card-cap-bg: #FFFFFF;\n  --nc--card-border-color: #E7E7EA;\n  --nc--card-border-radius: 0.75rem;\n\n  --nc--nav-link-color: var(--nc-sidebar-color-muted);\n  --nc--nav-link-hover-color: var(--nc-sidebar-color);\n  --nc--nav-link-bgcolor: transparent;\n  --nc--nav-link-active-bgcolor: var(--nc-sidebar-active-bg);\n  --nc--nav-link-hover-bgcolor: var(--nc-sidebar-hover-bg);\n  --nc--nav-link-padding-x: 12px;\n  --nc--nav-link-padding-y: 11px;\n  --nc--nav-link-font-size: 13.5px;\n\n  --nc--table-bg: #FFFFFF;\n  --nc--table-border-color: #E7E7EA;\n  --nc--table-hover-bg: #F4F4F5;\n  --nc--table-th-bg: #FAFAFA;\n  --nc--table-th-color: #52525B;\n\n  --nc-form-input-bg: #FFFFFF;\n  --nc-form-input-color: #18181B;\n  --nc-form-input-border-color: #E7E7EA;\n  --nc-control-h: 32px;\n\n  --nc-progress-bar-bg1: var(--nc-primary);\n  --nc-fw-activeItemBg: var(--nc-primary);\n  --nc-fw-completedItemBg: var(--nc-success);\n}\n\n/* ── 2. Typography (app-wide, not only the sidebar/header) ── */\nhtml.cameo,\nhtml.cameo body {\n  font-family: var(--nc-font-family) !important;\n}\nhtml.cameo h6, html.cameo .h6, html.cameo h5, html.cameo .h5, html.cameo h4, html.cameo .h4,\nhtml.cameo h3, html.cameo .h3, html.cameo h2, html.cameo .h2, html.cameo h1, html.cameo .h1 {\n  margin-top: 0;\n  margin-bottom: 0.5rem;\n  font-weight: 700;\n  line-height: 1.2;\n}\nhtml.cameo .formtitle {\n  font-size: 1.25rem;\n  font-weight: 700;\n}\nhtml.cameo .nc-page-header.card-header {\n  display: none !important;\n}\n\n/* ── 3. Sidebar and menu ── */\nhtml.cameo .aside-sidebar,\nhtml.cameo .sidebar {\n  background: var(--nc-sidebar-bg);\n  font-family: var(--nc-sidebar-font);\n  display: flex;\n  flex-direction: column;\n  overflow-y: auto;\n  overflow-x: hidden;\n  scrollbar-width: none;\n}\nhtml.cameo .sidebar::-webkit-scrollbar { display: none; }\nhtml.cameo .sidebar-logo {\n  height: var(--nc-topbar-h);\n  display: flex;\n  align-items: center;\n  padding: 0 1rem;\n  border-bottom: 1px solid var(--nc-sidebar-active-bg);\n  gap: 0.75rem;\n  flex-shrink: 0;\n}\nhtml.cameo .logo-name {\n  font-size: 12.5px;\n  font-weight: 700;\n  color: var(--nc-sidebar-color);\n  letter-spacing: -0.01em;\n  line-height: 1.1;\n}\nhtml.cameo .sb-sec { padding: 1rem 0 0.5rem; }\nhtml.cameo .sb-lbl {\n  padding: 0 1rem 0.5rem;\n  font-size: 10px;\n  font-weight: 600;\n  letter-spacing: 0.08em;\n  text-transform: uppercase;\n  color: var(--nc-color-text-faint);\n}\n/* inactive items are the one deliberate exception to the 600/700 rule: weight 400 */\nhtml.cameo .sidebar .nav-item {\n  display: flex;\n  align-items: center;\n  gap: 0.75rem;\n  padding: 0.45rem 1rem;\n  font-size: 12.5px;\n  font-weight: 400;\n  color: var(--nc-sidebar-color-muted);\n  text-decoration: none;\n  cursor: pointer;\n  transition: background var(--nc-tr), color var(--nc-tr);\n  margin: 1px 0.5rem;\n  border-radius: 7px;\n  position: relative;\n  user-select: none;\n}\nhtml.cameo .sidebar .nav-item:hover {\n  background: var(--nc-sidebar-hover-bg);\n  color: var(--nc-sidebar-color);\n}\nhtml.cameo .sidebar .nav-item.active {\n  background: var(--nc-sidebar-active-bg);\n  color: var(--nc-sidebar-color);\n  font-weight: 600;\n}\nhtml.cameo .nav-label { flex: 1; }\nhtml.cameo .sb-div {\n  height: 1px;\n  background: var(--nc-color-divider);\n  margin: 0.5rem 1rem;\n}\nhtml.cameo .aside-sidebar {\n  position: fixed;\n  top: 70px;\n  left: 0;\n  height: calc(100vh - 70px);\n  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.06);\n  z-index: 101;\n  color: var(--nc-sidebar-color);\n  transition: all 250ms linear;\n  padding: 16px 0;\n}\nhtml.cameo .side-header .custom-navbar { overflow: visible; padding: 0; transition: all 250ms linear; }\nhtml.cameo .side-header .custom-navbar .navbar-nav { gap: 4px; }\nhtml.cameo .side-header .custom-navbar .nav-item { margin: 0 0 3px; }\nhtml.cameo .side-header .custom-navbar .nav-item .nav-link { border-radius: 7px; }\nhtml.cameo .side-header .custom-navbar .nav-item .nav-link i {\n  width: 18px;\n  height: 18px;\n  font-size: 15px;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  text-align: center;\n  flex-shrink: 0;\n}\nhtml.cameo .side-header .custom-navbar .nav-item .nav-link i.me-2 { margin-right: 13px !important; }\nhtml.cameo .side-header .nav-item .nav-link {\n  line-height: 1.3;\n  color: var(--nc-sidebar-color-muted);\n  background-color: var(--nc--nav-link-bgcolor);\n  font-family: var(--nc-sidebar-font);\n  font-size: var(--nc--nav-link-font-size);\n  font-weight: 400;\n  padding: var(--nc--nav-link-padding-y) var(--nc--nav-link-padding-x);\n  border-radius: 7px;\n  box-shadow: 0 0 3px 3px transparent;\n  transition: all 300ms ease-in-out;\n}\nhtml.cameo .side-header .nav-item .nav-link:hover {\n  color: var(--nc-sidebar-color);\n  background-color: var(--nc--nav-link-hover-bgcolor);\n  box-shadow: none;\n}\nhtml.cameo .side-header .nav-item.active .nav-link {\n  color: var(--nc-sidebar-color) !important;\n  background-color: var(--nc--nav-link-active-bgcolor);\n  font-weight: 600;\n  box-shadow: none;\n}\n/* a parent group is tagged active when any child is: keep the parent itself neutral */\nhtml.cameo .aside-sidebar .issub.active > button.nav-link,\nhtml.cameo .aside-sidebar .issub.active > .issub-toggle,\nhtml.cameo .aside-sidebar .issub.sub-active > button.nav-link,\nhtml.cameo .aside-sidebar .issub.sub-active > .issub-toggle {\n  color: var(--nc-sidebar-color-muted) !important;\n  background-color: transparent !important;\n  font-weight: 400 !important;\n}\nhtml.cameo .aside-sidebar .issub .navbar-nav .nav-item > a.nav-link,\nhtml.cameo .aside-sidebar .issub ul .nav-item > a.nav-link {\n  color: var(--nc-sidebar-color-muted) !important;\n  background-color: transparent !important;\n  font-weight: 400 !important;\n  padding: 9px 12px 9px 32px !important;\n  font-size: 13px !important;\n  margin: 1px 4px !important;\n  border-radius: 6px !important;\n  line-height: 1.4 !important;\n}\nhtml.cameo .aside-sidebar .issub .navbar-nav .nav-item > a.nav-link:hover,\nhtml.cameo .aside-sidebar .issub ul .nav-item > a.nav-link:hover {\n  color: var(--nc-sidebar-color) !important;\n  background-color: var(--nc-sidebar-hover-bg) !important;\n}\nhtml.cameo .aside-sidebar .issub .navbar-nav .nav-item.active > a.nav-link,\nhtml.cameo .aside-sidebar .issub ul .nav-item.active > a.nav-link {\n  color: var(--nc-sidebar-color) !important;\n  background-color: var(--nc-sidebar-active-bg) !important;\n  font-weight: 600 !important;\n}\nhtml.cameo .aside-sidebar .issub .navbar-nav,\nhtml.cameo .aside-sidebar .issub > ul.navbar-nav { padding-top: 4px !important; padding-bottom: 4px !important; gap: 2px !important; }\nhtml.cameo .side-header .issub ul { display: none; }\nhtml.cameo .side-header .issub.sub-active ul { display: flex; }\n\n/* ── 4. Cards, panels, buttons, global form controls ── */\nhtml.cameo .card,\nhtml.cameo .nc-page.card {\n  background: var(--nc--card-bg);\n  border: 1px solid var(--nc--card-border-color) !important;\n  border-radius: var(--nc--card-border-radius);\n  box-shadow: var(--nc-box-shadow-sm);\n}\nhtml.cameo .card-header {\n  background: var(--nc--card-cap-bg);\n  border-bottom: 1px solid var(--nc--card-border-color);\n  font-size: 0.75rem;\n  font-weight: 700;\n  letter-spacing: 0.04em;\n  text-transform: uppercase;\n  color: var(--nc-secondary);\n}\nhtml.cameo .btn { border-radius: 6px; font-weight: 600; font-size: 13px; }\nhtml.cameo .btn-primary {\n  background-color: var(--nc-primary) !important;\n  border-color: var(--nc-primary) !important;\n  color: #fff !important;\n}\nhtml.cameo .btn-primary:hover {\n  background-color: var(--nc-primary-hover) !important;\n  border-color: var(--nc-primary-hover) !important;\n}\nhtml.cameo .btn-outline-primary {\n  color: var(--nc-primary) !important;\n  border-color: var(--nc-border-color) !important;\n  background: var(--nc-color-surface) !important;\n}\nhtml.cameo .btn-outline-primary:hover {\n  background: var(--nc-primary) !important;\n  border-color: var(--nc-primary) !important;\n  color: #fff !important;\n}\nhtml.cameo input.form-control:not([type=\"checkbox\"]):not([type=\"radio\"]):not([type=\"range\"]),\nhtml.cameo select.form-control,\nhtml.cameo .form-select {\n  height: var(--nc-control-h) !important;\n  border-radius: 6px !important;\n  border: 1px solid var(--nc-form-input-border-color) !important;\n  background-color: var(--nc-form-input-bg) !important;\n  padding: 5px 10px !important;\n  font-size: 13.5px !important;\n  color: var(--nc-form-input-color) !important;\n  box-shadow: none !important;\n}\nhtml.cameo textarea.form-control {\n  border-radius: 6px !important;\n  border: 1px solid var(--nc-form-input-border-color) !important;\n  background-color: var(--nc-form-input-bg) !important;\n  padding: 8px 10px !important;\n  font-size: 13.5px !important;\n  color: var(--nc-form-input-color) !important;\n  box-shadow: none !important;\n}\nhtml.cameo input.form-control:focus,\nhtml.cameo select.form-control:focus,\nhtml.cameo .form-select:focus,\nhtml.cameo textarea.form-control:focus {\n  border-color: var(--nc-primary) !important;\n  box-shadow: 0 0 0 3px rgba(var(--nc-primary-rgb), 0.12) !important;\n  outline: none !important;\n}\nhtml.cameo input.form-control::placeholder,\nhtml.cameo textarea.form-control::placeholder {\n  color: var(--nc-color-text-faint) !important;\n  font-size: 13.5px !important;\n}\nhtml.cameo .input-group-text {\n  height: var(--nc-control-h) !important;\n  border-color: var(--nc-form-input-border-color) !important;\n  background-color: var(--nc-color-surface-2) !important;\n  color: var(--nc-color-text-muted) !important;\n  font-size: 13.5px !important;\n}\nhtml.cameo label.d-block,\nhtml.cameo .form-label {\n  font-size: 13px !important;\n  font-weight: 600 !important;\n  color: var(--nc-body-color) !important;\n}\n\n/* ── 5. Split view — left bar and list cards ── */\nhtml.cameo .splitview-left-bar .position-sticky,\nhtml.cameo .splitview-left-bar > .custom-scrollbar > .position-relative > div:first-child {\n  background-color: var(--nc-color-surface) !important;\n  padding: 10px 12px 8px !important;\n  z-index: 10;\n}\nhtml.cameo .splitview-left-bar .row.pb-2.pt-1 {\n  background-color: var(--nc-color-surface) !important;\n  display: flex;\n  align-items: center;\n  gap: 8px;\n  flex-wrap: nowrap;\n  padding: 0 !important;\n  margin: 0 !important;\n}\nhtml.cameo .splitview-left-bar .searchinputboxboard .form-control,\nhtml.cameo .splitview-left-bar .searchinputbox .form-control {\n  height: 36px !important;\n  border-radius: 8px !important;\n  border: 1px solid var(--nc-border-color) !important;\n  background-color: var(--nc-color-surface);\n  padding: 0 12px !important;\n  font-size: 12.5px !important;\n  color: var(--nc-body-color);\n  box-shadow: none;\n  transition: border-color 0.15s ease, box-shadow 0.15s ease;\n}\nhtml.cameo .splitview-left-bar .searchinputboxboard .form-control:focus,\nhtml.cameo .splitview-left-bar .searchinputbox .form-control:focus {\n  border-color: var(--nc-primary) !important;\n  box-shadow: 0 0 0 3px rgba(var(--nc-primary-rgb), 0.12) !important;\n  outline: none;\n}\nhtml.cameo .splitview-left-bar .btn.pill.addsearchcust.btn-primary,\nhtml.cameo .splitview-left-bar .addsearchboot .btn {\n  width: 36px;\n  height: 36px;\n  padding: 0 !important;\n  display: inline-flex !important;\n  align-items: center;\n  justify-content: center;\n  border-radius: 8px !important;\n  background-color: var(--nc-primary) !important;\n  border: none !important;\n  color: #fff !important;\n  flex-shrink: 0;\n}\nhtml.cameo .splitview-left-bar .btn.btn-outline-primary[aria-label=\"Search\"] {\n  width: 36px;\n  height: 36px;\n  padding: 0 !important;\n  display: inline-flex !important;\n  align-items: center;\n  justify-content: center;\n  border-radius: 8px !important;\n  border: 1px solid var(--nc-border-color) !important;\n  color: var(--nc-primary) !important;\n  background: var(--nc-color-surface) !important;\n  flex-shrink: 0;\n}\nhtml.cameo .left-card-row {\n  display: flex;\n  flex-direction: column;\n  gap: 0;\n  padding: 4px 0;\n}\nhtml.cameo .left-card-col {\n  padding: 0 !important;\n  border-bottom: 1px solid var(--nc-border-color);\n}\nhtml.cameo .left-card-col:last-child { border-bottom: none; }\nhtml.cameo .new-card.list-card {\n  width: 100%;\n  border: none !important;\n  border-radius: 0 !important;\n  background-color: var(--nc-color-surface);\n  padding: 10px 12px !important;\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  cursor: pointer;\n  position: relative;\n  transition: background-color 0.15s ease;\n  text-align: left;\n  font: inherit;\n  color: inherit;\n}\nhtml.cameo .new-card.list-card:hover { background-color: var(--nc-color-surface-3); }\nhtml.cameo .new-card.list-card.active-card {\n  background-color: var(--nc-color-surface-3) !important;\n  border-left: 3px solid var(--nc-primary) !important;\n  padding-left: 9px !important;\n}\nhtml.cameo .new-card.list-card.active-card .img-placeholder {\n  background-color: var(--nc-primary);\n  color: #fff;\n}\nhtml.cameo .img-placeholder {\n  width: 38px;\n  height: 38px;\n  border-radius: 50%;\n  background-color: var(--nc-color-surface-3);\n  color: var(--nc-secondary);\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  font-size: 12px;\n  font-weight: 600;\n  flex-shrink: 0;\n  line-height: 1;\n  letter-spacing: 0.3px;\n}\nhtml.cameo .new-card-texts { flex: 1; min-width: 0; overflow: hidden; }\nhtml.cameo .new-card-title {\n  font-size: 13.5px;\n  font-weight: 600;\n  color: var(--nc-body-color);\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  line-height: 1.4;\n  margin-bottom: 2px;\n}\nhtml.cameo .new-card.list-card.active-card .new-card-title { font-weight: 700; }\nhtml.cameo .new-card-subtitle {\n  font-size: 12px;\n  color: var(--nc-color-text-muted) !important;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  line-height: 1.3;\n}\n\n/* ── 6. Tables ── */\nhtml.cameo .table-responsive {\n  border: 1px solid var(--nc-border-color) !important;\n  border-radius: 12px !important;\n  overflow: hidden !important;\n  background: var(--nc--table-bg);\n  box-shadow: var(--nc-box-shadow-sm);\n}\nhtml.cameo .table-responsive table.table {\n  width: 100%;\n  margin: 0 !important;\n  border-collapse: collapse !important;\n  font-size: 13.5px;\n  color: var(--nc-body-color);\n  background: transparent !important;\n  box-shadow: none !important;\n}\nhtml.cameo .table-responsive table.table thead tr { background-color: var(--nc--table-th-bg) !important; }\nhtml.cameo .table-responsive table.table thead th {\n  background-color: transparent !important;\n  color: var(--nc--table-th-color) !important;\n  font-size: 11px !important;\n  font-weight: 600 !important;\n  text-transform: uppercase !important;\n  letter-spacing: 0.07em !important;\n  padding: 12px 20px !important;\n  border: none !important;\n  border-bottom: 1px solid var(--nc--table-border-color) !important;\n  white-space: nowrap;\n  vertical-align: middle !important;\n}\nhtml.cameo .table-responsive table.table tbody tr {\n  background-color: var(--nc--table-bg) !important;\n  transition: background-color 0.12s ease;\n  cursor: pointer;\n}\nhtml.cameo .table-responsive table.table tbody tr:hover { background-color: var(--nc--table-hover-bg) !important; }\nhtml.cameo .table-responsive table.table tbody tr:hover td { background-color: transparent !important; }\nhtml.cameo .table-responsive table.table tbody tr td {\n  background-color: transparent !important;\n  padding: 14px 20px !important;\n  border: none !important;\n  border-bottom: 1px solid var(--nc-color-surface-3) !important;\n  vertical-align: middle !important;\n  color: var(--nc-body-color);\n  font-size: 13.5px;\n}\nhtml.cameo .table-responsive table.table tbody tr:last-child td { border-bottom: none !important; }\n\n/* ── 7. Pagination ── */\nhtml.cameo .pagination {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  gap: 4px;\n  padding: 16px 0 8px;\n  flex-wrap: wrap;\n}\nhtml.cameo .pagination .page-item .page-link,\nhtml.cameo .pagination button {\n  min-width: 32px;\n  height: 32px;\n  padding: 0 8px;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  border-radius: 8px !important;\n  font-size: 12.5px;\n  font-weight: 600;\n  border: 1px solid var(--nc-border-color) !important;\n  background: var(--nc-color-surface) !important;\n  color: var(--nc-secondary) !important;\n  line-height: 1;\n  cursor: pointer;\n}\nhtml.cameo .pagination .page-item .page-link:hover,\nhtml.cameo .pagination button:hover {\n  background: var(--nc-color-surface-3) !important;\n  color: var(--nc-body-color) !important;\n}\nhtml.cameo .pagination .page-item.active .page-link,\nhtml.cameo .pagination button.active,\nhtml.cameo .pagination button[aria-current=\"page\"] {\n  background: var(--nc-primary) !important;\n  color: #fff !important;\n  border-color: var(--nc-primary) !important;\n}\nhtml.cameo .pagination .page-item.disabled .page-link,\nhtml.cameo .pagination button:disabled { opacity: 0.4; pointer-events: none; }\n\n/* ── 8. Tabs ── */\nhtml.cameo .tabs .nav.nav-tabs {\n  border-bottom: 2px solid var(--nc-border-color) !important;\n  gap: 4px !important;\n  padding: 0 4px !important;\n  flex-wrap: nowrap !important;\n  overflow-x: auto !important;\n  overflow-y: hidden !important;\n  scrollbar-width: none !important;\n  margin: 0;\n  list-style: none;\n}\nhtml.cameo .tabs .nav.nav-tabs::-webkit-scrollbar { display: none !important; }\nhtml.cameo .tabs .nav-tabs .nav-item { list-style: none !important; margin: 0 !important; }\nhtml.cameo .tabs .nav-tabs .nav-link {\n  display: inline-flex !important;\n  align-items: center !important;\n  justify-content: center !important;\n  gap: 6px !important;\n  padding: 8px 14px !important;\n  font-size: 13px !important;\n  font-weight: 600 !important;\n  color: var(--nc-secondary) !important;\n  background: transparent !important;\n  border: none !important;\n  border-bottom: 2px solid transparent !important;\n  border-radius: 0 !important;\n  margin-bottom: -2px !important;\n  white-space: nowrap !important;\n  cursor: pointer !important;\n  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease !important;\n  text-decoration: none !important;\n}\nhtml.cameo .tabs .nav-tabs .nav-link:hover {\n  color: var(--nc-body-color) !important;\n  background: var(--nc-color-surface-3) !important;\n  border-radius: 8px 8px 0 0 !important;\n}\nhtml.cameo .tabs .nav-tabs .nav-link.active {\n  color: var(--nc-primary) !important;\n  border-bottom: 2px solid var(--nc-primary) !important;\n  background: transparent !important;\n}\nhtml.cameo .tabs .tab-content { padding: 16px 0 0 !important; }\n"
+}

@@ -1,0 +1,50 @@
+{
+  "_note": "Projection of spec.json - do not edit",
+  "state_machines": [
+    {
+      "id": "SM-01",
+      "entity": "E-02",
+      "field": "F-02.07",
+      "reason_field": "F-02.09",
+      "initial": "Active",
+      "states": [
+        "Active",
+        "Inactive"
+      ],
+      "terminal": [],
+      "terminal_note": "Not terminal: Inactive customers can be re-activated (control not shown in inputs, AS-26). Accepted exception to 'every stateful entity terminates'.",
+      "transitions": [
+        {
+          "id": "T-01",
+          "from": "Active",
+          "to": "Inactive",
+          "trigger": "Admin confirms De-activate in the dialog",
+          "via": "A-09",
+          "tool": "np_update_customer",
+          "role": null
+        },
+        {
+          "id": "T-02",
+          "from": "Inactive",
+          "to": "Active",
+          "trigger": "Re-activate (named in the dialog text; no control shown)",
+          "via": "out of scope (AS-26)",
+          "tool": null,
+          "role": null
+        }
+      ],
+      "illegal": [
+        {
+          "from": "Inactive",
+          "to": "Inactive",
+          "reason": "Customer is already inactive."
+        },
+        {
+          "from": "Active",
+          "to": "Active",
+          "reason": "Customer is already active."
+        }
+      ]
+    }
+  ]
+}

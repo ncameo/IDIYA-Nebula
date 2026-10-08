@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" class="cameo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>De-activate customer</title>
+<meta name="nebula:project" content="nebula-products">
+<meta name="nebula:version" content="1.1">
+<link rel="stylesheet" href="../assets/nebula-brand.css">
+</head>
+<body>
+<div class="app">
+<nav class="sidebar" aria-label="Main"><div class="sidebar-logo"><span class="logo-name">Nebula Products</span></div>
+<div class="sb-sec">
+<!-- nav item uuid 1791262684219 -> formid e588f7ab-bbbc-4540-93c9-eb7d2fc2b0e6 -->
+<a class="nav-item" href="S-01-products.html" data-nav-uuid="1791262684219"><span class="nav-label">Products</span></a>
+<!-- nav item uuid 1791286238764 -> formid 6421b203-cc6c-4acf-ae40-b3c83621641e -->
+<a class="nav-item active" href="S-03-customers.html" data-nav-uuid="1791286238764"><span class="nav-label">Customers</span></a>
+</div></nav>
+<div>
+<main data-screen="S-04" data-form-id="75f2b668-7fab-4ee6-af5a-47a6108db840" data-entity="E-02" data-model="customers" data-form-type="Transaction" data-composition="Panel">
+<div class="page-head"><h1 class="formtitle">De-activate <span data-bind="Name"></span>?</h1></div>
+<form id="deactivateForm" class="dialog" novalidate>
+<input type="hidden" id="CustomerId" name="CustomerId" data-field="F-02.01" data-control="hidden">
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card" id="deactivationPanel" data-section="deactivation">
+  <div class="card-body row">
+    <div class="col-12"><label class="form-label" for="DeactivationReason">Reason</label>
+    <!-- NCAMEO_CONTROL: dropdown2 -->
+    <select class="form-select" id="DeactivationReason" name="DeactivationReason" data-field="F-02.09" data-control="dropdown2"><option value="">Select</option></select></div>
+    <div class="col-12"><label class="form-label" for="DeactivationNote">Internal note</label>
+    <!-- NCAMEO_CONTROL: textarea -->
+    <textarea rows="3" class="form-control" id="DeactivationNote" name="DeactivationNote" maxlength="3000" data-field="F-02.10" data-control="textarea" placeholder="Internal note"></textarea></div>
+  </div>
+</section>
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card" id="promoAlternativePanel" data-section="promoAlternative">
+  <div class="card-header">Or apply a promo instead</div>
+  <div class="card-body promo-row">
+    <!-- NCAMEO_CONTROL: textbox -->
+    <input type="text" class="form-control" id="promoCode" placeholder="Promo code" aria-label="Promo code" data-control="textbox">
+    <!-- NCAMEO_CONTROL: button -->
+    <button type="button" class="btn" id="applyPromoDialog" data-control-key="applyPromoDialog" data-placeholder="true">Apply</button>
+  </div>
+</section>
+<div class="error" id="deactivateError" role="alert"></div>
+<div class="actions">
+  <!-- NCAMEO_CONTROL: button -->
+  <button type="button" class="btn" id="cancelDeactivate" data-control-key="cancelDeactivate" data-target-screen="S-03">Cancel</button>
+  <!-- NCAMEO_CONTROL: button -->
+  <button type="submit" class="btn btn-primary" id="confirmDeactivate" data-control-key="confirmDeactivate" data-action-update="A-09" data-tool-update="np_update_customer" data-endpoint-update="EP-007" data-transition="T-01" data-target-screen="S-03">De-activate</button>
+</div>
+</form>
+</main>
+<div class="notice" id="notice" role="status">Prototype - mock data only.</div>
+<pre id="trace"></pre>
+</div>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

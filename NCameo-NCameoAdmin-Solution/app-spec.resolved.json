@@ -1,0 +1,306 @@
+{
+  "appName": "NCameoAdmin",
+  "blobBaseUrl": "https://adminncameodevstorage.blob.core.windows.net/ncameopublic",
+  "apiBaseUrl": "https://adminncameodvapi.azurewebsites.net",
+  "roles": [],
+  "screens": [
+    {
+      "name": "iDIY'A Apps",
+      "pluginName": "IdiyaApps",
+      "key": "idiya",
+      "title": "iDIY'A",
+      "modelName": "Wireframe",
+      "icon": "fa fa-magic",
+      "componentType": "Custom (card gallery)",
+      "sourceRefs": [
+        "S01-idiya-apps"
+      ],
+      "onLoad": {
+        "endpoint": "/api/wireframe/list?idx=ncameo",
+        "responseField": "data",
+        "description": "iDIY'A app gallery (Wireframe[])"
+      },
+      "otherApis": [],
+      "exportFunction": "IdiyaApps",
+      "parent": null,
+      "navParams": [],
+      "showinmenu": true,
+      "ids": {
+        "formId": "30ceb44a-1d82-4f1f-90b3-74d47c6ed68c",
+        "controlId": "c9cb4a98-77b1-4965-9097-9e88c5b35dfd",
+        "contentId": "5c991161-6f0d-481b-8969-9904bcc95f92",
+        "navId": 216485133060
+      }
+    },
+    {
+      "name": "iDIY'A Builder",
+      "pluginName": "IdiyaBuilder",
+      "key": "idiya-builder",
+      "parent": "idiya",
+      "title": "iDIY'A Builder",
+      "modelName": "Wireframe",
+      "icon": "fa fa-pencil-square-o",
+      "navParams": [
+        {
+          "key": "id",
+          "value": ""
+        }
+      ],
+      "componentType": "Custom (chat + preview)",
+      "sourceRefs": [
+        "S02-idiya-builder"
+      ],
+      "onLoad": {
+        "endpoint": "/api/wireframe/GetById",
+        "params": [
+          {
+            "key": "id",
+            "value": "id",
+            "paramtype": "querystring"
+          }
+        ],
+        "responseField": "data",
+        "host": "agent",
+        "description": "Loaded by the plugin from token.NCameoAgentEndpoint"
+      },
+      "otherApis": [
+        "POST /api/Chat/stream (agent, SSE)",
+        "POST /api/wireframe (agent)"
+      ],
+      "exportFunction": "IdiyaBuilder",
+      "showinmenu": false,
+      "ids": {
+        "formId": "74654f14-375e-43b2-b51b-05dca4e583d2",
+        "controlId": "b62f9f32-a2de-45bc-8db7-bd0024a523e6",
+        "contentId": "558cd850-e4d6-48ca-8705-ade59eb514ee",
+        "navId": 211364145773
+      }
+    },
+    {
+      "name": "Subscription",
+      "pluginName": "Subscription",
+      "key": "subscription",
+      "title": "Subscription",
+      "modelName": "Tenant",
+      "icon": "fa fa-credit-card",
+      "componentType": "Dashboard (table + plan cards + drawers)",
+      "sourceRefs": [
+        "S03",
+        "S06",
+        "S07",
+        "S08"
+      ],
+      "onLoad": {
+        "endpoint": "/api/tenant?idx=ncameo",
+        "responseField": "data",
+        "description": "Current tenant"
+      },
+      "otherApis": [
+        "GET /api/subscription/list",
+        "GET /api/Product/List",
+        "GET /api/subscription/ProductDetailsBySubscriptionId",
+        "GET /api/subscription",
+        "POST /api/subscription/EnableCors",
+        "GET /api/stripepayment/card/list",
+        "GET /api/product/Detail",
+        "POST /api/subscription"
+      ],
+      "exportFunction": "Subscription",
+      "parent": null,
+      "navParams": [],
+      "showinmenu": true,
+      "ids": {
+        "formId": "294a9543-c6ba-473c-afb8-9fd3fa963642",
+        "controlId": "88b8a4e8-c447-48fa-8c05-5c12c6aee7e5",
+        "contentId": "b51e2cfb-d4f0-4102-abbe-bd76310a2622",
+        "navId": 547152869989
+      }
+    },
+    {
+      "name": "Subscription Invoices",
+      "pluginName": "SubscriptionInvoices",
+      "key": "subscription-invoices",
+      "parent": "subscription",
+      "title": "Invoices",
+      "modelName": "Tenant",
+      "icon": "fa fa-file-text-o",
+      "showinmenu": false,
+      "componentType": "DataTable",
+      "sourceRefs": [
+        "S04"
+      ],
+      "onLoad": {
+        "endpoint": "/api/tenant?idx=ncameo",
+        "responseField": "data",
+        "description": "Current tenant"
+      },
+      "otherApis": [
+        "GET /api/stripepayment/invoice/list",
+        "GET /api/subscription/list"
+      ],
+      "exportFunction": "SubscriptionInvoices",
+      "navParams": [],
+      "ids": {
+        "formId": "b17d8939-f5a6-463e-b1a0-96b2f07de84f",
+        "controlId": "5701ca24-c256-42a6-add3-5f88a4e3d03d",
+        "contentId": "f6d5fccb-0edf-4231-bbfd-d2245daaf32b",
+        "navId": 748827779853
+      }
+    },
+    {
+      "name": "Subscription Payment Methods",
+      "pluginName": "SubscriptionPaymentMethods",
+      "key": "subscription-payment-methods",
+      "parent": "subscription",
+      "title": "Payment Methods",
+      "modelName": "Tenant",
+      "icon": "fa fa-money",
+      "showinmenu": false,
+      "componentType": "Custom (card grid)",
+      "sourceRefs": [
+        "S05"
+      ],
+      "onLoad": {
+        "endpoint": "/api/tenant?idx=ncameo",
+        "responseField": "data",
+        "description": "Current tenant"
+      },
+      "otherApis": [
+        "GET /api/stripepayment/card/list"
+      ],
+      "exportFunction": "SubscriptionPaymentMethods",
+      "navParams": [],
+      "ids": {
+        "formId": "533cfb3c-c2d4-4258-ba84-8a29988e4ce6",
+        "controlId": "467b9261-dc53-465a-869a-07254c4013d3",
+        "contentId": "579bf8de-82a8-45f9-b2ee-34d7042c0d5a",
+        "navId": 706624685479
+      }
+    },
+    {
+      "name": "Customer List Detail",
+      "pluginName": "CustomerListDetail",
+      "key": "customer",
+      "title": "Customer",
+      "modelName": "Tenant",
+      "icon": "fa fa-users",
+      "componentType": "List + detail",
+      "sourceRefs": [
+        "S09",
+        "S10"
+      ],
+      "onLoad": {
+        "endpoint": "/api/tenant/SearchAsync?idx=ncameo&IsActive=true&PageNumber=1&PageSize=20",
+        "responseField": "data",
+        "description": "First page of active customers"
+      },
+      "otherApis": [
+        "GET /api/tenant/SearchAsync (search/paging)",
+        "GET /api/tenant/Details",
+        "GET /api/subscription/list",
+        "GET /api/stripepayment/invoice/list",
+        "GET /api/stripepayment/card/list",
+        "POST /api/tenant/deactivate",
+        "POST /api/subscription/applypromo"
+      ],
+      "exportFunction": "CustomerListDetail",
+      "parent": null,
+      "navParams": [],
+      "showinmenu": true,
+      "ids": {
+        "formId": "e2f837cb-4d28-42b1-a435-7e928981a20b",
+        "controlId": "5fbc557a-20d3-4256-925d-15a38160f48c",
+        "contentId": "b6766ea9-64d3-4c01-b150-a53ca664c735",
+        "navId": 433724265612
+      }
+    },
+    {
+      "name": "Product Catalog",
+      "pluginName": "ProductCatalog",
+      "key": "product",
+      "title": "Product",
+      "modelName": "Product",
+      "icon": "fa fa-cube",
+      "componentType": "DataTable + form drawer",
+      "sourceRefs": [
+        "S11",
+        "S12"
+      ],
+      "onLoad": null,
+      "otherApis": [
+        "POST /api/entity/SearchAsync (Product)",
+        "GET/POST/PUT /api/entity (Product)",
+        "GET /api/tenant/SearchAsync",
+        "GET /api/stripepayment/plan/list"
+      ],
+      "exportFunction": "ProductCatalog",
+      "parent": null,
+      "navParams": [],
+      "showinmenu": true,
+      "ids": {
+        "formId": "e6aa61b9-1517-4f41-9499-742ba08bcad2",
+        "controlId": "620b4246-1e83-4a3d-a67e-d696f02393f6",
+        "contentId": "a7907afb-2dee-4e49-8cec-bfc0349d2172",
+        "navId": 433175919864
+      }
+    },
+    {
+      "name": "Inquiry List Detail",
+      "pluginName": "InquiryListDetail",
+      "key": "inquiry",
+      "title": "Inquiry",
+      "modelName": "Inquiry",
+      "icon": "fa fa-comments",
+      "componentType": "List + detail + drawers",
+      "sourceRefs": [
+        "S13",
+        "S14",
+        "S15"
+      ],
+      "onLoad": null,
+      "otherApis": [
+        "POST /api/entity/SearchAsync (Inquiry, Note, ContactEmail, Task)",
+        "GET/POST/DELETE /api/entity"
+      ],
+      "exportFunction": "InquiryListDetail",
+      "parent": null,
+      "navParams": [],
+      "showinmenu": true,
+      "ids": {
+        "formId": "7309b045-a021-4be4-a01e-0b8b9388dbea",
+        "controlId": "c61ba733-585b-4725-9648-168cd8682d4d",
+        "contentId": "2805fe1b-561a-4c7d-b31a-20c3153b3614",
+        "navId": 479537064055
+      }
+    },
+    {
+      "name": "Marketing Leads",
+      "pluginName": "MarketingLeads",
+      "key": "marketing-leads",
+      "title": "Marketing Leads",
+      "modelName": "Lead",
+      "icon": "fa fa-bullhorn",
+      "componentType": "List + detail + drawers",
+      "sourceRefs": [
+        "S16",
+        "S17"
+      ],
+      "onLoad": null,
+      "otherApis": [
+        "POST /api/entity/SearchAsync (Lead, Task)",
+        "GET/POST/PUT/DELETE /api/entity"
+      ],
+      "exportFunction": "MarketingLeads",
+      "parent": null,
+      "navParams": [],
+      "showinmenu": true,
+      "ids": {
+        "formId": "6842c212-b66b-4368-b8bd-576c783755b1",
+        "controlId": "0e7e8722-e7d9-43ce-803e-04ac9fa5ba09",
+        "contentId": "e14e2df9-4131-427e-b6cc-607760970bfe",
+        "navId": 314464080044
+      }
+    }
+  ],
+  "appSlug": "NCameoAdmin"
+}

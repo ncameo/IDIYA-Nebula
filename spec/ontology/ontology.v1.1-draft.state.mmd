@@ -1,0 +1,6 @@
+%% State machine DRAFT for CR-001 - Customer.Status. Not confirmed.
+stateDiagram-v2
+    [*] --> Active : created (?)
+    Active --> Inactive : De-activate (dialog, IN-04)
+    Inactive --> Active : Re-activate (?) - named in the dialog text, no control shown in IN-03/IN-04
+    note right of Inactive : Not terminal. Active subscriptions stay in Stripe until cancelled.

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="cameo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Customers</title>
+<meta name="nebula:project" content="nebula-products">
+<meta name="nebula:version" content="1.1">
+<link rel="stylesheet" href="../assets/nebula-brand.css">
+</head>
+<body>
+<div class="app">
+<nav class="sidebar" aria-label="Main"><div class="sidebar-logo"><span class="logo-name">Nebula Products</span></div>
+<div class="sb-sec">
+<!-- nav item uuid 1791262684219 -> formid e588f7ab-bbbc-4540-93c9-eb7d2fc2b0e6 -->
+<a class="nav-item" href="S-01-products.html" data-nav-uuid="1791262684219"><span class="nav-label">Products</span></a>
+<!-- nav item uuid 1791286238764 -> formid 6421b203-cc6c-4acf-ae40-b3c83621641e -->
+<a class="nav-item active" href="S-03-customers.html" data-nav-uuid="1791286238764"><span class="nav-label">Customers</span></a>
+</div></nav>
+<div>
+<main data-screen="S-03" data-form-id="6421b203-cc6c-4acf-ae40-b3c83621641e" data-entity="E-02" data-model="customers" data-form-type="List" data-composition="Filter / Search + Tabs + Split View">
+<div class="page-head"><h1 class="formtitle">Customers</h1></div>
+<!-- NCAMEO_CONTROL: cardgrid | SplitView -->
+<div class="split" id="customersSplit" data-view="SplitView" data-entity="E-02" data-form-id-search="31ed0d29-1164-44cb-8c5a-a5593bc5ef02" data-form-id-detail="6caa76d1-6ae7-4a21-be3f-bcb5243f5891" data-form-id-addedit="fcaac76e-69ab-4852-bedc-a16561ef8823">
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card splitview-left-bar" id="customerListPanel" data-section="customerList">
+  <div class="card-body">
+    <!-- NCAMEO_CONTROL: textbox -->
+    <div class="searchinputbox"><input type="text" class="form-control" id="customerSearch" name="Name" maxlength="150" data-field="F-02.02" data-control="textbox" placeholder="Search customers" aria-label="Search customers" data-control-key="customerSearch" data-action-list="A-07" data-tool-list="np_list_customer" data-endpoint-list="EP-005" data-triggers=""></div>
+    <div class="list-tools">
+      <label class="check"><!-- NCAMEO_CONTROL: checkbox -->
+      <input type="checkbox" id="activeOnly" data-field="F-02.07" data-control="checkbox"> Show active customers only</label>
+      <!-- NCAMEO_CONTROL: button -->
+      <button type="button" class="btn" id="customerFilter" data-placeholder="true" aria-label="Filter">Filter</button>
+    </div>
+    <div class="left-card-row" id="customerItems">
+      <template id="customerItemTemplate">
+        <div class="left-card-col">
+          <div class="new-card list-card" role="button" tabindex="0" data-control-key="selectCustomer" data-action-get="A-08" data-tool-get="np_get_customer" data-endpoint-get="EP-006">
+            <div class="img-placeholder" data-bind="initials"></div>
+            <div class="new-card-texts">
+              <div class="new-card-title" data-bind="Name"></div>
+              <div class="new-card-subtitle" data-bind="ContactName"></div>
+              <span class="badge" data-bind="Status"></span>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+    <div class="empty" id="customerEmpty" hidden>No customers match.</div>
+  </div>
+</section>
+<div class="split-detail" id="customerDetail">
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card" id="customerHeaderPanel" data-section="customerHeader">
+  <div class="card-body detail-head">
+    <div><h2 data-bind="Name"></h2>
+      <div class="meta"><span class="badge" data-bind="Status" data-field="F-02.07"></span><span data-bind="CustomerSince" data-field="F-02.08"></span></div></div>
+    <div class="actions">
+      <!-- NCAMEO_CONTROL: button -->
+      <button type="button" class="btn" id="applyPromo" data-control-key="applyPromo" data-placeholder="true">Apply promo</button>
+      <!-- NCAMEO_CONTROL: button -->
+      <button type="button" class="btn" id="deactivateCustomer" data-control-key="deactivateCustomer" data-target-screen="S-04">De-activate</button>
+    </div>
+  </div>
+</section>
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card" id="contactCardPanel" data-section="contactCard">
+  <div class="card-header">Contact</div>
+  <div class="card-body row">
+    <div class="col-6"><span class="k">Contact name</span><span data-bind="ContactName" data-field="F-02.03"></span></div>
+    <div class="col-6"><span class="k">Email</span><span data-bind="Email" data-field="F-02.04"></span></div>
+    <div class="col-6"><span class="k">Phone</span><span data-bind="Phone" data-field="F-02.05"></span></div>
+    <div class="col-6"><span class="k">Stripe customer ID</span><span data-bind="StripeCustomerId" data-field="F-02.06"></span></div>
+  </div>
+</section>
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card" id="customerTabsPanel" data-section="customerTabs">
+  <!-- NCAMEO_CONTROL: tabs -->
+  <div class="tabs">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item"><a class="nav-link active" role="tab" aria-selected="true" data-placeholder="true">Subscriptions</a></li>
+      <li class="nav-item"><a class="nav-link" role="tab" aria-selected="false" data-placeholder="true">Invoices</a></li>
+      <li class="nav-item"><a class="nav-link" role="tab" aria-selected="false" data-placeholder="true">Payment methods</a></li>
+    </ul>
+  </div>
+  <div class="card-body empty">Not modelled in this build (OOS-05).</div>
+</section>
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card" id="recentInvoicesPanel" data-section="recentInvoices">
+  <div class="card-header">Recent invoices</div>
+  <div class="card-body empty">Not modelled in this build (OOS-05).</div>
+</section>
+</div>
+</div>
+</main>
+<div class="notice" id="notice" role="status">Prototype - mock data only.</div>
+<pre id="trace"></pre>
+</div>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

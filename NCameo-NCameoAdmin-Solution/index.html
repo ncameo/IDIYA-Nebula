@@ -1,0 +1,35 @@
+<!doctype html>
+<html class="cameo">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>NCameoAdmin</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script defer="defer" src="https://adminncameodev.azurewebsites.net/Plugin/build/ncameo.js"></script>
+  <link href="https://adminncameodev.azurewebsites.net/Plugin/build/ncameo.css" rel="stylesheet">
+  <!-- React 18.2.0 globals for the plugins; must stay before the plugin scripts -->
+  <script type="module" src="/src/react-globals.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body><noscript>NCAMEO helps companies build, deploy, and manage complex applications without writing a single line of
+    code.</noscript>
+  <div class="env-vars"></div>
+  <div class="app-shell">
+    <nav class="app-nav">
+      <h1 id="app-title"></h1>
+      <ul id="app-menu"></ul>
+      <div class="app-sync">
+        <button type="button" id="sync-btn"><i class="fa fa-refresh"></i> Sync datasources, forms &amp; menu</button>
+        <pre id="sync-status"></pre>
+      </div>
+    </nav>
+    <main class="app-content">
+      <div class="cameo" id="ncameo"></div>
+    </main>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>

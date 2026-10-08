@@ -1,0 +1,19 @@
+{
+  "agent": "AG-01",
+  "plugin": "nebula-products",
+  "plugin_version": "1.1.0",
+  "ncameo_agent_id": null,
+  "registered_version": null,
+  "registered_at": null,
+  "runtime": {
+    "host": "Agent SDK service",
+    "plugin_source": "local: repo/nebula-products/plugin",
+    "endpoint_env": "NP_AGENT_BASE_URL",
+    "env": [
+      "NP_DAB_MCP_URL",
+      "NP_DAB_AGENT_TOKEN",
+      "ANTHROPIC_API_KEY"
+    ]
+  },
+  "note": "ncameo_agent_id is filled by the build step that registers the agent through the Nebula agent editor. No secrets in this file."
+}

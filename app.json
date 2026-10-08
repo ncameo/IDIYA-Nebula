@@ -1,0 +1,35 @@
+{
+  "project": "nebula-products",
+  "title": "Nebula Products",
+  "version": "1.0",
+  "released": "2026-10-06",
+  "tag": null,
+  "generator": "nebula/0.1.0",
+  "source": { "mode": "local", "project_root": "repo/nebula-products", "branching": "none", "work_branch": null },
+  "ncameo": {
+    "idx": "quzlglsembkgyxy",
+    "data_store_id": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+    "forms_folder": "ncameo/quzlglsembkgyxy/",
+    "dataconnections_folder": "ncameo/quzlglsembkgyxydataconnections/",
+    "forms": [],
+    "menu": "ncameo/quzlglsembkgyxy/menu.json",
+    "formlist": "ncameo/quzlglsembkgyxy/formlist.json"
+  },
+  "database": {
+    "source_type": "nosql",
+    "product": "cosmosdb",
+    "crud_mcp": "Data API builder (NoSQL)",
+    "config": null,
+    "schema": null,
+    "latest_migration": null,
+    "applied": [],
+    "pending_contracts": []
+  },
+  "agent": { "id": "AG-01", "plugin": "plugin", "plugin_version": null, "ncameo_agent_id": null },
+  "folders": { "spec": "spec/", "html": "html/", "ncameo": "ncameo/", "db": "db/", "plugin": "plugin/" },
+  "environment": {
+    "NP_DAB_BASE_URL": "Base URL of the Data API builder REST surface the Nebula forms bind to",
+    "NP_AGENT_BASE_URL": "Base URL of the backend agent",
+    "NP_DAB_MCP_URL": "URL of the CRUD MCP server used by the agent"
+  }
+}

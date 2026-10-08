@@ -1,0 +1,20 @@
+{
+  "name": "ncameo-ncameoadmin-solution",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "spec": "node scripts/generate-app-spec.mjs",
+    "forms": "node scripts/sync-forms.mjs"
+  },
+  "devDependencies": {
+    "vite": "^7.0.0"
+  },
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  }
+}

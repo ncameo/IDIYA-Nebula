@@ -1,0 +1,1848 @@
+{
+  "meta": {
+    "project": "Nebula Products",
+    "project_key": "nebula-products",
+    "version": "1.1",
+    "status": "Approved",
+    "generated_at": "2026-10-06T17:00:38+05:30",
+    "generator": "nebula/0.1.0",
+    "inputs": [
+      {
+        "id": "IN-01",
+        "type": "screenshot",
+        "name": "S11-product-catalog.png"
+      },
+      {
+        "id": "IN-02",
+        "type": "screenshot",
+        "name": "S12-product-form.png"
+      },
+      {
+        "id": "IN-03",
+        "type": "screenshot",
+        "name": "Customers split view"
+      },
+      {
+        "id": "IN-04",
+        "type": "screenshot",
+        "name": "De-activate RB? modal"
+      }
+    ],
+    "approver": "Paresh",
+    "change_log": [
+      {
+        "version": "1.0",
+        "date": "2026-10-06",
+        "cr": null,
+        "summary": "Initial draft from rationalized inputs + interview"
+      },
+      {
+        "version": "1.1",
+        "date": "2026-10-06",
+        "cr": "CR-001",
+        "summary": "Add Customer entity (E-02), Customers split-view screen S-03 and De-activate customer dialog S-04; no v1.0 id changed"
+      },
+      {
+        "version": "1.1",
+        "date": "2026-10-08",
+        "cr": "CR-001",
+        "summary": "Theme sampled from the screenshots (IN-01..IN-04) and recorded as spec.theme; replaces the default palette. Requested by the user."
+      }
+    ],
+    "approved_at": "2026-10-06T05:02:10Z"
+  },
+  "data_store": {
+    "id": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+    "id_origin": "generated",
+    "source_type": "nosql",
+    "database_type": "cosmosdb",
+    "service": "Cosmos DB",
+    "model_naming_convention": "camelCase_plural",
+    "access": {
+      "crud_mcp": {
+        "server": "sql-mcp-server",
+        "product": "Data API builder (NoSQL)",
+        "config": "db/mcp/dab-config.json",
+        "mcp_path": "/mcp",
+        "rest_path": "/api"
+      },
+      "ncameo_binding": "http",
+      "rest_base_url_env": "NP_DAB_BASE_URL",
+      "agent_base_url_env": "NP_AGENT_BASE_URL"
+    },
+    "caveat": "DAB NoSQL support to be verified for both REST and MCP before BUILD.",
+    "confidence": "user-confirmed",
+    "source": {
+      "interview": [
+        "Q-020",
+        "Q-021"
+      ],
+      "inputs": []
+    }
+  },
+  "roles": [],
+  "modules": [
+    {
+      "name": "Admin",
+      "screens": [
+        "S-01",
+        "S-02"
+      ]
+    },
+    {
+      "name": "Customer",
+      "screens": [
+        "S-03",
+        "S-04"
+      ]
+    }
+  ],
+  "forms": [
+    {
+      "id": "e588f7ab-bbbc-4540-93c9-eb7d2fc2b0e6",
+      "screen": "S-01",
+      "title": "Products",
+      "form_type": "Card Grid",
+      "model": "products",
+      "datasource": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+      "id_origin": "generated",
+      "status": "active",
+      "role": "main",
+      "parent": "S-01"
+    },
+    {
+      "id": "67aa70d6-44b1-433a-8430-d4332e394d0f",
+      "screen": "S-01",
+      "title": "Products — Card",
+      "form_type": "Card",
+      "model": "products",
+      "datasource": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+      "id_origin": "generated",
+      "status": "active",
+      "role": "card",
+      "parent": "S-01"
+    },
+    {
+      "id": "ccb72cf7-900b-44a7-afc0-01425d21d515",
+      "screen": "S-02",
+      "title": "Edit product",
+      "form_type": "Transaction",
+      "model": "products",
+      "datasource": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+      "id_origin": "generated",
+      "status": "active",
+      "role": "main",
+      "parent": "S-02"
+    },
+    {
+      "id": "6421b203-cc6c-4acf-ae40-b3c83621641e",
+      "screen": "S-03",
+      "title": "Customers",
+      "form_type": "Split View",
+      "model": "customers",
+      "datasource": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+      "id_origin": "generated",
+      "status": "active",
+      "role": "main",
+      "parent": "S-03"
+    },
+    {
+      "id": "31ed0d29-1164-44cb-8c5a-a5593bc5ef02",
+      "screen": "S-03",
+      "title": "Customers — Search",
+      "form_type": "Search",
+      "model": "customers",
+      "datasource": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+      "id_origin": "generated",
+      "status": "active",
+      "role": "search",
+      "parent": "S-03"
+    },
+    {
+      "id": "6caa76d1-6ae7-4a21-be3f-bcb5243f5891",
+      "screen": "S-03",
+      "title": "Customers — Detail",
+      "form_type": "Detail",
+      "model": "customers",
+      "datasource": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+      "id_origin": "generated",
+      "status": "active",
+      "role": "detail",
+      "parent": "S-03"
+    },
+    {
+      "id": "fcaac76e-69ab-4852-bedc-a16561ef8823",
+      "screen": "S-03",
+      "title": "Customers — Add/Edit",
+      "form_type": "Transaction",
+      "model": "customers",
+      "datasource": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+      "id_origin": "generated",
+      "status": "active",
+      "role": "addEdit",
+      "parent": "S-03"
+    },
+    {
+      "id": "75f2b668-7fab-4ee6-af5a-47a6108db840",
+      "screen": "S-04",
+      "title": "De-activate customer",
+      "form_type": "Transaction",
+      "model": "customers",
+      "datasource": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+      "id_origin": "generated",
+      "status": "active",
+      "role": "main",
+      "parent": "S-04"
+    }
+  ],
+  "screens": [
+    {
+      "id": "S-01",
+      "title": "Products",
+      "archetype": "collection",
+      "module": "Admin",
+      "primary_entity": "E-01",
+      "actions": [
+        "A-01",
+        "A-02",
+        "A-03"
+      ],
+      "sections": [
+        {
+          "key": "pageHeader",
+          "title": "Products",
+          "fields": []
+        },
+        {
+          "key": "filters",
+          "title": "Filters",
+          "fields": [
+            "F-01.01",
+            "F-01.02",
+            "F-01.05"
+          ]
+        },
+        {
+          "key": "productCards",
+          "title": "Product cards",
+          "fields": [
+            "F-01.01",
+            "F-01.02",
+            "F-01.05",
+            "F-01.06",
+            "F-01.08",
+            "F-01.14"
+          ]
+        }
+      ],
+      "wizard": {
+        "flow": "",
+        "step": 0
+      },
+      "ncameo": {
+        "screen_type": "List",
+        "view_pattern": "Card Grid",
+        "composition": [
+          {
+            "pattern": "Filter / Search",
+            "confidence": "user-confirmed",
+            "evidence": "IN-01 search box, Visibility button and All / PaaS / Managed tab strip with counts"
+          }
+        ],
+        "pattern_label": "List + Card Grid + Filter / Search",
+        "confidence": "user-confirmed",
+        "rationale": "Eight repeated tiles with identical layout; no sortable columns, bulk actions or paging, so not Advanced Grid. The tab strip filters the result set, so it is Filter / Search, not Tabs.",
+        "implementation_skill": "cardgrid-control"
+      },
+      "status": "active"
+    },
+    {
+      "id": "S-02",
+      "title": "Edit product",
+      "archetype": "entry",
+      "module": "Admin",
+      "primary_entity": "E-01",
+      "presentation": "right-side drawer over S-01",
+      "actions": [
+        "A-04"
+      ],
+      "sections": [
+        {
+          "key": "productDetails",
+          "title": null,
+          "fields": [
+            "F-01.01",
+            "F-01.02",
+            "F-01.03",
+            "F-01.04",
+            "F-01.05",
+            "F-01.06"
+          ]
+        },
+        {
+          "key": "recurringPricingStripe",
+          "title": "Recurring pricing (Stripe)",
+          "fields": [
+            "F-01.07",
+            "F-01.08",
+            "F-01.09",
+            "F-01.10"
+          ],
+          "visible_when": {
+            "field": "F-01.06",
+            "equals": "Recurring"
+          }
+        },
+        {
+          "key": "oneTimePricing",
+          "title": "One-time pricing",
+          "fields": [
+            "F-01.14"
+          ],
+          "visible_when": {
+            "field": "F-01.06",
+            "equals": "One time"
+          }
+        },
+        {
+          "key": "descriptionAndScripts",
+          "title": null,
+          "fields": [
+            "F-01.11",
+            "F-01.12",
+            "F-01.13"
+          ]
+        }
+      ],
+      "controls": [
+        {
+          "id": "A-05",
+          "key": "cancelProduct",
+          "label": "Cancel",
+          "kind": "dismiss",
+          "target_screen": "S-01"
+        },
+        {
+          "id": "A-06",
+          "key": "closeProduct",
+          "label": null,
+          "icon": "close",
+          "kind": "dismiss",
+          "target_screen": "S-01"
+        }
+      ],
+      "wizard": {
+        "flow": "",
+        "step": 0
+      },
+      "ncameo": {
+        "screen_type": "Transaction",
+        "view_pattern": null,
+        "composition": [
+          {
+            "pattern": "Panel",
+            "confidence": "user-confirmed",
+            "evidence": "IN-02 titled bordered group 'RECURRING PRICING (STRIPE)'; other fields ungrouped"
+          }
+        ],
+        "pattern_label": "Transaction + Panel",
+        "confidence": "user-confirmed",
+        "rationale": "Create/edit form for one record shown as a right-side drawer; no steps and no section switching, so not a wizard or tabs.",
+        "implementation_skill": "transaction-form"
+      },
+      "status": "active"
+    },
+    {
+      "id": "S-03",
+      "title": "Customers",
+      "archetype": "collection",
+      "module": "Customer",
+      "primary_entity": "E-02",
+      "actions": [
+        "A-07",
+        "A-08"
+      ],
+      "sections": [
+        {
+          "key": "customerList",
+          "title": "Customers",
+          "fields": [
+            "F-02.02",
+            "F-02.07"
+          ]
+        },
+        {
+          "key": "customerHeader",
+          "title": null,
+          "fields": [
+            "F-02.02",
+            "F-02.08",
+            "F-02.07"
+          ]
+        },
+        {
+          "key": "contactCard",
+          "title": "Contact",
+          "fields": [
+            "F-02.03",
+            "F-02.04",
+            "F-02.05",
+            "F-02.06"
+          ]
+        },
+        {
+          "key": "customerTabs",
+          "title": null,
+          "fields": [],
+          "note": "Tabs Subscriptions, Invoices, Payment methods; their data is not modelled (OOS-05)"
+        },
+        {
+          "key": "recentInvoices",
+          "title": "Recent invoices",
+          "fields": [],
+          "note": "Not modelled (OOS-05)"
+        }
+      ],
+      "controls": [
+        {
+          "id": "A-10",
+          "key": "deactivateCustomer",
+          "label": "De-activate",
+          "kind": "open_dialog",
+          "target_screen": "S-04"
+        },
+        {
+          "id": "A-11",
+          "key": "applyPromo",
+          "label": "Apply promo",
+          "kind": "placeholder",
+          "target_screen": null
+        }
+      ],
+      "wizard": {
+        "flow": "",
+        "step": 0
+      },
+      "ncameo": {
+        "screen_type": "List",
+        "view_pattern": "Split View",
+        "composition": [
+          {
+            "pattern": "Filter / Search",
+            "confidence": "assumed",
+            "evidence": "IN-03 search box, 'Show active customers only' toggle and filter button above the list"
+          },
+          {
+            "pattern": "Tabs",
+            "confidence": "assumed",
+            "evidence": "IN-03 tab strip Subscriptions / Invoices / Payment methods in the detail pane"
+          }
+        ],
+        "pattern_label": "List + Split View + Filter / Search + Tabs",
+        "confidence": "assumed",
+        "rationale": "Customer list on the left and the selected customer's detail on the right on one page.",
+        "implementation_skill": "split-view"
+      },
+      "status": "active"
+    },
+    {
+      "id": "S-04",
+      "title": "De-activate customer",
+      "archetype": "entry",
+      "module": "Customer",
+      "primary_entity": "E-02",
+      "presentation": "modal dialog over S-03",
+      "actions": [
+        "A-09"
+      ],
+      "sections": [
+        {
+          "key": "deactivation",
+          "title": null,
+          "fields": [
+            "F-02.09",
+            "F-02.10"
+          ]
+        },
+        {
+          "key": "promoAlternative",
+          "title": "Or apply a promo instead",
+          "fields": []
+        }
+      ],
+      "controls": [
+        {
+          "id": "A-12",
+          "key": "cancelDeactivate",
+          "label": "Cancel",
+          "kind": "dismiss",
+          "target_screen": "S-03"
+        },
+        {
+          "id": "A-13",
+          "key": "applyPromoDialog",
+          "label": "Apply",
+          "kind": "placeholder",
+          "target_screen": null
+        }
+      ],
+      "wizard": {
+        "flow": "",
+        "step": 0
+      },
+      "ncameo": {
+        "screen_type": "Transaction",
+        "view_pattern": null,
+        "composition": [
+          {
+            "pattern": "Panel",
+            "confidence": "assumed",
+            "evidence": "IN-04 promo code + Apply grouped under 'Or apply a promo instead'"
+          }
+        ],
+        "pattern_label": "Transaction + Panel",
+        "confidence": "assumed",
+        "rationale": "Single-record confirmation form shown as a modal; no steps or tabs.",
+        "implementation_skill": "transaction-form"
+      },
+      "status": "active"
+    }
+  ],
+  "entities": [
+    {
+      "id": "E-01",
+      "name": "Product",
+      "purpose": "A plan or support package that customers can subscribe to, with its category, visibility, billing type and pricing.",
+      "model_name": "products",
+      "model_confidence": "user-delegated",
+      "model_notes": "Collection name and camelCase document property names derived by the nosql convention and decided by Claude under user delegation (Q-022); change on request. For this nosql store 'column' holds the camelCase document property name; the API key stays PascalCase.",
+      "collection": "products",
+      "primary_key": "F-01.15",
+      "system_of_record": "Cosmos DB - products collection (Nebula store, to be created)",
+      "velocity_layer": "Slow",
+      "velocity_rationale": "Shared catalog of plans, not per customer; changes when plans or prices change (Q-010). Two-admin concurrent edits are not treated as contested.",
+      "classification": null,
+      "status": "active",
+      "fields": [
+        {
+          "id": "F-01.01",
+          "name": "Name",
+          "key": "Name",
+          "column": "name",
+          "type": "string",
+          "max_length": 150,
+          "required": true,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.0",
+          "retired_in": null
+        },
+        {
+          "id": "F-01.02",
+          "name": "Category",
+          "key": "Category",
+          "column": "category",
+          "type": "enum",
+          "enum_values": [
+            "PaaS",
+            "Managed"
+          ],
+          "required": true,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.0",
+          "retired_in": null
+        },
+        {
+          "id": "F-01.03",
+          "name": "Partner code",
+          "key": "PartnerCode",
+          "column": "partnerCode",
+          "type": "string",
+          "max_length": 50,
+          "required": false,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.0",
+          "retired_in": null
+        },
+        {
+          "id": "F-01.04",
+          "name": "No. of apps allowed",
+          "key": "NoOfAppsAllowed",
+          "column": "noOfAppsAllowed",
+          "type": "number",
+          "required": true,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.0",
+          "retired_in": null
+        },
+        {
+          "id": "F-01.05",
+          "name": "Visibility",
+          "key": "Visibility",
+          "column": "visibility",
+          "type": "enum",
+          "enum_values": [
+            "Public",
+            "Private",
+            "Draft"
+          ],
+          "required": true,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.0",
+          "retired_in": null
+        },
+        {
+          "id": "F-01.06",
+          "name": "Billing type",
+          "key": "BillingType",
+          "column": "billingType",
+          "type": "enum",
+          "enum_values": [
+            "One time",
+            "Recurring"
+          ],
+          "required": true,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.0",
+          "retired_in": null
+        },
+        {
+          "id": "F-01.07",
+          "name": "Monthly Stripe price",
+          "key": "MonthlyStripePrice",
+          "column": "monthlyStripePrice",
+          "type": "string",
+          "max_length": 100,
+          "required": false,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.0",
+          "retired_in": null
+        },
+        {
+          "id": "F-01.08",
+          "name": "Monthly price (USD)",
+          "key": "MonthlyPriceUsd",
+          "column": "monthlyPriceUsd",
+          "type": "number",
+          "required": false,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.0",
+          "retired_in": null
+        },
+        {
+          "id": "F-01.09",
+          "name": "Yearly Stripe price",
+          "key": "YearlyStripePrice",
+          "column": "yearlyStripePrice",
+          "type": "string",
+          "max_length": 100,
+          "required": false,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.0",
+          "retired_in": null
+        },
+        {
+          "id": "F-01.10",
+          "name": "Yearly price (USD)",
+          "key": "YearlyPriceUsd",
+          "column": "yearlyPriceUsd",
+          "type": "number",
+          "required": false,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.0",
+          "retired_in": null
+        },
+        {
+          "id": "F-01.11",
+          "name": "Short description",
+          "key": "ShortDescription",
+          "column": "shortDescription",
+          "type": "longtext",
+          "max_length": 3000,
+          "required": false,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.0",
+          "retired_in": null
+        },
+        {
+          "id": "F-01.12",
+          "name": "Script (Azure)",
+          "key": "ScriptAzure",
+          "column": "scriptAzure",
+          "type": "longtext",
+          "required": false,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.0",
+          "retired_in": null
+        },
+        {
+          "id": "F-01.13",
+          "name": "Script (AWS)",
+          "key": "ScriptAws",
+          "column": "scriptAws",
+          "type": "string",
+          "max_length": 4000,
+          "required": false,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.0",
+          "retired_in": null
+        },
+        {
+          "id": "F-01.14",
+          "name": "One-time price (USD)",
+          "key": "OneTimePriceUsd",
+          "column": "oneTimePriceUsd",
+          "type": "number",
+          "required": false,
+          "origin": "entry",
+          "assumed": true,
+          "status": "active",
+          "since": "1.0",
+          "retired_in": null
+        },
+        {
+          "id": "F-01.15",
+          "name": "Product Id",
+          "key": "ProductId",
+          "column": "productId",
+          "type": "guid",
+          "required": true,
+          "origin": "system",
+          "assumed": true,
+          "status": "active",
+          "since": "1.0",
+          "retired_in": null
+        }
+      ],
+      "relationships": []
+    },
+    {
+      "id": "E-02",
+      "name": "Customer",
+      "purpose": "A customer account that subscribes to products: contact details, Stripe customer reference, and an Active or Inactive status.",
+      "model_name": "customers",
+      "model_confidence": "user-delegated",
+      "model_notes": "camelCase plural collection (same convention as products); property names camelCase, API keys PascalCase.",
+      "collection": "customers",
+      "primary_key": "F-02.01",
+      "system_of_record": "Cosmos DB - customers collection (Nebula store, to be created)",
+      "velocity_layer": "Customer",
+      "velocity_rationale": "Data belongs to individual customers and is read per customer; status changes on explicit admin action (CR-001 interview).",
+      "classification": null,
+      "status": "active",
+      "fields": [
+        {
+          "id": "F-02.01",
+          "name": "Customer Id",
+          "key": "CustomerId",
+          "column": "customerId",
+          "type": "guid",
+          "required": true,
+          "origin": "system",
+          "assumed": true,
+          "status": "active",
+          "since": "1.1",
+          "retired_in": null
+        },
+        {
+          "id": "F-02.02",
+          "name": "Name",
+          "key": "Name",
+          "column": "name",
+          "type": "string",
+          "max_length": 150,
+          "required": true,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.1",
+          "retired_in": null
+        },
+        {
+          "id": "F-02.03",
+          "name": "Contact name",
+          "key": "ContactName",
+          "column": "contactName",
+          "type": "string",
+          "max_length": 150,
+          "required": false,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.1",
+          "retired_in": null
+        },
+        {
+          "id": "F-02.04",
+          "name": "Email",
+          "key": "Email",
+          "column": "email",
+          "type": "email",
+          "max_length": 254,
+          "required": false,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.1",
+          "retired_in": null
+        },
+        {
+          "id": "F-02.05",
+          "name": "Phone",
+          "key": "Phone",
+          "column": "phone",
+          "type": "phone",
+          "max_length": 30,
+          "required": false,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.1",
+          "retired_in": null
+        },
+        {
+          "id": "F-02.06",
+          "name": "Stripe customer ID",
+          "key": "StripeCustomerId",
+          "column": "stripeCustomerId",
+          "type": "string",
+          "max_length": 100,
+          "required": false,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.1",
+          "retired_in": null
+        },
+        {
+          "id": "F-02.07",
+          "name": "Status",
+          "key": "Status",
+          "column": "status",
+          "type": "enum",
+          "enum_values": [
+            "Active",
+            "Inactive"
+          ],
+          "required": true,
+          "origin": "system",
+          "assumed": false,
+          "status": "active",
+          "since": "1.1",
+          "retired_in": null
+        },
+        {
+          "id": "F-02.08",
+          "name": "Customer since",
+          "key": "CustomerSince",
+          "column": "customerSince",
+          "type": "date",
+          "required": false,
+          "origin": "entry",
+          "assumed": false,
+          "status": "active",
+          "since": "1.1",
+          "retired_in": null
+        },
+        {
+          "id": "F-02.09",
+          "name": "Deactivation reason",
+          "key": "DeactivationReason",
+          "column": "deactivationReason",
+          "type": "string",
+          "max_length": 100,
+          "required": false,
+          "origin": "entry",
+          "assumed": true,
+          "status": "active",
+          "since": "1.1",
+          "retired_in": null
+        },
+        {
+          "id": "F-02.10",
+          "name": "Deactivation note",
+          "key": "DeactivationNote",
+          "column": "deactivationNote",
+          "type": "longtext",
+          "max_length": 3000,
+          "required": false,
+          "origin": "entry",
+          "assumed": true,
+          "status": "active",
+          "since": "1.1",
+          "retired_in": null
+        }
+      ],
+      "relationships": []
+    }
+  ],
+  "state_machines": [
+    {
+      "id": "SM-01",
+      "entity": "E-02",
+      "field": "F-02.07",
+      "reason_field": "F-02.09",
+      "initial": "Active",
+      "states": [
+        "Active",
+        "Inactive"
+      ],
+      "terminal": [],
+      "terminal_note": "Not terminal: Inactive customers can be re-activated (control not shown in inputs, AS-26). Accepted exception to 'every stateful entity terminates'.",
+      "transitions": [
+        {
+          "id": "T-01",
+          "from": "Active",
+          "to": "Inactive",
+          "trigger": "Admin confirms De-activate in the dialog",
+          "via": "A-09",
+          "tool": "np_update_customer",
+          "role": null
+        },
+        {
+          "id": "T-02",
+          "from": "Inactive",
+          "to": "Active",
+          "trigger": "Re-activate (named in the dialog text; no control shown)",
+          "via": "out of scope (AS-26)",
+          "tool": null,
+          "role": null
+        }
+      ],
+      "illegal": [
+        {
+          "from": "Inactive",
+          "to": "Inactive",
+          "reason": "Customer is already inactive."
+        },
+        {
+          "from": "Active",
+          "to": "Active",
+          "reason": "Customer is already active."
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "A-01",
+      "screen": "S-01",
+      "name": "Add product",
+      "kind": "create",
+      "target_screen": "S-02",
+      "control_key": "addProduct",
+      "operation": "create",
+      "endpoint": {
+        "id": "EP-001",
+        "type": "api"
+      },
+      "tool": "np_create_product",
+      "transition": null,
+      "sets": {},
+      "triggers": [],
+      "roles": [],
+      "note": "Opens S-02 in create mode; Save in create mode submits this endpoint."
+    },
+    {
+      "id": "A-02",
+      "screen": "S-01",
+      "name": "Edit",
+      "kind": "edit",
+      "target_screen": "S-02",
+      "control_key": "editProduct",
+      "operation": "get",
+      "endpoint": {
+        "id": "EP-003",
+        "type": "api"
+      },
+      "tool": "np_get_product",
+      "transition": null,
+      "sets": {},
+      "triggers": [],
+      "roles": [],
+      "note": "Loads the record into S-02."
+    },
+    {
+      "id": "A-03",
+      "screen": "S-01",
+      "name": "Filter products",
+      "kind": "custom",
+      "target_screen": null,
+      "control_key": "visibilityFilter",
+      "operation": "list",
+      "endpoint": {
+        "id": "EP-004",
+        "type": "api"
+      },
+      "tool": "np_list_product",
+      "transition": null,
+      "sets": {},
+      "triggers": [],
+      "roles": [],
+      "note": "Visibility filter, category tabs and name search all call the list endpoint."
+    },
+    {
+      "id": "A-04",
+      "screen": "S-02",
+      "name": "Save product",
+      "kind": "edit",
+      "target_screen": "S-01",
+      "control_key": "saveProduct",
+      "operation": "update",
+      "endpoint": {
+        "id": "EP-002",
+        "type": "api"
+      },
+      "tool": "np_update_product",
+      "transition": null,
+      "sets": {},
+      "triggers": [],
+      "roles": []
+    },
+    {
+      "id": "A-07",
+      "screen": "S-03",
+      "name": "Find customers",
+      "kind": "custom",
+      "target_screen": null,
+      "control_key": "customerSearch",
+      "operation": "list",
+      "endpoint": {
+        "id": "EP-005",
+        "type": "api"
+      },
+      "tool": "np_list_customer",
+      "transition": null,
+      "sets": {},
+      "triggers": [],
+      "roles": [],
+      "note": "Search box and 'Show active customers only' toggle call the list endpoint (toggle = Status Active)."
+    },
+    {
+      "id": "A-08",
+      "screen": "S-03",
+      "name": "View customer",
+      "kind": "view",
+      "target_screen": null,
+      "control_key": "selectCustomer",
+      "operation": "get",
+      "endpoint": {
+        "id": "EP-006",
+        "type": "api"
+      },
+      "tool": "np_get_customer",
+      "transition": null,
+      "sets": {},
+      "triggers": [],
+      "roles": [],
+      "note": "Selecting a list item loads it into the detail pane."
+    },
+    {
+      "id": "A-09",
+      "screen": "S-04",
+      "name": "De-activate customer",
+      "kind": "edit",
+      "target_screen": "S-03",
+      "control_key": "confirmDeactivate",
+      "operation": "update",
+      "endpoint": {
+        "id": "EP-007",
+        "type": "api"
+      },
+      "tool": "np_update_customer",
+      "transition": "T-01",
+      "sets": {
+        "Status": "Inactive"
+      },
+      "triggers": [],
+      "roles": [],
+      "guard": "Customer.Status must be Active; otherwise 'Customer is already inactive.'"
+    }
+  ],
+  "endpoints": [
+    {
+      "id": "EP-001",
+      "type": "api",
+      "operation": "create",
+      "entity": "E-01",
+      "method": "post",
+      "path": "/products",
+      "served_by": "sql-mcp-server REST",
+      "mcp_tool": "create_record"
+    },
+    {
+      "id": "EP-002",
+      "type": "api",
+      "operation": "update",
+      "entity": "E-01",
+      "method": "patch",
+      "path": "/products/ProductId/{ProductId}",
+      "served_by": "sql-mcp-server REST",
+      "mcp_tool": "update_record"
+    },
+    {
+      "id": "EP-003",
+      "type": "api",
+      "operation": "get",
+      "entity": "E-01",
+      "method": "get",
+      "path": "/products/ProductId/{ProductId}",
+      "served_by": "sql-mcp-server REST",
+      "mcp_tool": "read_records"
+    },
+    {
+      "id": "EP-004",
+      "type": "api",
+      "operation": "list",
+      "entity": "E-01",
+      "method": "get",
+      "path": "/products",
+      "served_by": "sql-mcp-server REST",
+      "mcp_tool": "read_records"
+    },
+    {
+      "id": "EP-005",
+      "type": "api",
+      "operation": "list",
+      "entity": "E-02",
+      "method": "get",
+      "path": "/customers",
+      "served_by": "sql-mcp-server REST",
+      "mcp_tool": "read_records"
+    },
+    {
+      "id": "EP-006",
+      "type": "api",
+      "operation": "get",
+      "entity": "E-02",
+      "method": "get",
+      "path": "/customers/CustomerId/{CustomerId}",
+      "served_by": "sql-mcp-server REST",
+      "mcp_tool": "read_records"
+    },
+    {
+      "id": "EP-007",
+      "type": "api",
+      "operation": "update",
+      "entity": "E-02",
+      "method": "patch",
+      "path": "/customers/CustomerId/{CustomerId}",
+      "served_by": "sql-mcp-server REST",
+      "mcp_tool": "update_record"
+    }
+  ],
+  "workflows": [],
+  "agent": {
+    "id": "AG-01",
+    "name": "Product Management Agent",
+    "plugin": "nebula-products",
+    "tool_prefix": "np",
+    "model": "sonnet",
+    "model_rationale": "Talks to an admin user; no scheduled or multi-document work (Q-019).",
+    "scope": {
+      "intents": [
+        "List products",
+        "Show one product's details",
+        "Create a product",
+        "Update a product",
+        "List customers",
+        "Show one customer's details",
+        "De-activate a customer"
+      ],
+      "exclusions": [
+        "Deleting products",
+        "Anything outside Products and Customers (Subscription, Inquiry, Marketing Leads)"
+      ],
+      "escalation": [],
+      "tone": "Neutral and professional"
+    },
+    "tools": [
+      {
+        "name": "np_create_product",
+        "verb": "create",
+        "entity": "E-01",
+        "kind": "crud",
+        "mcp_tool": "create_record",
+        "endpoint": "EP-001",
+        "actions": [
+          "A-01"
+        ],
+        "workflows": [],
+        "blocking": true,
+        "status": "active",
+        "deprecated_in": null,
+        "remove_in": null
+      },
+      {
+        "name": "np_get_product",
+        "verb": "get",
+        "entity": "E-01",
+        "kind": "crud",
+        "mcp_tool": "read_records",
+        "endpoint": "EP-003",
+        "actions": [
+          "A-02"
+        ],
+        "workflows": [],
+        "blocking": true,
+        "status": "active",
+        "deprecated_in": null,
+        "remove_in": null
+      },
+      {
+        "name": "np_list_product",
+        "verb": "list",
+        "entity": "E-01",
+        "kind": "crud",
+        "mcp_tool": "read_records",
+        "endpoint": "EP-004",
+        "actions": [
+          "A-03"
+        ],
+        "workflows": [],
+        "blocking": true,
+        "status": "active",
+        "deprecated_in": null,
+        "remove_in": null
+      },
+      {
+        "name": "np_update_product",
+        "verb": "update",
+        "entity": "E-01",
+        "kind": "crud",
+        "mcp_tool": "update_record",
+        "endpoint": "EP-002",
+        "actions": [
+          "A-04"
+        ],
+        "workflows": [],
+        "blocking": true,
+        "status": "active",
+        "deprecated_in": null,
+        "remove_in": null
+      },
+      {
+        "name": "np_list_customer",
+        "verb": "list",
+        "entity": "E-02",
+        "kind": "crud",
+        "mcp_tool": "read_records",
+        "endpoint": "EP-005",
+        "actions": [
+          "A-07"
+        ],
+        "workflows": [],
+        "transitions": [],
+        "blocking": true,
+        "status": "active",
+        "deprecated_in": null,
+        "remove_in": null
+      },
+      {
+        "name": "np_get_customer",
+        "verb": "get",
+        "entity": "E-02",
+        "kind": "crud",
+        "mcp_tool": "read_records",
+        "endpoint": "EP-006",
+        "actions": [
+          "A-08"
+        ],
+        "workflows": [],
+        "transitions": [],
+        "blocking": true,
+        "status": "active",
+        "deprecated_in": null,
+        "remove_in": null
+      },
+      {
+        "name": "np_update_customer",
+        "verb": "update",
+        "entity": "E-02",
+        "kind": "crud",
+        "mcp_tool": "update_record",
+        "endpoint": "EP-007",
+        "actions": [
+          "A-09"
+        ],
+        "workflows": [],
+        "transitions": [
+          "T-01"
+        ],
+        "blocking": true,
+        "status": "active",
+        "deprecated_in": null,
+        "remove_in": null
+      }
+    ],
+    "skills": [
+      {
+        "name": "product-management",
+        "origin": "author",
+        "serves": [],
+        "entities": [
+          "E-01"
+        ],
+        "note": "Covers the four Product tools; no workflows in this build."
+      },
+      {
+        "name": "customer-management",
+        "origin": "author",
+        "serves": [],
+        "entities": [
+          "E-02"
+        ],
+        "note": "Covers the three Customer tools and the Active to Inactive transition guard."
+      }
+    ],
+    "integrations": [
+      {
+        "id": "MCP-01",
+        "name": "sql-mcp-server",
+        "purpose": "All Product CRUD",
+        "transport": "http",
+        "url_env": "NP_DAB_MCP_URL"
+      }
+    ]
+  },
+  "functional_requirements": [
+    {
+      "id": "FR-1.1",
+      "module": "Admin",
+      "text": "The system shall list products as cards showing name, category, a visibility badge, price with its billing unit, and an Edit button.",
+      "source": {
+        "screens": [
+          "S-01"
+        ],
+        "entities": [
+          "E-01"
+        ],
+        "actions": [
+          "A-03"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "id": "FR-1.2",
+      "module": "Admin",
+      "text": "The system shall filter the product cards by category (All, PaaS, Managed, with counts), by a Visibility filter, and by a name search.",
+      "source": {
+        "screens": [
+          "S-01"
+        ],
+        "entities": [
+          "E-01"
+        ],
+        "actions": [
+          "A-03"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "id": "FR-1.3",
+      "module": "Admin",
+      "text": "An admin shall add a product through the product drawer, opened by Add product.",
+      "source": {
+        "screens": [
+          "S-01",
+          "S-02"
+        ],
+        "entities": [
+          "E-01"
+        ],
+        "actions": [
+          "A-01",
+          "A-04"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "id": "FR-1.4",
+      "module": "Admin",
+      "text": "An admin shall edit a product through the same drawer, opened by Edit on its card, and save or cancel the change.",
+      "source": {
+        "screens": [
+          "S-01",
+          "S-02"
+        ],
+        "entities": [
+          "E-01"
+        ],
+        "actions": [
+          "A-02",
+          "A-04"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "id": "FR-1.5",
+      "module": "Admin",
+      "text": "The form shall require Name, Category, No. of apps allowed, Visibility and Billing type, and limit Short description to 3000 characters.",
+      "source": {
+        "screens": [
+          "S-02"
+        ],
+        "entities": [
+          "E-01"
+        ],
+        "actions": [
+          "A-04"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "id": "FR-1.6",
+      "module": "Admin",
+      "text": "The form shall show the recurring pricing (Stripe) panel when Billing type is Recurring and the one-time price when it is One time.",
+      "source": {
+        "screens": [
+          "S-02"
+        ],
+        "entities": [
+          "E-01"
+        ],
+        "actions": [
+          "A-04"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "id": "FR-1.7",
+      "module": "Admin",
+      "text": "The Product Management Agent shall list, show, create and update products through the CRUD tools.",
+      "source": {
+        "screens": [
+          "S-01",
+          "S-02"
+        ],
+        "entities": [
+          "E-01"
+        ],
+        "actions": [
+          "A-01",
+          "A-02",
+          "A-03",
+          "A-04"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "id": "FR-2.1",
+      "module": "Customer",
+      "text": "The system shall list customers on the left of a split view with a name search and a 'Show active customers only' toggle.",
+      "source": {
+        "screens": [
+          "S-03"
+        ],
+        "entities": [
+          "E-02"
+        ],
+        "actions": [
+          "A-07"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "id": "FR-2.2",
+      "module": "Customer",
+      "text": "The system shall show the selected customer on the right: name, status, 'Customer since' date, and a contact card with contact name, email, phone and Stripe customer ID.",
+      "source": {
+        "screens": [
+          "S-03"
+        ],
+        "entities": [
+          "E-02"
+        ],
+        "actions": [
+          "A-08"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "id": "FR-2.3",
+      "module": "Customer",
+      "text": "An admin shall de-activate an active customer through the De-activate dialog by giving a reason and an optional internal note and confirming; the customer's status becomes Inactive.",
+      "source": {
+        "screens": [
+          "S-03",
+          "S-04"
+        ],
+        "entities": [
+          "E-02"
+        ],
+        "actions": [
+          "A-09"
+        ]
+      },
+      "status": "active"
+    },
+    {
+      "id": "FR-2.4",
+      "module": "Customer",
+      "text": "The dialog shall be dismissed without change by Cancel.",
+      "source": {
+        "screens": [
+          "S-04"
+        ],
+        "entities": [
+          "E-02"
+        ],
+        "actions": []
+      },
+      "status": "active"
+    },
+    {
+      "id": "FR-2.5",
+      "module": "Customer",
+      "text": "The Product Management Agent shall list and show customers and de-activate an active customer through the CRUD tools.",
+      "source": {
+        "screens": [
+          "S-03",
+          "S-04"
+        ],
+        "entities": [
+          "E-02"
+        ],
+        "actions": [
+          "A-07",
+          "A-08",
+          "A-09"
+        ]
+      },
+      "status": "active"
+    }
+  ],
+  "assumptions": [
+    {
+      "id": "AS-01",
+      "text": "A new field OneTimePriceUsd (F-01.14) holds the price of One time products and is shown when Billing type = One time; the Stripe pricing panel is shown for Recurring only.",
+      "confidence": "user-delegated",
+      "evidence": "Q-005, Q-006; IN-01 cards show $99/$199/$299 one-time",
+      "risk_if_wrong": "Wrong field or wrong visibility rule on the form"
+    },
+    {
+      "id": "AS-02",
+      "text": "Visibility (Public, Private, Draft) is a label; Product has no state machine.",
+      "confidence": "user-delegated",
+      "evidence": "Q-012",
+      "risk_if_wrong": "A lifecycle with transitions and guards would be missing"
+    },
+    {
+      "id": "AS-03",
+      "text": "Velocity layer is Slow.",
+      "confidence": "user-delegated",
+      "evidence": "Q-010",
+      "risk_if_wrong": "Caching and sync choices would change"
+    },
+    {
+      "id": "AS-04",
+      "text": "Tool prefix is np; operations are create, get, list and update through the API endpoints; there is no delete.",
+      "confidence": "user-delegated",
+      "evidence": "Q-016",
+      "risk_if_wrong": "Missing delete or different tool names"
+    },
+    {
+      "id": "AS-05",
+      "text": "Add product opens the same drawer with no defaults. The Visibility filter is single-select (All, Public, Private, Draft); search matches Name; category counts are totals and do not react to search or the filter.",
+      "confidence": "user-delegated",
+      "evidence": "Q-018",
+      "risk_if_wrong": "Different filter or count behaviour"
+    },
+    {
+      "id": "AS-06",
+      "text": "The agent converses with an admin to list, show, create and update products; model sonnet; one skill product-management.",
+      "confidence": "user-delegated",
+      "evidence": "Q-019",
+      "risk_if_wrong": "Agent scope or model would change"
+    },
+    {
+      "id": "AS-07",
+      "text": "Collection name 'products' and camelCase property names for the nosql store.",
+      "confidence": "user-delegated",
+      "evidence": "Q-022",
+      "risk_if_wrong": "Property or collection names would change"
+    },
+    {
+      "id": "AS-08",
+      "text": "Maximum lengths not visible in the inputs are set to defaults: Name 150, Partner code 50, Stripe price fields 100, Script (AWS) 4000. ProductId is a system-set guid.",
+      "confidence": "assumed",
+      "evidence": "No lengths shown in IN-02; Q-002 (ProductId only)",
+      "risk_if_wrong": "Longer values rejected or truncated"
+    },
+    {
+      "id": "AS-09",
+      "text": "Add and Edit share one screen, S-02, titled 'Edit product' as in IN-02.",
+      "confidence": "assumed",
+      "evidence": "IN-02 shows only the edit state",
+      "risk_if_wrong": "A separate Add screen may be needed"
+    },
+    {
+      "id": "AS-10",
+      "text": "The panel title text is stored in sentence case; the preview styles it uppercase as in IN-02.",
+      "confidence": "assumed",
+      "evidence": "IN-02 shows 'RECURRING PRICING (STRIPE)'",
+      "risk_if_wrong": "Title casing"
+    },
+    {
+      "id": "AS-11",
+      "text": "Data classification for Product is not decided.",
+      "confidence": "open",
+      "evidence": "Q-011 (GAP-02)"
+    },
+    {
+      "id": "AS-12",
+      "text": "The source of the Monthly and Yearly Stripe price options and any rule tying them to the USD prices are unknown; the dropdowns are non-functional.",
+      "confidence": "open",
+      "evidence": "GAP-12"
+    },
+    {
+      "id": "AS-13",
+      "text": "Whether the drawer has fields below Script (AWS) is unknown; none are added.",
+      "confidence": "open",
+      "evidence": "GAP-13"
+    },
+    {
+      "id": "AS-14",
+      "text": "The purpose and maximum length of the Script (Azure) and Script (AWS) fields are unknown; Script (Azure) is multi-line and Script (AWS) single-line as seen.",
+      "confidence": "open",
+      "evidence": "GAP-14"
+    },
+    {
+      "id": "AS-15",
+      "text": "The second chip ('NCAMEO') on every card is shown as static text and is not bound to any field.",
+      "confidence": "open",
+      "evidence": "GAP-07"
+    },
+    {
+      "id": "AS-16",
+      "text": "The card banner colour is presentational and not a stored field.",
+      "confidence": "open",
+      "evidence": "GAP-08"
+    },
+    {
+      "id": "AS-17",
+      "text": "Who may view, add and edit products is unknown; no roles are defined and the CRUD access role is undecided.",
+      "confidence": "open",
+      "evidence": "GAP-15"
+    },
+    {
+      "id": "AS-18",
+      "text": "No delete or archive control exists in the inputs; whether Draft is the way to retire a product is unconfirmed.",
+      "confidence": "open",
+      "evidence": "GAP-16"
+    },
+    {
+      "id": "AS-19",
+      "text": "Data API builder (NoSQL) support for Cosmos DB, for both REST and MCP, must be verified before BUILD.",
+      "confidence": "open",
+      "evidence": "data_store caveat"
+    },
+    {
+      "id": "AS-20",
+      "text": "Reachability of the Nebula workbench and agent editor was not verified at G0 and must be verified before BUILD.",
+      "confidence": "open",
+      "evidence": "G0 deferred check"
+    },
+    {
+      "id": "AS-21",
+      "text": "Customer is a new entity E-02 with ten fields (F-02.01 to F-02.10); Product and Customer have no relationship in this build.",
+      "confidence": "user-confirmed",
+      "evidence": "CR-001 G2 confirmed"
+    },
+    {
+      "id": "AS-22",
+      "text": "Maximum lengths not visible in IN-03 / IN-04 are defaults: Name 150, Contact name 150, Email 254, Phone 30, Stripe customer ID 100, Deactivation reason 100, Deactivation note 3000. CustomerId is a system-set guid.",
+      "confidence": "assumed",
+      "evidence": "No lengths shown",
+      "risk_if_wrong": "Longer values rejected or truncated"
+    },
+    {
+      "id": "AS-23",
+      "text": "New customers start as Active; Status is changed only by the De-activate action.",
+      "confidence": "assumed",
+      "evidence": "IN-03 shows Active; IN-04 shows De-activate",
+      "risk_if_wrong": "Status could also be editable on a form"
+    },
+    {
+      "id": "AS-24",
+      "text": "Search matches Name; the 'Show active customers only' toggle filters Status = Active.",
+      "confidence": "assumed",
+      "evidence": "IN-03 controls",
+      "risk_if_wrong": "Different search fields or filter meaning"
+    },
+    {
+      "id": "AS-25",
+      "text": "Deactivation reason is stored as text; the dropdown options are not shown, so the dropdown is empty and non-functional.",
+      "confidence": "open",
+      "evidence": "IN-04 Reason dropdown (GAP-17)"
+    },
+    {
+      "id": "AS-26",
+      "text": "Re-activate (Inactive to Active) is named in the dialog text but no control is shown; T-02 has no tool or screen.",
+      "confidence": "open",
+      "evidence": "IN-04 text (GAP-18)"
+    },
+    {
+      "id": "AS-27",
+      "text": "What Apply promo (S-03) and the promo code Apply (S-04) do, and which promo codes exist, is unknown; both are non-functional.",
+      "confidence": "open",
+      "evidence": "IN-03, IN-04 (GAP-19)"
+    },
+    {
+      "id": "AS-28",
+      "text": "The filter button beside the search box on S-03 has unknown behaviour; non-functional.",
+      "confidence": "open",
+      "evidence": "IN-03 (GAP-20)"
+    },
+    {
+      "id": "AS-29",
+      "text": "Sidebar counts and menu items other than Product and Customer remain non-functional placeholders.",
+      "confidence": "open",
+      "evidence": "IN-03 (GAP-21)"
+    },
+    {
+      "id": "AS-30",
+      "text": "No add or edit control for customers is shown; the Customers Add/Edit form is generated as required by Split View but nothing opens it.",
+      "confidence": "open",
+      "evidence": "IN-03 (GAP-22)"
+    },
+    {
+      "id": "AS-31",
+      "text": "Data classification for Customer is not decided; who may view or de-activate customers is unknown (no roles).",
+      "confidence": "open",
+      "evidence": "GAP-02 / GAP-15 extended"
+    }
+  ],
+  "out_of_scope": [
+    {
+      "id": "OOS-01",
+      "item": "Sidebar modules iDIY'A, Subscription, Customer, Inquiry, Marketing Leads",
+      "reason": "Not in this request; shown as non-functional placeholders"
+    },
+    {
+      "id": "OOS-02",
+      "item": "App shell controls: global search, notification icon, app-grid icon, user menu",
+      "reason": "Not in this request; non-functional placeholders"
+    },
+    {
+      "id": "OOS-03",
+      "item": "Relationships from Product to Subscription or Customer",
+      "reason": "Q-001: Product stands alone in this build"
+    },
+    {
+      "id": "OOS-04",
+      "item": "Live Stripe price lookup or sync",
+      "reason": "Option source unknown (AS-12)"
+    },
+    {
+      "id": "OOS-05",
+      "item": "Subscription, Invoice and Payment method data: the Subscriptions, Invoices and Payment methods tabs and Recent invoices on S-03",
+      "reason": "No fields shown; not modelled in v1.1"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Product",
+      "definition": "A plan or support package customers can subscribe to (page subtitle in IN-01)."
+    },
+    {
+      "term": "Category",
+      "definition": "PaaS or Managed; also the All / PaaS / Managed tabs on the Products screen."
+    },
+    {
+      "term": "Visibility",
+      "definition": "Public, Private or Draft; Public and Private appear as a badge on each card."
+    },
+    {
+      "term": "Billing type",
+      "definition": "One time or Recurring; decides which pricing fields apply."
+    },
+    {
+      "term": "Stripe price",
+      "definition": "A Stripe price id (shown as price_...) chosen for the monthly or yearly price of a recurring product."
+    },
+    {
+      "term": "Customer",
+      "definition": "An account that subscribes to products; listed in the Customers split view."
+    },
+    {
+      "term": "De-activate",
+      "definition": "Sets a customer's status to Inactive, with a reason and optional internal note."
+    }
+  ],
+  "diagrams": [
+    "spec/ontology/ontology.mmd"
+  ],
+  "theme": {
+    "primary": "#4f46e5",
+    "secondary": "#475569",
+    "success": "#059669",
+    "danger": "#dc2626",
+    "warning": "#b45309",
+    "light": "#f1f5f9",
+    "dark": "#0b1020",
+    "headerBg": "#ffffff",
+    "headerTextColor": "#0f172a",
+    "sidebarBg": "#0b1020",
+    "sidebarTextColor": "#cbd5e1",
+    "bodyTextColor": "#0f172a",
+    "bodyBg": "#f6f7fb",
+    "borderColor": "#e5e7ef",
+    "sidebarActiveBg": "#1e2442"
+  },
+  "theme_sources": {
+    "primary": "IN-01/IN-02 primary button fill (modal colour)",
+    "secondary": "IN-01 page sub-title text",
+    "success": "IN-01 \"Public\" chip text",
+    "danger": "IN-04 De-activate button fill",
+    "warning": "IN-01 \"Private\" chip text",
+    "light": "IN-02 segmented-control track",
+    "dark": "IN-01 sidebar panel",
+    "headerBg": "IN-01 top bar",
+    "headerTextColor": "IN-01 breadcrumb text",
+    "sidebarBg": "IN-01 sidebar panel",
+    "sidebarTextColor": "IN-01 inactive nav label",
+    "bodyTextColor": "IN-01 page heading",
+    "bodyBg": "IN-01 page canvas",
+    "borderColor": "IN-01 card outline",
+    "sidebarActiveBg": "IN-01 selected nav row",
+    "_not_in_inputs": [
+      "info",
+      "fontfamily"
+    ]
+  }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="cameo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edit product</title>
+<meta name="nebula:project" content="nebula-products">
+<meta name="nebula:version" content="1.1">
+<link rel="stylesheet" href="../assets/nebula-brand.css">
+</head>
+<body>
+<div class="app">
+<nav class="sidebar" aria-label="Main"><div class="sidebar-logo"><span class="logo-name">Nebula Products</span></div>
+<div class="sb-sec">
+<!-- nav item uuid 1791262684219 -> formid e588f7ab-bbbc-4540-93c9-eb7d2fc2b0e6 -->
+<a class="nav-item active" href="S-01-products.html" data-nav-uuid="1791262684219"><span class="nav-label">Products</span></a>
+<!-- nav item uuid 1791286238764 -> formid 6421b203-cc6c-4acf-ae40-b3c83621641e -->
+<a class="nav-item" href="S-03-customers.html" data-nav-uuid="1791286238764"><span class="nav-label">Customers</span></a>
+</div></nav>
+<div>
+<main data-screen="S-02" data-form-id="ccb72cf7-900b-44a7-afc0-01425d21d515" data-entity="E-01" data-model="products" data-form-type="Transaction" data-composition="Panel">
+<div class="page-head drawer-head"><h1 class="formtitle">Edit product</h1>
+  <!-- NCAMEO_CONTROL: button -->
+  <button type="button" class="btn btn-icon" id="closeProduct" aria-label="Close" data-control-key="closeProduct" data-target-screen="S-01">&times;</button>
+</div>
+<form id="productForm" novalidate>
+<!-- NCAMEO_CONTROL: hidden -->
+<input type="hidden" id="ProductId" name="ProductId" data-field="F-01.15" data-control="hidden">
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card" id="productDetailsPanel" data-section="productDetails">
+  
+  <div class="card-body row">
+<div class="col-6"><label class="form-label req" for="Name">Name</label>
+<!-- NCAMEO_CONTROL: textbox -->
+<input type="text" class="form-control" id="Name" name="Name" maxlength="150" data-field="F-01.01" data-control="textbox" data-required="true" placeholder="Name">
+<div class="error" data-error-for="Name"></div></div><div class="col-6"><label class="form-label req" for="Category">Category</label>
+<!-- NCAMEO_CONTROL: dropdown2 -->
+<select class="form-select" id="Category" name="Category" data-field="F-01.02" data-control="dropdown2" data-required="true"><option value="">Select</option><option value="PaaS">PaaS</option><option value="Managed">Managed</option></select>
+<div class="error" data-error-for="Category"></div></div><div class="col-6"><label class="form-label" for="PartnerCode">Partner code</label>
+<!-- NCAMEO_CONTROL: textbox -->
+<input type="text" class="form-control" id="PartnerCode" name="PartnerCode" maxlength="50" data-field="F-01.03" data-control="textbox" placeholder="Partner code">
+<div class="error" data-error-for="PartnerCode"></div></div><div class="col-6"><label class="form-label req" for="NoOfAppsAllowed">No. of apps allowed</label>
+<!-- NCAMEO_CONTROL: number -->
+<input type="number" step="any" class="form-control" id="NoOfAppsAllowed" name="NoOfAppsAllowed" data-field="F-01.04" data-control="number" data-required="true" placeholder="0">
+<div class="error" data-error-for="NoOfAppsAllowed"></div></div><div class="col-6"><label class="form-label req" for="Visibility">Visibility</label>
+<!-- NCAMEO_CONTROL: dropdown2 -->
+<select class="form-select" id="Visibility" name="Visibility" data-field="F-01.05" data-control="dropdown2" data-required="true"><option value="">Select</option><option value="Public">Public</option><option value="Private">Private</option><option value="Draft">Draft</option></select>
+<div class="error" data-error-for="Visibility"></div></div><div class="col-6"><label class="form-label req" for="BillingType">Billing type</label>
+<!-- NCAMEO_CONTROL: dropdown2 -->
+<select class="form-select" id="BillingType" name="BillingType" data-field="F-01.06" data-control="dropdown2" data-required="true"><option value="">Select</option><option value="One time">One time</option><option value="Recurring">Recurring</option></select>
+<div class="error" data-error-for="BillingType"></div></div>
+  </div>
+</section>
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card" id="recurringPricingStripePanel" data-section="recurringPricingStripe" data-visible-field="BillingType" data-visible-equals="Recurring">
+  <div class="card-header">Recurring pricing (Stripe)</div>
+  <div class="card-body row">
+<div class="col-6"><label class="form-label" for="MonthlyStripePrice">Monthly Stripe price</label>
+<!-- NCAMEO_CONTROL: textbox -->
+<input type="text" class="form-control" id="MonthlyStripePrice" name="MonthlyStripePrice" maxlength="100" data-field="F-01.07" data-control="textbox" placeholder="Monthly Stripe price">
+<div class="error" data-error-for="MonthlyStripePrice"></div></div><div class="col-6"><label class="form-label" for="MonthlyPriceUsd">Monthly price (USD)</label>
+<!-- NCAMEO_CONTROL: number -->
+<input type="number" step="any" class="form-control" id="MonthlyPriceUsd" name="MonthlyPriceUsd" data-field="F-01.08" data-control="number" placeholder="0">
+<div class="error" data-error-for="MonthlyPriceUsd"></div></div><div class="col-6"><label class="form-label" for="YearlyStripePrice">Yearly Stripe price</label>
+<!-- NCAMEO_CONTROL: textbox -->
+<input type="text" class="form-control" id="YearlyStripePrice" name="YearlyStripePrice" maxlength="100" data-field="F-01.09" data-control="textbox" placeholder="Yearly Stripe price">
+<div class="error" data-error-for="YearlyStripePrice"></div></div><div class="col-6"><label class="form-label" for="YearlyPriceUsd">Yearly price (USD)</label>
+<!-- NCAMEO_CONTROL: number -->
+<input type="number" step="any" class="form-control" id="YearlyPriceUsd" name="YearlyPriceUsd" data-field="F-01.10" data-control="number" placeholder="0">
+<div class="error" data-error-for="YearlyPriceUsd"></div></div>
+  </div>
+</section>
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card" id="oneTimePricingPanel" data-section="oneTimePricing" data-visible-field="BillingType" data-visible-equals="One time">
+  <div class="card-header">One-time pricing</div>
+  <div class="card-body row">
+<div class="col-6"><label class="form-label" for="OneTimePriceUsd">One-time price (USD)</label>
+<!-- NCAMEO_CONTROL: number -->
+<input type="number" step="any" class="form-control" id="OneTimePriceUsd" name="OneTimePriceUsd" data-field="F-01.14" data-control="number" placeholder="0">
+<div class="error" data-error-for="OneTimePriceUsd"></div></div>
+  </div>
+</section>
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card" id="descriptionAndScriptsPanel" data-section="descriptionAndScripts">
+  
+  <div class="card-body row">
+<div class="col-12"><label class="form-label" for="ShortDescription">Short description</label>
+<!-- NCAMEO_CONTROL: textarea -->
+<textarea rows="4" class="form-control" id="ShortDescription" name="ShortDescription" maxlength="3000" data-field="F-01.11" data-control="textarea" placeholder="Short description"></textarea>
+<div class="error" data-error-for="ShortDescription"></div></div><div class="col-12"><label class="form-label" for="ScriptAzure">Script (Azure)</label>
+<!-- NCAMEO_CONTROL: textarea -->
+<textarea rows="4" class="form-control" id="ScriptAzure" name="ScriptAzure" data-field="F-01.12" data-control="textarea" placeholder="Script (Azure)"></textarea>
+<div class="error" data-error-for="ScriptAzure"></div></div><div class="col-12"><label class="form-label" for="ScriptAws">Script (AWS)</label>
+<!-- NCAMEO_CONTROL: textbox -->
+<input type="text" class="form-control" id="ScriptAws" name="ScriptAws" maxlength="4000" data-field="F-01.13" data-control="textbox" placeholder="Script (AWS)">
+<div class="error" data-error-for="ScriptAws"></div></div>
+  </div>
+</section>
+
+<div class="actions">
+  <!-- NCAMEO_CONTROL: button -->
+  <button type="button" class="btn" id="cancelProduct" data-control-key="cancelProduct" data-target-screen="S-01">Cancel</button>
+  <!-- NCAMEO_CONTROL: button -->
+  <button type="submit" class="btn btn-primary" id="saveProduct" data-control-key="saveProduct" data-action-create="A-01" data-tool-create="np_create_product" data-endpoint-create="EP-001" data-action-update="A-04" data-tool-update="np_update_product" data-endpoint-update="EP-002" data-target-screen="S-01">Save product</button>
+</div>
+</form>
+</main>
+<div class="notice" id="notice" role="status">Prototype - mock data only.</div>
+<pre id="trace"></pre>
+</div>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

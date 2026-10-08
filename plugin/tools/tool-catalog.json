@@ -1,0 +1,467 @@
+{
+  "_generated_from": "spec/spec.json#/agent/tools — do not edit by hand",
+  "plugin": "nebula-products",
+  "version": "1.1.0",
+  "prefix": "np",
+  "naming": "{prefix}_{verb}_{entity}",
+  "binding_model": "Each np_* tool is a logical contract. It executes as one call to the SQL MCP Server with fixed arguments shown under 'executes'. Callers never pass entity names or raw filters of their own.",
+  "_pending": "executes.args.entity is null and dab_role is null: db/mcp/dab-config.json was not generated (database layer skipped by user decision) and spec.roles is empty (GAP-15). Filled when the database layer exists; a null value fails pre-registration.",
+  "tools": [
+    {
+      "name": "np_create_product",
+      "verb": "create",
+      "entity": "E-01",
+      "description": "Create one Product. Reads nothing; writes one document to the Product entity (products collection) via create_record on the SQL MCP Server. Returns ProductId. ProductId is set by the system; never supply it. Name, Category, NoOfAppsAllowed, Visibility and BillingType are required; field types and lengths are enforced by the schema.",
+      "kind": "crud",
+      "blocking": true,
+      "exposed_to": [
+        "ncameo-form",
+        "agent"
+      ],
+      "action": "A-01",
+      "transition": null,
+      "workflows": [],
+      "triggers": [],
+      "endpoint": {
+        "id": "EP-001",
+        "method": "POST",
+        "path": "/api/products"
+      },
+      "executes": {
+        "server": "sql-mcp-server",
+        "tool": "create_record",
+        "args": {
+          "entity": null
+        }
+      },
+      "dab_role": null,
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "Name": {
+            "type": "string",
+            "maxLength": 150,
+            "description": "Name"
+          },
+          "Category": {
+            "type": "string",
+            "enum": [
+              "PaaS",
+              "Managed"
+            ],
+            "description": "Category"
+          },
+          "PartnerCode": {
+            "type": "string",
+            "maxLength": 50,
+            "description": "Partner code"
+          },
+          "NoOfAppsAllowed": {
+            "type": "number",
+            "description": "No. of apps allowed"
+          },
+          "Visibility": {
+            "type": "string",
+            "enum": [
+              "Public",
+              "Private",
+              "Draft"
+            ],
+            "description": "Visibility"
+          },
+          "BillingType": {
+            "type": "string",
+            "enum": [
+              "One time",
+              "Recurring"
+            ],
+            "description": "Billing type"
+          },
+          "MonthlyStripePrice": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Monthly Stripe price"
+          },
+          "MonthlyPriceUsd": {
+            "type": "number",
+            "description": "Monthly price (USD)"
+          },
+          "YearlyStripePrice": {
+            "type": "string",
+            "maxLength": 100,
+            "description": "Yearly Stripe price"
+          },
+          "YearlyPriceUsd": {
+            "type": "number",
+            "description": "Yearly price (USD)"
+          },
+          "ShortDescription": {
+            "type": "string",
+            "maxLength": 3000,
+            "description": "Short description"
+          },
+          "ScriptAzure": {
+            "type": "string",
+            "description": "Script (Azure)"
+          },
+          "ScriptAws": {
+            "type": "string",
+            "maxLength": 4000,
+            "description": "Script (AWS)"
+          },
+          "OneTimePriceUsd": {
+            "type": "number",
+            "description": "One-time price (USD)"
+          }
+        },
+        "required": [
+          "Name",
+          "Category",
+          "NoOfAppsAllowed",
+          "Visibility",
+          "BillingType"
+        ],
+        "additionalProperties": false
+      },
+      "fallback": [
+        "retry once after 2s",
+        "stop: leave the Product unchanged, tell the admin the request could not be completed, log error"
+      ],
+      "status": "active",
+      "deprecated_in": null,
+      "remove_in": null
+    },
+    {
+      "name": "np_get_product",
+      "verb": "get",
+      "entity": "E-01",
+      "description": "Get one Product by ProductId from the Product entity (products collection) via read_records on the SQL MCP Server. Returns found and the Product fields. Slow layer; read fresh for each request, never from an earlier run.",
+      "kind": "crud",
+      "blocking": true,
+      "exposed_to": [
+        "ncameo-form",
+        "agent"
+      ],
+      "action": "A-02",
+      "transition": null,
+      "workflows": [],
+      "triggers": [],
+      "endpoint": {
+        "id": "EP-003",
+        "method": "GET",
+        "path": "/api/products/ProductId/{ProductId}"
+      },
+      "executes": {
+        "server": "sql-mcp-server",
+        "tool": "read_records",
+        "args": {
+          "entity": null,
+          "filter": "ProductId eq {ProductId}",
+          "first": 1
+        }
+      },
+      "dab_role": null,
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "ProductId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Product Id"
+          }
+        },
+        "required": [
+          "ProductId"
+        ],
+        "additionalProperties": false
+      },
+      "fallback": [
+        "retry once after 2s",
+        "stop: no Product data changed, tell the admin the data could not be read, log error"
+      ],
+      "status": "active",
+      "deprecated_in": null,
+      "remove_in": null
+    },
+    {
+      "name": "np_list_product",
+      "verb": "list",
+      "entity": "E-01",
+      "description": "List Products from the Product entity (products collection) via read_records on the SQL MCP Server. Returns products, an array of Product records. Takes no filter parameters in spec v1.0; narrow the returned list by Name, Category or Visibility when the admin asks.",
+      "kind": "crud",
+      "blocking": true,
+      "exposed_to": [
+        "ncameo-form",
+        "agent"
+      ],
+      "action": "A-03",
+      "transition": null,
+      "workflows": [],
+      "triggers": [],
+      "endpoint": {
+        "id": "EP-004",
+        "method": "GET",
+        "path": "/api/products"
+      },
+      "executes": {
+        "server": "sql-mcp-server",
+        "tool": "read_records",
+        "args": {
+          "entity": null
+        }
+      },
+      "dab_role": null,
+      "input_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "fallback": [
+        "retry once after 2s",
+        "stop: no Product data changed, tell the admin the data could not be read, log error"
+      ],
+      "status": "active",
+      "deprecated_in": null,
+      "remove_in": null
+    },
+    {
+      "name": "np_update_product",
+      "verb": "update",
+      "entity": "E-01",
+      "description": "Update one existing Product by ProductId. Writes the given changes to the Product entity (products collection) via update_record on the SQL MCP Server. Returns ok and ProductId. Call np_get_product first to confirm the Product exists. ProductId itself is never changed.",
+      "kind": "crud",
+      "blocking": true,
+      "exposed_to": [
+        "ncameo-form",
+        "agent"
+      ],
+      "action": "A-04",
+      "transition": null,
+      "workflows": [],
+      "triggers": [],
+      "endpoint": {
+        "id": "EP-002",
+        "method": "PATCH",
+        "path": "/api/products/ProductId/{ProductId}"
+      },
+      "executes": {
+        "server": "sql-mcp-server",
+        "tool": "update_record",
+        "args": {
+          "entity": null,
+          "keys": {
+            "ProductId": "{ProductId}"
+          }
+        }
+      },
+      "dab_role": null,
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "ProductId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Product Id"
+          },
+          "changes": {
+            "$ref": "#/tools/0/input_schema",
+            "description": "Fields to change"
+          }
+        },
+        "required": [
+          "ProductId",
+          "changes"
+        ],
+        "additionalProperties": false
+      },
+      "fallback": [
+        "retry once after 2s",
+        "stop: leave the Product unchanged, tell the admin the request could not be completed, log error"
+      ],
+      "status": "active",
+      "deprecated_in": null,
+      "remove_in": null
+    },
+    {
+      "name": "np_get_customer",
+      "verb": "get",
+      "entity": "E-02",
+      "description": "Get one Customer by CustomerId from the Customer entity (customers collection) via read_records on the SQL MCP Server. Returns found and the Customer fields, including Status. Customer layer; read fresh for each request, never from an earlier run. Call before np_update_customer to check that Status is Active.",
+      "kind": "crud",
+      "blocking": true,
+      "exposed_to": [
+        "ncameo-form",
+        "agent"
+      ],
+      "action": "A-08",
+      "transition": null,
+      "transitions": [],
+      "workflows": [],
+      "triggers": [],
+      "endpoint": {
+        "id": "EP-006",
+        "method": "GET",
+        "path": "/api/customers/CustomerId/{CustomerId}"
+      },
+      "executes": {
+        "server": "sql-mcp-server",
+        "tool": "read_records",
+        "args": {
+          "entity": null,
+          "filter": "CustomerId eq {CustomerId}",
+          "first": 1
+        }
+      },
+      "dab_role": null,
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "CustomerId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Customer Id"
+          }
+        },
+        "required": [
+          "CustomerId"
+        ],
+        "additionalProperties": false
+      },
+      "fallback": [
+        "retry once after 2s",
+        "stop: no Customer data changed, tell the admin the data could not be read, log error"
+      ],
+      "status": "active",
+      "deprecated_in": null,
+      "remove_in": null
+    },
+    {
+      "name": "np_list_customer",
+      "verb": "list",
+      "entity": "E-02",
+      "description": "List Customers from the Customer entity (customers collection) via read_records on the SQL MCP Server. Returns customers, an array of Customer records. Takes no filter parameters in spec v1.1; narrow the returned list by Name, or to Status Active, when the admin asks (AS-24). Customer layer; read fresh for each request, never from an earlier run.",
+      "kind": "crud",
+      "blocking": true,
+      "exposed_to": [
+        "ncameo-form",
+        "agent"
+      ],
+      "action": "A-07",
+      "transition": null,
+      "transitions": [],
+      "workflows": [],
+      "triggers": [],
+      "endpoint": {
+        "id": "EP-005",
+        "method": "GET",
+        "path": "/api/customers"
+      },
+      "executes": {
+        "server": "sql-mcp-server",
+        "tool": "read_records",
+        "args": {
+          "entity": null
+        }
+      },
+      "dab_role": null,
+      "input_schema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "fallback": [
+        "retry once after 2s",
+        "stop: no Customer data changed, tell the admin the data could not be read, log error"
+      ],
+      "status": "active",
+      "deprecated_in": null,
+      "remove_in": null
+    },
+    {
+      "name": "np_update_customer",
+      "verb": "update",
+      "entity": "E-02",
+      "description": "De-activate one Customer by CustomerId (T-01 Active to Inactive, action A-09). Writes Status Inactive and the optional DeactivationReason and DeactivationNote to the Customer entity (customers collection) via update_record on the SQL MCP Server. Returns ok and CustomerId. Only valid when Status is Active: call np_get_customer first; if Status is already Inactive do not call, the reason is 'Customer is already inactive.'. Spec v1.1 has no database guard (database layer not generated), so the check before the call is mandatory. No other Customer field is changed through this tool; CustomerId is never changed.",
+      "kind": "crud",
+      "blocking": true,
+      "exposed_to": [
+        "ncameo-form",
+        "agent"
+      ],
+      "action": "A-09",
+      "transition": "T-01",
+      "transitions": [
+        "T-01"
+      ],
+      "workflows": [],
+      "triggers": [],
+      "endpoint": {
+        "id": "EP-007",
+        "method": "PATCH",
+        "path": "/api/customers/CustomerId/{CustomerId}"
+      },
+      "executes": {
+        "server": "sql-mcp-server",
+        "tool": "update_record",
+        "args": {
+          "entity": null,
+          "keys": {
+            "CustomerId": "{CustomerId}"
+          }
+        }
+      },
+      "dab_role": null,
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "CustomerId": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Customer Id"
+          },
+          "changes": {
+            "type": "object",
+            "description": "Fields set by De-activate customer (A-09)",
+            "properties": {
+              "Status": {
+                "type": "string",
+                "enum": [
+                  "Inactive"
+                ],
+                "description": "Status; only Inactive (T-01). Inactive to Active (T-02) is out of scope v1.1"
+              },
+              "DeactivationReason": {
+                "type": "string",
+                "maxLength": 100,
+                "description": "Deactivation reason"
+              },
+              "DeactivationNote": {
+                "type": "string",
+                "maxLength": 3000,
+                "description": "Deactivation note"
+              }
+            },
+            "required": [
+              "Status"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "CustomerId",
+          "changes"
+        ],
+        "additionalProperties": false
+      },
+      "fallback": [
+        "retry once after 2s",
+        "stop: leave the Customer status unchanged, tell the admin the request could not be completed, log error"
+      ],
+      "status": "active",
+      "deprecated_in": null,
+      "remove_in": null
+    }
+  ]
+}

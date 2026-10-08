@@ -1,0 +1,17 @@
+html, body { margin: 0; height: 100%; }
+.app-shell { display: flex; min-height: 100vh; }
+.app-nav { width: 240px; flex-shrink: 0; background: #1f2937; color: #e5e7eb; font-family: sans-serif; }
+.app-nav h1 { font-size: 18px; margin: 0; padding: 18px 16px; border-bottom: 1px solid #374151; }
+.app-nav ul { list-style: none; margin: 0; padding: 0; }
+.app-nav ul ul a { padding-left: 36px; font-size: 13px; }
+.app-nav a { display: block; padding: 10px 16px; color: inherit; text-decoration: none; cursor: pointer; }
+.app-nav a:hover { background: #374151; }
+.app-nav a.active { background: #2563eb; color: #fff; }
+.app-nav a i { width: 20px; }
+.app-content { flex: 1; min-width: 0; }
+.app-message { padding: 24px; font-family: sans-serif; color: #b91c1c; }
+.app-sync { padding: 16px; border-top: 1px solid #374151; }
+.app-sync button { width: 100%; padding: 8px; border: 0; border-radius: 4px; background: #2563eb; color: #fff; cursor: pointer; }
+.app-sync button:disabled { opacity: 0.6; cursor: wait; }
+.app-sync pre { margin: 8px 0 0; font-size: 11px; white-space: pre-wrap; word-break: break-word; }
+.app-sync pre.error { color: #fca5a5; }

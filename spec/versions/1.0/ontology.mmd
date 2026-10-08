@@ -1,0 +1,20 @@
+%% Generated from spec.json - do not edit by hand
+%% DG-S-10 entity model; no state machines (Visibility is a label, AS-02)
+erDiagram
+    PRODUCT {
+        guid productId PK
+        string name
+        enum category
+        string partnerCode
+        number noOfAppsAllowed
+        enum visibility
+        enum billingType
+        string monthlyStripePrice
+        number monthlyPriceUsd
+        string yearlyStripePrice
+        number yearlyPriceUsd
+        longtext shortDescription
+        longtext scriptAzure
+        string scriptAws
+        number oneTimePriceUsd
+    }

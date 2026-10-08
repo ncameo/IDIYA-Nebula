@@ -1,0 +1,127 @@
+{
+  "Id": "67aa70d6-44b1-433a-8430-d4332e394d0f",
+  "FormName": "",
+  "ModelName": "Product Card",
+  "GetEndpoint": "",
+  "GetRawQuery": "",
+  "GetEndpointParams": [],
+  "getdatasource": "",
+  "controls": [
+    {
+      "key": "productCardHtml",
+      "Name": "Html",
+      "label": "Product card",
+      "placeholder": "Html",
+      "icon": "fa fa-html5",
+      "type": "html",
+      "width": 12,
+      "order": 1,
+      "showinlist": false,
+      "haschildren": false,
+      "isTableView": false,
+      "hasdatasource": true,
+      "id": "05629752-7b54-4351-b7c7-1a63c2642c59",
+      "col1": "",
+      "htmlCode": "<div class='np-card'><div class='np-card-head'><h3 class='np-card-title'>{Name}</h3><span class='np-badge'>{Visibility}</span></div><div class='np-card-meta'><span>{Category}</span><span>NCAMEO</span></div><div class='np-card-price'>[if {BillingType} == \"Recurring\"]${MonthlyPriceUsd} / month[/if][if {BillingType} == \"One time\"]${OneTimePriceUsd} one time[/if]</div></div>",
+      "mappingFields": [
+        {
+          "htmlKey": "Name",
+          "dataKey": "Name",
+          "defaultvalue": ""
+        },
+        {
+          "htmlKey": "Visibility",
+          "dataKey": "Visibility",
+          "defaultvalue": ""
+        },
+        {
+          "htmlKey": "Category",
+          "dataKey": "Category",
+          "defaultvalue": ""
+        },
+        {
+          "htmlKey": "BillingType",
+          "dataKey": "BillingType",
+          "defaultvalue": ""
+        },
+        {
+          "htmlKey": "MonthlyPriceUsd",
+          "dataKey": "MonthlyPriceUsd",
+          "defaultvalue": ""
+        },
+        {
+          "htmlKey": "OneTimePriceUsd",
+          "dataKey": "OneTimePriceUsd",
+          "defaultvalue": ""
+        }
+      ],
+      "colclass": "",
+      "customClass": "",
+      "htmlStyle": ".np-card{display:flex;flex-direction:column;gap:12px}.np-card-head{display:flex;justify-content:space-between;gap:8px}.np-card-title{margin:0;font-size:1rem}.np-card-meta{display:flex;gap:8px}.np-card-price{font-weight:600}"
+    }
+  ],
+  "ModelJson": {},
+  "FilterUIJson": {
+    "filtertype": "None",
+    "filterAddform": "",
+    "ShowAddform": false,
+    "addBtnText": "Add New",
+    "addBtnClass": "ml-2 btn-outline-primary btn-round",
+    "addBtnIcon": "fa fa-plus",
+    "ShowExport": false,
+    "CustomFilter": false,
+    "customfilterapimappingform": "",
+    "customfilterapimapping": [],
+    "exportBtnText": "Export",
+    "exportBtnClass": "ml-2 btn-outline-primary btn-round",
+    "exportBtnIcon": "fa fa-file-excel-o",
+    "searchBtnClass": "btn-outline-secondary",
+    "searchBtnIcon": "fa fa-search",
+    "applyFilterBtnClass": "btn-outline-primary",
+    "applyFilterBtnIcon": "none",
+    "applyFilterBtnText": "Apply",
+    "filterBtnClass": "ml-2 btn-outline-secondary",
+    "filterBtnIcon": "fa fa-filter",
+    "filterBubble": "bg-danger",
+    "ShowImport": false,
+    "importBtnText": "Import",
+    "importBtnClass": "ml-2 btn-outline-primary btn-round",
+    "importBtnIcon": "fa fa-cloud-upload",
+    "datasource": "",
+    "ExportColumns": [],
+    "FilterApiEndpoint": "",
+    "FilterEndpointParams": [],
+    "FilterRawQuery": "",
+    "controls": [],
+    "apimethod": "get"
+  },
+  "FilterModelJson": {},
+  "Notification": {
+    "create": false,
+    "createmodelfiled": "",
+    "createsubject": "",
+    "isloginusercreateenable": false,
+    "updatemodelfiled": "",
+    "updatesubject": "",
+    "isloginuserupdateenable": false,
+    "deletemodelfiled": "",
+    "deletesubject": "",
+    "isloginuserdeleteenable": false,
+    "importmodelfiled": "",
+    "importsubject": "",
+    "isloginuserimportenable": false,
+    "createtemplate": "",
+    "update": false,
+    "updatetemplate": "",
+    "delete": false,
+    "deletetemplate": "",
+    "import": false,
+    "importtemplate": ""
+  },
+  "saveBtnKeyForEditMode": "",
+  "formType": "both",
+  "Formname": "Products — Card",
+  "Isactive": "true",
+  "CreateDate": "2026-10-06T05:12:11.0000000+00:00",
+  "UpdateDate": "2026-10-06T05:12:11.0000000+00:00"
+}

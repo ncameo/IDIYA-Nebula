@@ -1,0 +1,368 @@
+{
+  "mode": "http",
+  "datasource": "http",
+  "datasourcetype": "http",
+  "id": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+  "connection": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+  "connectionName": "Cosmos DB",
+  "idx": "quzlglsembkgyxy",
+  "baseurl": "",
+  "authentication": null,
+  "swagger": {
+    "enabled": false,
+    "url": ""
+  },
+  "responsefield": "data",
+  "pageSize": 10,
+  "apimethod": "get",
+  "paging": {
+    "type": "server",
+    "pageSizeParam": "PageSize",
+    "pageFromParam": "PageNumber"
+  },
+  "route": {
+    "style": "plural-camel",
+    "template": "{base}/{entity}"
+  },
+  "operationTemplates": {
+    "list": {
+      "method": "get",
+      "path": "{base}/{entity}"
+    },
+    "get": {
+      "method": "get",
+      "path": "{base}/{entity}/{pk}/{id}"
+    },
+    "create": {
+      "method": "post",
+      "path": "{base}/{entity}"
+    },
+    "update": {
+      "method": "post",
+      "path": "{base}/{entity}/{pk}/{id}"
+    },
+    "delete": {
+      "method": "delete",
+      "path": "{base}/{entity}/{id}"
+    },
+    "bulkDelete": {
+      "method": "post",
+      "path": "{base}/{entity}/bulk-delete"
+    },
+    "export": {
+      "method": "get",
+      "path": "{base}/{entity}/export"
+    },
+    "import": {
+      "method": "post",
+      "path": "{base}/{entity}/import"
+    },
+    "lookup": {
+      "method": "get",
+      "path": "{base}/{entity}"
+    }
+  },
+  "explicitEndpoints": {
+    "Product": {
+      "list": {
+        "method": "get",
+        "path": "/api/products",
+        "spec": "EP-004"
+      },
+      "get": {
+        "method": "get",
+        "path": "/api/products/ProductId/{ProductId}",
+        "spec": "EP-003"
+      },
+      "create": {
+        "method": "post",
+        "path": "/api/products",
+        "spec": "EP-001"
+      },
+      "update": {
+        "method": "patch",
+        "path": "/api/products/ProductId/{ProductId}",
+        "spec": "EP-002"
+      }
+    },
+    "Customer": {
+      "list": {
+        "method": "get",
+        "path": "/api/customers",
+        "spec": "EP-005"
+      },
+      "get": {
+        "method": "get",
+        "path": "/api/customers/CustomerId/{CustomerId}",
+        "spec": "EP-006"
+      },
+      "update": {
+        "method": "patch",
+        "path": "/api/customers/CustomerId/{CustomerId}",
+        "spec": "EP-007"
+      }
+    }
+  },
+  "uploadEndpoint": "",
+  "assumptions": [
+    "data_store.access.ncameo_binding = http: forms bind to the Data API builder REST surface (source_type nosql / cosmosdb is recorded in the pair, not used as the platform datasource)",
+    "baseurl PENDING: env var NP_DAB_BASE_URL is declared in app.json.environment without a value; endpoints are host-relative (rest_path /api + spec endpoint path) until it is set",
+    "authentication PENDING: no auth kind is named in data_store.access or app.json.environment",
+    "response envelope field defaulted to \"data\" (no data_store.conventions block); Data API builder REST normally wraps rows in \"value\" - confirm before go-live",
+    "page size defaulted to 10; server paging params PageSize / PageNumber defaulted",
+    "update method taken from spec EP-002 (patch), not the profile default",
+    "route segment is entities[].model_name verbatim (products); model_naming_convention camelCase_plural recorded as plural-camel",
+    "primary key control key is ProductId (entities[].primary_key F-01.15)",
+    "workbench save PENDING: workbenchmcp.ncameo.com returned 403 from this environment; nothing saved (user decision: do not route around)",
+    "CR-001 (spec 1.1): Customer entity bound to /api/customers (EP-005 list, EP-006 get, EP-007 update); route segment is entities[].model_name verbatim",
+    "Customer primary key control key is CustomerId (entities[].primary_key F-02.01); Split View detail getEndpointParams carries both the SplitView-required id entry and the CustomerId path param",
+    "S-04 confirm binds update only (EP-007, patch) with Status=Inactive set by a hidden Status control per A-09 / T-01",
+    "inert placeholder buttons use actiontype redirect with an empty URL (platform has no no-op actiontype)"
+  ],
+  "bindings": {
+    "S-01": {
+      "form": "e588f7ab-bbbc-4540-93c9-eb7d2fc2b0e6",
+      "mode": "http",
+      "entity": "Product",
+      "model": "products",
+      "primaryKey": "ProductId",
+      "connection": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+      "datasource": "http",
+      "datasourcetype": "http",
+      "responsefield": "data",
+      "pageSize": 10,
+      "apimethod": "get",
+      "paging": {
+        "type": "server",
+        "pageSizeParam": "PageSize",
+        "pageFromParam": "PageNumber"
+      },
+      "operations": {
+        "list": {
+          "endpoint": "/api/products",
+          "query": ""
+        }
+      },
+      "child": null,
+      "lookups": [],
+      "uploadEndpoint": "",
+      "unbound": [
+        {
+          "operation": "list-filter",
+          "reason": "spec names no list filter/search parameters (A-03 triggers empty); filter controls rendered non-functional, ResultApiParam []"
+        }
+      ]
+    },
+    "S-01:card": {
+      "form": "67aa70d6-44b1-433a-8430-d4332e394d0f",
+      "operations": {},
+      "unbound": [],
+      "note": "card FormUI binds nothing"
+    },
+    "S-02": {
+      "form": "ccb72cf7-900b-44a7-afc0-01425d21d515",
+      "mode": "http",
+      "entity": "Product",
+      "model": "products",
+      "primaryKey": "ProductId",
+      "connection": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+      "datasource": "http",
+      "datasourcetype": "http",
+      "responsefield": "data",
+      "operations": {
+        "create": {
+          "endpoint": "/api/products",
+          "method": "post",
+          "query": ""
+        },
+        "update": {
+          "endpoint": "/api/products/ProductId/{ProductId}",
+          "method": "patch",
+          "query": ""
+        },
+        "get": {
+          "endpoint": "/api/products/ProductId/{ProductId}",
+          "method": "get",
+          "query": ""
+        }
+      },
+      "child": null,
+      "lookups": [],
+      "uploadEndpoint": "",
+      "unbound": []
+    },
+    "S-03": {
+      "form": "6421b203-cc6c-4acf-ae40-b3c83621641e",
+      "mode": "http",
+      "entity": "Customer",
+      "model": "customers",
+      "primaryKey": "CustomerId",
+      "connection": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+      "datasource": "http",
+      "datasourcetype": "http",
+      "responsefield": "data",
+      "pageSize": 10,
+      "apimethod": "get",
+      "paging": {
+        "type": "server",
+        "pageSizeParam": "PageSize",
+        "pageFromParam": "PageNumber"
+      },
+      "operations": {
+        "list": {
+          "endpoint": "/api/customers",
+          "query": ""
+        }
+      },
+      "child": null,
+      "lookups": [],
+      "uploadEndpoint": "",
+      "unbound": [
+        {
+          "operation": "list-filter",
+          "reason": "A-07 names the search box and the Show active customers only toggle but no filter or search parameter; keywords/PageSize/PageNumber are the Split View convention, the toggle is inert and not mapped"
+        }
+      ]
+    },
+    "S-03:search": {
+      "form": "31ed0d29-1164-44cb-8c5a-a5593bc5ef02",
+      "operations": {},
+      "unbound": [],
+      "note": "search form binds nothing; feeds keywords into the list form; Filter button and active-only toggle are inert placeholders"
+    },
+    "S-03:detail": {
+      "form": "6caa76d1-6ae7-4a21-be3f-bcb5243f5891",
+      "mode": "http",
+      "entity": "Customer",
+      "model": "customers",
+      "primaryKey": "CustomerId",
+      "connection": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+      "datasource": "http",
+      "datasourcetype": "http",
+      "responsefield": "data",
+      "operations": {
+        "get": {
+          "endpoint": "/api/customers/CustomerId/{CustomerId}",
+          "method": "get",
+          "query": ""
+        }
+      },
+      "child": null,
+      "lookups": [],
+      "uploadEndpoint": "",
+      "unbound": []
+    },
+    "S-03:addEdit": {
+      "form": "fcaac76e-69ab-4852-bedc-a16561ef8823",
+      "mode": "http",
+      "entity": "Customer",
+      "model": "customers",
+      "primaryKey": "CustomerId",
+      "connection": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+      "datasource": "http",
+      "datasourcetype": "http",
+      "responsefield": "data",
+      "operations": {},
+      "child": null,
+      "lookups": [],
+      "uploadEndpoint": "",
+      "unbound": [
+        {
+          "operation": "create",
+          "reason": "spec has no create endpoint for Customer (no create action on S-03)"
+        },
+        {
+          "operation": "update",
+          "reason": "nothing opens this form (no Add/Edit action in spec); built inert by instruction, EP-007 is bound on S-04 only"
+        }
+      ]
+    },
+    "S-04": {
+      "form": "75f2b668-7fab-4ee6-af5a-47a6108db840",
+      "mode": "http",
+      "entity": "Customer",
+      "model": "customers",
+      "primaryKey": "CustomerId",
+      "connection": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+      "datasource": "http",
+      "datasourcetype": "http",
+      "responsefield": "data",
+      "operations": {
+        "update": {
+          "endpoint": "/api/customers/CustomerId/{CustomerId}",
+          "method": "patch",
+          "query": ""
+        }
+      },
+      "child": null,
+      "lookups": [],
+      "uploadEndpoint": "",
+      "sets": {
+        "Status": "Inactive"
+      },
+      "action": "A-09",
+      "transition": "T-01",
+      "unbound": [
+        {
+          "operation": "create",
+          "reason": "S-04 is a confirmation of an existing record; spec has no create action"
+        },
+        {
+          "operation": "get",
+          "reason": "A-09 names only EP-007; the record is identified by the CustomerId page variable, so the customer Name is not shown in the dialog title"
+        },
+        {
+          "operation": "lookup",
+          "reason": "Reason options not supplied in spec (placeholder, empty optionlist)"
+        }
+      ]
+    }
+  },
+  "unbound": [
+    {
+      "form": "e588f7ab-bbbc-4540-93c9-eb7d2fc2b0e6",
+      "operation": "list-filter",
+      "reason": "no filter/search parameter names or operator in spec"
+    },
+    {
+      "form": "ccb72cf7-900b-44a7-afc0-01425d21d515",
+      "operation": "upload",
+      "reason": "no Upload control in spec"
+    },
+    {
+      "form": "6421b203-cc6c-4acf-ae40-b3c83621641e",
+      "operation": "list-filter",
+      "reason": "no filter/search parameter names in spec (A-07)"
+    },
+    {
+      "form": "31ed0d29-1164-44cb-8c5a-a5593bc5ef02",
+      "operation": "filter-toggle-and-button",
+      "reason": "Show active customers only toggle and Filter button are inert; no parameter named in spec"
+    },
+    {
+      "form": "6caa76d1-6ae7-4a21-be3f-bcb5243f5891",
+      "operation": "apply-promo",
+      "reason": "A-11 placeholder, no endpoint"
+    },
+    {
+      "form": "6caa76d1-6ae7-4a21-be3f-bcb5243f5891",
+      "operation": "tabs",
+      "reason": "Subscriptions/Invoices/Payment methods tabs and Recent invoices not modelled (OOS-05)"
+    },
+    {
+      "form": "fcaac76e-69ab-4852-bedc-a16561ef8823",
+      "operation": "create/update",
+      "reason": "no endpoint, nothing opens the form"
+    },
+    {
+      "form": "75f2b668-7fab-4ee6-af5a-47a6108db840",
+      "operation": "apply-promo",
+      "reason": "A-13 placeholder, no endpoint"
+    },
+    {
+      "form": "75f2b668-7fab-4ee6-af5a-47a6108db840",
+      "operation": "reason-options",
+      "reason": "empty Reason options; spec supplies no list"
+    }
+  ]
+}

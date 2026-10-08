@@ -1,0 +1,42 @@
+[
+  {
+    "CustomerId": "8d116ece-1738-47d9-bd9c-172411e20b8f",
+    "Name": "Sample Customer RB",
+    "ContactName": "Sample Contact 1",
+    "Email": "contact1@example.com",
+    "Phone": "+00 000 000 0001",
+    "StripeCustomerId": "cus_sample001",
+    "Status": "Active",
+    "CustomerSince": "2026-01-15"
+  },
+  {
+    "CustomerId": "90c192cf-d3ac-44af-8f21-ddb66cad4a26",
+    "Name": "Sample Customer Alpha",
+    "ContactName": "Sample Contact 2",
+    "Email": "contact2@example.com",
+    "Phone": "+00 000 000 0002",
+    "StripeCustomerId": "cus_sample002",
+    "Status": "Active",
+    "CustomerSince": "2025-11-02"
+  },
+  {
+    "CustomerId": "a170b338-3926-4059-b28c-105d1fb17c23",
+    "Name": "Sample Customer Beta",
+    "ContactName": "Sample Contact 3",
+    "Email": "contact3@example.com",
+    "Phone": "+00 000 000 0003",
+    "StripeCustomerId": "cus_sample003",
+    "Status": "Inactive",
+    "CustomerSince": "2025-06-20"
+  },
+  {
+    "CustomerId": "0fd630f1-f29d-4da9-953f-48f1a09f76b5",
+    "Name": "Sample Customer Gamma",
+    "ContactName": "Sample Contact 4",
+    "Email": "contact4@example.com",
+    "Phone": "+00 000 000 0004",
+    "StripeCustomerId": "cus_sample004",
+    "Status": "Active",
+    "CustomerSince": "2026-03-08"
+  }
+]

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" class="cameo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Products</title>
+<meta name="nebula:project" content="nebula-products">
+<meta name="nebula:version" content="1.1">
+<link rel="stylesheet" href="../assets/nebula-brand.css">
+</head>
+<body>
+<div class="app">
+<nav class="sidebar" aria-label="Main"><div class="sidebar-logo"><span class="logo-name">Nebula Products</span></div>
+<div class="sb-sec">
+<!-- nav item uuid 1791262684219 -> formid e588f7ab-bbbc-4540-93c9-eb7d2fc2b0e6 -->
+<a class="nav-item active" href="S-01-products.html" data-nav-uuid="1791262684219"><span class="nav-label">Products</span></a>
+<!-- nav item uuid 1791286238764 -> formid 6421b203-cc6c-4acf-ae40-b3c83621641e -->
+<a class="nav-item" href="S-03-customers.html" data-nav-uuid="1791286238764"><span class="nav-label">Customers</span></a>
+</div></nav>
+<div>
+<main data-screen="S-01" data-form-id="e588f7ab-bbbc-4540-93c9-eb7d2fc2b0e6" data-entity="E-01" data-model="products" data-form-type="List" data-composition="Filter / Search + Card Grid">
+<div class="page-head"><h1 class="formtitle">Products</h1></div>
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card" id="pageHeaderPanel" data-section="pageHeader">
+  <div class="card-body actions-bar">
+    <!-- NCAMEO_CONTROL: button -->
+    <button type="button" class="btn btn-primary" id="addProduct" data-control-key="addProduct" data-action-create="A-01" data-tool-create="np_create_product" data-endpoint-create="EP-001" data-target-screen="S-02">Add product</button>
+  </div>
+</section>
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card" id="filtersPanel" data-section="filters">
+  <div class="card-header">Filters</div>
+  <div class="card-body row">
+<div class="col-4"><label class="form-label" for="Name">Name</label>
+<!-- NCAMEO_CONTROL: textbox -->
+<input type="text" class="form-control" id="Name" name="Name" maxlength="150" data-field="F-01.01" data-control="textbox" placeholder="Search by name"></div>
+<div class="col-4"><label class="form-label" for="Category">Category</label>
+<!-- NCAMEO_CONTROL: dropdown2 -->
+<select class="form-select" id="Category" name="Category" data-field="F-01.02" data-control="dropdown2"><option value="">Select</option><option value="PaaS">PaaS</option><option value="Managed">Managed</option></select></div>
+<div class="col-4"><label class="form-label" for="Visibility">Visibility</label>
+<!-- NCAMEO_CONTROL: dropdown2 -->
+<select class="form-select" id="Visibility" name="Visibility" data-field="F-01.05" data-control="dropdown2" data-control-key="visibilityFilter" data-action-list="A-03" data-tool-list="np_list_product" data-endpoint-list="EP-004" data-triggers=""><option value="">Select</option><option value="Public">Public</option><option value="Private">Private</option><option value="Draft">Draft</option></select></div>
+  </div>
+</section>
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card card-plain" id="productCardsPanel" data-section="productCards">
+  <!-- NCAMEO_CONTROL: cardgrid | GridView -->
+  <div class="cardgrid grid-view" id="productsGrid" data-entity="E-01" data-form-id-card="67aa70d6-44b1-433a-8430-d4332e394d0f">
+    <template id="cardTemplate">
+      <article class="pcard">
+        <header><h3 data-bind="Name"></h3><span class="badge" data-bind="Visibility"></span></header>
+        <div class="meta"><span data-bind="Category"></span><span data-bind="BillingType"></span></div>
+        <div class="price" data-bind="price"></div>
+        <button type="button" class="btn" id="editProduct" data-control-key="editProduct" data-action-get="A-02" data-tool-get="np_get_product" data-endpoint-get="EP-003" data-target-screen="S-02">Edit</button>
+      </article>
+    </template>
+  </div>
+  <div class="empty" id="emptyState" hidden>No products match the filters.</div>
+</section>
+</main>
+<div class="notice" id="notice" role="status">Prototype - mock data only.</div>
+<pre id="trace"></pre>
+</div>
+</div>
+<script src="../assets/app.js"></script>
+</body>
+</html>

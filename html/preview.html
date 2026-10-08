@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en" class="cameo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nebula Products Preview</title>
+<meta name="nebula:project" content="nebula-products">
+<meta name="nebula:version" content="1.1">
+<style>
+/* ════════════════════════════════════════════════════════════════════════
+   Nebula style standard — html.cameo
+   Scope   : every rule starts with `html.cameo` (the platform root class), never a bare tag/class.
+   Fonts   : OS system fonts only. No font imports, no font-face declarations, no external URLs, no CDN.
+   Colours : tokens only (--nc-*); the palette is the first block, change it there.
+   Weights : 600/700 for emphasis; 400 for body text and inactive sidebar items (the one exception).
+   Targets : the class names the Nebula platform really renders (splitview-left-bar, list-card,
+             table-responsive, nav-tabs, pagination, sidebar/nav-item, form-control …).
+   This file is the "font" string written to navigation.json / menu.json (together with nothing else).
+════════════════════════════════════════════════════════════════════════ */
+
+/* ── 1. Tokens ── */
+html.cameo {
+  --nc-client-font: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --nc-font-family: var(--nc-client-font);
+  --nc-font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --nc-body-font-family: var(--nc-font-family);
+  --nc-body-font-size: 0.875rem;
+  --nc-body-font-weight: 400;
+  --nc-body-line-height: 1.5;
+
+  --nc-primary: #4F46E5;
+  --nc-primary-rgb: 79, 70, 229;
+  --nc-primary-hover: #271DD0;
+  --nc-secondary: #475569;
+  --nc-success: #059669;
+  --nc-info: #2D8FD5;
+  --nc-warning: #B45309;
+  --nc-danger: #DC2626;
+  --nc-light: #F1F5F9;
+  --nc-dark: #0B1020;
+
+  --nc-body-bg: #F6F7FB;
+  --nc-body-color: #0F172A;
+  --nc-header-bg: #FFFFFF;
+  --nc-header-color: #0F172A;
+
+  --nc-sidebar-bg: #0B1020;
+  --nc-sidebar-color: #CBD5E1;
+  --nc-sidebar-color-muted: #CBD5E1;
+  --nc-sidebar-active-bg: #1E2442;
+  --nc-sidebar-hover-bg: #1E2442;
+  --nc-sidebar-font: var(--nc-client-font);
+  --nc-sidebar-w: 232px;
+  --nc-topbar-h: 56px;
+  --nc-tr: 160ms cubic-bezier(.16, 1, .3, 1);
+
+  --nc-border-color: #E5E7EF;
+  --nc-border-radius: 0.625rem;
+  --nc-border-radius-sm: 0.375rem;
+  --nc-border-radius-lg: 0.75rem;
+  --nc-border-radius-xl: 1rem;
+  --r-sm: var(--nc-border-radius-sm);
+  --r-md: var(--nc-border-radius);
+  --r-lg: var(--nc-border-radius-lg);
+  --r-xl: var(--nc-border-radius-xl);
+  --r-full: 9999px;
+  --nc-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --nc-box-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.03);
+
+  --nc-color-surface: #FFFFFF;
+  --nc-color-surface-2: #FAFAFA;
+  --nc-color-surface-3: #F1F5F9;
+  --nc-color-divider: #E7E7EA;
+  --nc-color-accent: var(--nc-primary);
+  --nc-color-success: var(--nc-success);
+  --nc-color-text-muted: #71717A;
+  --nc-color-text-faint: #A1A1AA;
+
+  --nc--card-bg: #FFFFFF;
+  --nc--card-cap-bg: #FFFFFF;
+  --nc--card-border-color: #E7E7EA;
+  --nc--card-border-radius: 0.75rem;
+
+  --nc--nav-link-color: var(--nc-sidebar-color-muted);
+  --nc--nav-link-hover-color: var(--nc-sidebar-color);
+  --nc--nav-link-bgcolor: transparent;
+  --nc--nav-link-active-bgcolor: var(--nc-sidebar-active-bg);
+  --nc--nav-link-hover-bgcolor: var(--nc-sidebar-hover-bg);
+  --nc--nav-link-padding-x: 12px;
+  --nc--nav-link-padding-y: 11px;
+  --nc--nav-link-font-size: 13.5px;
+
+  --nc--table-bg: #FFFFFF;
+  --nc--table-border-color: #E7E7EA;
+  --nc--table-hover-bg: #F4F4F5;
+  --nc--table-th-bg: #FAFAFA;
+  --nc--table-th-color: #52525B;
+
+  --nc-form-input-bg: #FFFFFF;
+  --nc-form-input-color: #18181B;
+  --nc-form-input-border-color: #E7E7EA;
+  --nc-control-h: 32px;
+
+  --nc-progress-bar-bg1: var(--nc-primary);
+  --nc-fw-activeItemBg: var(--nc-primary);
+  --nc-fw-completedItemBg: var(--nc-success);
+}
+
+/* ── 2. Typography (app-wide, not only the sidebar/header) ── */
+html.cameo,
+html.cameo body {
+  font-family: var(--nc-font-family) !important;
+}
+html.cameo h6, html.cameo .h6, html.cameo h5, html.cameo .h5, html.cameo h4, html.cameo .h4,
+html.cameo h3, html.cameo .h3, html.cameo h2, html.cameo .h2, html.cameo h1, html.cameo .h1 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+html.cameo .formtitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+html.cameo .nc-page-header.card-header {
+  display: none !important;
+}
+
+/* ── 3. Sidebar and menu ── */
+html.cameo .aside-sidebar,
+html.cameo .sidebar {
+  background: var(--nc-sidebar-bg);
+  font-family: var(--nc-sidebar-font);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+html.cameo .sidebar::-webkit-scrollbar { display: none; }
+html.cameo .sidebar-logo {
+  height: var(--nc-topbar-h);
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  border-bottom: 1px solid var(--nc-sidebar-active-bg);
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+html.cameo .logo-name {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--nc-sidebar-color);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+html.cameo .sb-sec { padding: 1rem 0 0.5rem; }
+html.cameo .sb-lbl {
+  padding: 0 1rem 0.5rem;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nc-color-text-faint);
+}
+/* inactive items are the one deliberate exception to the 600/700 rule: weight 400 */
+html.cameo .sidebar .nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.45rem 1rem;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--nc-sidebar-color-muted);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--nc-tr), color var(--nc-tr);
+  margin: 1px 0.5rem;
+  border-radius: 7px;
+  position: relative;
+  user-select: none;
+}
+html.cameo .sidebar .nav-item:hover {
+  background: var(--nc-sidebar-hover-bg);
+  color: var(--nc-sidebar-color);
+}
+html.cameo .sidebar .nav-item.active {
+  background: var(--nc-sidebar-active-bg);
+  color: var(--nc-sidebar-color);
+  font-weight: 600;
+}
+html.cameo .nav-label { flex: 1; }
+html.cameo .sb-div {
+  height: 1px;
+  background: var(--nc-color-divider);
+  margin: 0.5rem 1rem;
+}
+html.cameo .aside-sidebar {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  height: calc(100vh - 70px);
+  box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.06);
+  z-index: 101;
+  color: var(--nc-sidebar-color);
+  transition: all 250ms linear;
+  padding: 16px 0;
+}
+html.cameo .side-header .custom-navbar { overflow: visible; padding: 0; transition: all 250ms linear; }
+html.cameo .side-header .custom-navbar .navbar-nav { gap: 4px; }
+html.cameo .side-header .custom-navbar .nav-item { margin: 0 0 3px; }
+html.cameo .side-header .custom-navbar .nav-item .nav-link { border-radius: 7px; }
+html.cameo .side-header .custom-navbar .nav-item .nav-link i {
+  width: 18px;
+  height: 18px;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-shrink: 0;
+}
+html.cameo .side-header .custom-navbar .nav-item .nav-link i.me-2 { margin-right: 13px !important; }
+html.cameo .side-header .nav-item .nav-link {
+  line-height: 1.3;
+  color: var(--nc-sidebar-color-muted);
+  background-color: var(--nc--nav-link-bgcolor);
+  font-family: var(--nc-sidebar-font);
+  font-size: var(--nc--nav-link-font-size);
+  font-weight: 400;
+  padding: var(--nc--nav-link-padding-y) var(--nc--nav-link-padding-x);
+  border-radius: 7px;
+  box-shadow: 0 0 3px 3px transparent;
+  transition: all 300ms ease-in-out;
+}
+html.cameo .side-header .nav-item .nav-link:hover {
+  color: var(--nc-sidebar-color);
+  background-color: var(--nc--nav-link-hover-bgcolor);
+  box-shadow: none;
+}
+html.cameo .side-header .nav-item.active .nav-link {
+  color: var(--nc-sidebar-color) !important;
+  background-color: var(--nc--nav-link-active-bgcolor);
+  font-weight: 600;
+  box-shadow: none;
+}
+/* a parent group is tagged active when any child is: keep the parent itself neutral */
+html.cameo .aside-sidebar .issub.active > button.nav-link,
+html.cameo .aside-sidebar .issub.active > .issub-toggle,
+html.cameo .aside-sidebar .issub.sub-active > button.nav-link,
+html.cameo .aside-sidebar .issub.sub-active > .issub-toggle {
+  color: var(--nc-sidebar-color-muted) !important;
+  background-color: transparent !important;
+  font-weight: 400 !important;
+}
+html.cameo .aside-sidebar .issub .navbar-nav .nav-item > a.nav-link,
+html.cameo .aside-sidebar .issub ul .nav-item > a.nav-link {
+  color: var(--nc-sidebar-color-muted) !important;
+  background-color: transparent !important;
+  font-weight: 400 !important;
+  padding: 9px 12px 9px 32px !important;
+  font-size: 13px !important;
+  margin: 1px 4px !important;
+  border-radius: 6px !important;
+  line-height: 1.4 !important;
+}
+html.cameo .aside-sidebar .issub .navbar-nav .nav-item > a.nav-link:hover,
+html.cameo .aside-sidebar .issub ul .nav-item > a.nav-link:hover {
+  color: var(--nc-sidebar-color) !important;
+  background-color: var(--nc-sidebar-hover-bg) !important;
+}
+html.cameo .aside-sidebar .issub .navbar-nav .nav-item.active > a.nav-link,
+html.cameo .aside-sidebar .issub ul .nav-item.active > a.nav-link {
+  color: var(--nc-sidebar-color) !important;
+  background-color: var(--nc-sidebar-active-bg) !important;
+  font-weight: 600 !important;
+}
+html.cameo .aside-sidebar .issub .navbar-nav,
+html.cameo .aside-sidebar .issub > ul.navbar-nav { padding-top: 4px !important; padding-bottom: 4px !important; gap: 2px !important; }
+html.cameo .side-header .issub ul { display: none; }
+html.cameo .side-header .issub.sub-active ul { display: flex; }
+
+/* ── 4. Cards, panels, buttons, global form controls ── */
+html.cameo .card,
+html.cameo .nc-page.card {
+  background: var(--nc--card-bg);
+  border: 1px solid var(--nc--card-border-color) !important;
+  border-radius: var(--nc--card-border-radius);
+  box-shadow: var(--nc-box-shadow-sm);
+}
+html.cameo .card-header {
+  background: var(--nc--card-cap-bg);
+  border-bottom: 1px solid var(--nc--card-border-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--nc-secondary);
+}
+html.cameo .btn { border-radius: 6px; font-weight: 600; font-size: 13px; }
+html.cameo .btn-primary {
+  background-color: var(--nc-primary) !important;
+  border-color: var(--nc-primary) !important;
+  color: #fff !important;
+}
+html.cameo .btn-primary:hover {
+  background-color: var(--nc-primary-hover) !important;
+  border-color: var(--nc-primary-hover) !important;
+}
+html.cameo .btn-outline-primary {
+  color: var(--nc-primary) !important;
+  border-color: var(--nc-border-color) !important;
+  background: var(--nc-color-surface) !important;
+}
+html.cameo .btn-outline-primary:hover {
+  background: var(--nc-primary) !important;
+  border-color: var(--nc-primary) !important;
+  color: #fff !important;
+}
+html.cameo input.form-control:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+html.cameo select.form-control,
+html.cameo .form-select {
+  height: var(--nc-control-h) !important;
+  border-radius: 6px !important;
+  border: 1px solid var(--nc-form-input-border-color) !important;
+  background-color: var(--nc-form-input-bg) !important;
+  padding: 5px 10px !important;
+  font-size: 13.5px !important;
+  color: var(--nc-form-input-color) !important;
+  box-shadow: none !important;
+}
+html.cameo textarea.form-control {
+  border-radius: 6px !important;
+  border: 1px solid var(--nc-form-input-border-color) !important;
+  background-color: var(--nc-form-input-bg) !important;
+  padding: 8px 10px !important;
+  font-size: 13.5px !important;
+  color: var(--nc-form-input-color) !important;
+  box-shadow: none !important;
+}
+html.cameo input.form-control:focus,
+html.cameo select.form-control:focus,
+html.cameo .form-select:focus,
+html.cameo textarea.form-control:focus {
+  border-color: var(--nc-primary) !important;
+  box-shadow: 0 0 0 3px rgba(var(--nc-primary-rgb), 0.12) !important;
+  outline: none !important;
+}
+html.cameo input.form-control::placeholder,
+html.cameo textarea.form-control::placeholder {
+  color: var(--nc-color-text-faint) !important;
+  font-size: 13.5px !important;
+}
+html.cameo .input-group-text {
+  height: var(--nc-control-h) !important;
+  border-color: var(--nc-form-input-border-color) !important;
+  background-color: var(--nc-color-surface-2) !important;
+  color: var(--nc-color-text-muted) !important;
+  font-size: 13.5px !important;
+}
+html.cameo label.d-block,
+html.cameo .form-label {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--nc-body-color) !important;
+}
+
+/* ── 5. Split view — left bar and list cards ── */
+html.cameo .splitview-left-bar .position-sticky,
+html.cameo .splitview-left-bar > .custom-scrollbar > .position-relative > div:first-child {
+  background-color: var(--nc-color-surface) !important;
+  padding: 10px 12px 8px !important;
+  z-index: 10;
+}
+html.cameo .splitview-left-bar .row.pb-2.pt-1 {
+  background-color: var(--nc-color-surface) !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+html.cameo .splitview-left-bar .searchinputboxboard .form-control,
+html.cameo .splitview-left-bar .searchinputbox .form-control {
+  height: 36px !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--nc-border-color) !important;
+  background-color: var(--nc-color-surface);
+  padding: 0 12px !important;
+  font-size: 12.5px !important;
+  color: var(--nc-body-color);
+  box-shadow: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+html.cameo .splitview-left-bar .searchinputboxboard .form-control:focus,
+html.cameo .splitview-left-bar .searchinputbox .form-control:focus {
+  border-color: var(--nc-primary) !important;
+  box-shadow: 0 0 0 3px rgba(var(--nc-primary-rgb), 0.12) !important;
+  outline: none;
+}
+html.cameo .splitview-left-bar .btn.pill.addsearchcust.btn-primary,
+html.cameo .splitview-left-bar .addsearchboot .btn {
+  width: 36px;
+  height: 36px;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px !important;
+  background-color: var(--nc-primary) !important;
+  border: none !important;
+  color: #fff !important;
+  flex-shrink: 0;
+}
+html.cameo .splitview-left-bar .btn.btn-outline-primary[aria-label="Search"] {
+  width: 36px;
+  height: 36px;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px !important;
+  border: 1px solid var(--nc-border-color) !important;
+  color: var(--nc-primary) !important;
+  background: var(--nc-color-surface) !important;
+  flex-shrink: 0;
+}
+html.cameo .left-card-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 4px 0;
+}
+html.cameo .left-card-col {
+  padding: 0 !important;
+  border-bottom: 1px solid var(--nc-border-color);
+}
+html.cameo .left-card-col:last-child { border-bottom: none; }
+html.cameo .new-card.list-card {
+  width: 100%;
+  border: none !important;
+  border-radius: 0 !important;
+  background-color: var(--nc-color-surface);
+  padding: 10px 12px !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.15s ease;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+html.cameo .new-card.list-card:hover { background-color: var(--nc-color-surface-3); }
+html.cameo .new-card.list-card.active-card {
+  background-color: var(--nc-color-surface-3) !important;
+  border-left: 3px solid var(--nc-primary) !important;
+  padding-left: 9px !important;
+}
+html.cameo .new-card.list-card.active-card .img-placeholder {
+  background-color: var(--nc-primary);
+  color: #fff;
+}
+html.cameo .img-placeholder {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--nc-color-surface-3);
+  color: var(--nc-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+  line-height: 1;
+  letter-spacing: 0.3px;
+}
+html.cameo .new-card-texts { flex: 1; min-width: 0; overflow: hidden; }
+html.cameo .new-card-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--nc-body-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4;
+  margin-bottom: 2px;
+}
+html.cameo .new-card.list-card.active-card .new-card-title { font-weight: 700; }
+html.cameo .new-card-subtitle {
+  font-size: 12px;
+  color: var(--nc-color-text-muted) !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+}
+
+/* ── 6. Tables ── */
+html.cameo .table-responsive {
+  border: 1px solid var(--nc-border-color) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  background: var(--nc--table-bg);
+  box-shadow: var(--nc-box-shadow-sm);
+}
+html.cameo .table-responsive table.table {
+  width: 100%;
+  margin: 0 !important;
+  border-collapse: collapse !important;
+  font-size: 13.5px;
+  color: var(--nc-body-color);
+  background: transparent !important;
+  box-shadow: none !important;
+}
+html.cameo .table-responsive table.table thead tr { background-color: var(--nc--table-th-bg) !important; }
+html.cameo .table-responsive table.table thead th {
+  background-color: transparent !important;
+  color: var(--nc--table-th-color) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.07em !important;
+  padding: 12px 20px !important;
+  border: none !important;
+  border-bottom: 1px solid var(--nc--table-border-color) !important;
+  white-space: nowrap;
+  vertical-align: middle !important;
+}
+html.cameo .table-responsive table.table tbody tr {
+  background-color: var(--nc--table-bg) !important;
+  transition: background-color 0.12s ease;
+  cursor: pointer;
+}
+html.cameo .table-responsive table.table tbody tr:hover { background-color: var(--nc--table-hover-bg) !important; }
+html.cameo .table-responsive table.table tbody tr:hover td { background-color: transparent !important; }
+html.cameo .table-responsive table.table tbody tr td {
+  background-color: transparent !important;
+  padding: 14px 20px !important;
+  border: none !important;
+  border-bottom: 1px solid var(--nc-color-surface-3) !important;
+  vertical-align: middle !important;
+  color: var(--nc-body-color);
+  font-size: 13.5px;
+}
+html.cameo .table-responsive table.table tbody tr:last-child td { border-bottom: none !important; }
+
+/* ── 7. Pagination ── */
+html.cameo .pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 16px 0 8px;
+  flex-wrap: wrap;
+}
+html.cameo .pagination .page-item .page-link,
+html.cameo .pagination button {
+  min-width: 32px;
+  height: 32px;
+  padding: 0 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px !important;
+  font-size: 12.5px;
+  font-weight: 600;
+  border: 1px solid var(--nc-border-color) !important;
+  background: var(--nc-color-surface) !important;
+  color: var(--nc-secondary) !important;
+  line-height: 1;
+  cursor: pointer;
+}
+html.cameo .pagination .page-item .page-link:hover,
+html.cameo .pagination button:hover {
+  background: var(--nc-color-surface-3) !important;
+  color: var(--nc-body-color) !important;
+}
+html.cameo .pagination .page-item.active .page-link,
+html.cameo .pagination button.active,
+html.cameo .pagination button[aria-current="page"] {
+  background: var(--nc-primary) !important;
+  color: #fff !important;
+  border-color: var(--nc-primary) !important;
+}
+html.cameo .pagination .page-item.disabled .page-link,
+html.cameo .pagination button:disabled { opacity: 0.4; pointer-events: none; }
+
+/* ── 8. Tabs ── */
+html.cameo .tabs .nav.nav-tabs {
+  border-bottom: 2px solid var(--nc-border-color) !important;
+  gap: 4px !important;
+  padding: 0 4px !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scrollbar-width: none !important;
+  margin: 0;
+  list-style: none;
+}
+html.cameo .tabs .nav.nav-tabs::-webkit-scrollbar { display: none !important; }
+html.cameo .tabs .nav-tabs .nav-item { list-style: none !important; margin: 0 !important; }
+html.cameo .tabs .nav-tabs .nav-link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  padding: 8px 14px !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: var(--nc-secondary) !important;
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 2px solid transparent !important;
+  border-radius: 0 !important;
+  margin-bottom: -2px !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease !important;
+  text-decoration: none !important;
+}
+html.cameo .tabs .nav-tabs .nav-link:hover {
+  color: var(--nc-body-color) !important;
+  background: var(--nc-color-surface-3) !important;
+  border-radius: 8px 8px 0 0 !important;
+}
+html.cameo .tabs .nav-tabs .nav-link.active {
+  color: var(--nc-primary) !important;
+  border-bottom: 2px solid var(--nc-primary) !important;
+  background: transparent !important;
+}
+html.cameo .tabs .tab-content { padding: 16px 0 0 !important; }
+/* ════════════════════════════════════════════════════════════════════════
+   Prototype-only layer (html/ pages and preview.html). NOT part of the "font" string.
+   Gives the standalone pages the Bootstrap-like structure the Nebula platform already provides
+   (page shell, grid, base .btn/.form-control/.card). Same rules as the standard: every rule starts
+   with `html.cameo`, tokens only, system fonts only, no external URLs.
+════════════════════════════════════════════════════════════════════════ */
+html.cameo { background: var(--nc-body-bg); }
+html.cameo *, html.cameo *::before, html.cameo *::after { box-sizing: border-box; }
+html.cameo body {
+  margin: 0;
+  background: var(--nc-body-bg);
+  color: var(--nc-body-color);
+  font-size: var(--nc-body-font-size);
+  font-weight: var(--nc-body-font-weight);
+  line-height: var(--nc-body-line-height);
+}
+html.cameo .app { display: grid; grid-template-columns: var(--nc-sidebar-w) minmax(0, 1fr); min-height: 100vh; }
+html.cameo .sidebar { border-right: 1px solid var(--nc-border-color); padding: 0 0 16px; }
+html.cameo main { padding: 24px; max-width: 1100px; width: 100%; }
+html.cameo .page-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; gap: 12px; }
+html.cameo .page-head h1 { margin: 0; }
+html.cameo .row { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 12px 16px; }
+html.cameo .col-4 { grid-column: span 4; }
+html.cameo .col-6 { grid-column: span 6; }
+html.cameo .col-12 { grid-column: span 12; }
+html.cameo .card { margin-bottom: 16px; }
+html.cameo .card-header { padding: 12px 16px; border-radius: var(--nc--card-border-radius) var(--nc--card-border-radius) 0 0; }
+html.cameo .card-body { padding: 16px; }
+html.cameo .card-plain { background: transparent; border: 0 !important; box-shadow: none; }
+html.cameo .actions-bar { display: flex; justify-content: flex-end; }
+html.cameo .btn {
+  min-height: var(--nc-control-h); padding: 6px 14px; border: 1px solid var(--nc-border-color);
+  background: var(--nc-color-surface); color: var(--nc-body-color); font-family: inherit; cursor: pointer;
+}
+html.cameo .btn:hover { background: var(--nc-color-surface-3); }
+html.cameo .btn:disabled { opacity: .5; cursor: not-allowed; }
+html.cameo .btn-icon { min-width: var(--nc-control-h); padding: 0; font-size: 1.25rem; line-height: 1; }
+html.cameo .form-control, html.cameo .form-select { display: block; width: 100%; font-family: inherit; }
+html.cameo textarea.form-control { min-height: 80px; }
+html.cameo .form-label { display: block; margin-bottom: 4px; }
+html.cameo label.req::after { content: " *"; color: var(--nc-danger); }
+html.cameo .error { color: var(--nc-danger); font-size: .75rem; }
+html.cameo .actions { display: flex; justify-content: flex-end; gap: 12px; margin-top: 8px; }
+html.cameo .empty { padding: 24px; text-align: center; color: var(--nc-secondary); }
+html.cameo .meta { display: flex; gap: 12px; align-items: center; color: var(--nc-secondary); font-size: .8125rem; }
+html.cameo .k { display: block; font-size: .75rem; color: var(--nc-secondary); margin-bottom: 2px; }
+html.cameo .badge {
+  display: inline-flex; align-items: center; background: var(--nc-color-surface-3); border-radius: var(--nc-border-radius-sm);
+  padding: 2px 8px; font-size: .75rem; font-weight: 600; color: var(--nc-body-color); white-space: nowrap;
+}
+html.cameo .badge::before { content: ""; width: 6px; height: 6px; border-radius: 50%; margin-right: 6px; background: var(--nc-secondary); }
+html.cameo .badge[data-v=Public]::before, html.cameo .badge[data-v=Active]::before { background: var(--nc-success); }
+html.cameo .badge[data-v=Draft]::before { background: var(--nc-warning); }
+html.cameo .cardgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 16px; }
+html.cameo .pcard {
+  background: var(--nc--card-bg); border: 1px solid var(--nc--card-border-color); border-radius: var(--nc--card-border-radius);
+  padding: 16px; display: flex; flex-direction: column; gap: 12px;
+}
+html.cameo .pcard header { display: flex; justify-content: space-between; gap: 8px; align-items: flex-start; }
+html.cameo .pcard .meta { color: var(--nc-secondary); }
+html.cameo .pcard .price { font-weight: 700; }
+html.cameo .split { display: grid; grid-template-columns: minmax(240px, 340px) minmax(0, 1fr); gap: 16px; align-items: start; }
+html.cameo .splitview-left-bar { overflow: hidden; }
+html.cameo .list-tools { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 8px 12px 4px; }
+html.cameo .check { display: flex; gap: 8px; align-items: center; margin: 0; font-weight: 400; font-size: .8125rem; white-space: nowrap; }
+/* Bootstrap .nav / list resets the platform supplies; the prototype has no Bootstrap */
+html.cameo .nav { display: flex; flex-wrap: wrap; padding-left: 0; margin: 0; list-style: none; }
+html.cameo ul.nav-tabs { margin-bottom: 0; }
+html.cameo input[type=checkbox] { width: 16px; height: 16px; }
+html.cameo .detail-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; flex-wrap: wrap; }
+html.cameo .detail-head h2 { font-size: 1.125rem; margin: 0 0 4px; }
+html.cameo .detail-head .actions { margin: 0; }
+html.cameo .dialog { max-width: 480px; margin: 0 auto; }
+html.cameo .promo-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; }
+html.cameo .notice { margin: 16px 0; padding: 8px 12px; border: 1px solid var(--nc-border-color); border-radius: var(--nc-border-radius-sm); background: var(--nc-color-surface-3); font-size: .8125rem; }
+html.cameo .notice.ok { border-color: var(--nc-success); }
+html.cameo .notice.err { border-color: var(--nc-danger); }
+html.cameo #trace {
+  margin: 0; padding: 12px; background: var(--nc-color-surface-3); border: 1px solid var(--nc-border-color);
+  border-radius: var(--nc-border-radius-sm); font-family: var(--nc-font-mono); font-size: .75rem; white-space: pre-wrap;
+  overflow-wrap: anywhere; color: var(--nc-secondary);
+}
+html.cameo .index-list { list-style: none; padding: 0; display: grid; gap: 8px; }
+html.cameo .index-list a { color: var(--nc-body-color); }
+html.cameo .switcher { display: none; }
+html.cameo [hidden] { display: none !important; }
+html.cameo .pv-head { display: flex; gap: 12px; align-items: center; padding: 12px 24px; background: var(--nc-header-bg); border-bottom: 1px solid var(--nc-border-color); font-size: .8125rem; color: var(--nc-secondary); flex-wrap: wrap; }
+html.cameo .pv-head strong { color: var(--nc-header-color); }
+html.cameo .pv-body { padding: 0 24px 24px; }
+html.cameo [data-changed] { position: relative; outline: 1px dashed var(--nc-info); outline-offset: 2px; }
+html.cameo [data-changed]::before {
+  content: "changed in " attr(data-changed); position: absolute; top: -10px; right: 8px; z-index: 5;
+  background: var(--nc-info); color: #fff; font-size: .6875rem; padding: 0 6px; border-radius: var(--nc-border-radius-sm);
+}
+@media (max-width: 768px) {
+  html.cameo { --nc-control-h: 40px; }
+  html.cameo .app { grid-template-columns: minmax(0, 1fr); }
+  html.cameo .sidebar { display: none; }
+  html.cameo .switcher { display: block; padding: 12px 16px; background: var(--nc-sidebar-bg); border-bottom: 1px solid var(--nc-border-color); }
+  html.cameo main { padding: 16px; }
+  html.cameo .pv-head, html.cameo .pv-body { padding-left: 16px; padding-right: 16px; }
+  html.cameo .col-4, html.cameo .col-6 { grid-column: span 12; }
+  html.cameo .split { grid-template-columns: minmax(0, 1fr); }
+  html.cameo .promo-row { grid-template-columns: minmax(0, 1fr); }
+  html.cameo .actions { flex-direction: column; }
+  html.cameo .actions .btn, html.cameo .actions-bar .btn { width: 100%; }
+  html.cameo .cardgrid { grid-template-columns: minmax(0, 1fr); }
+}
+
+
+</style>
+</head>
+<body>
+<div class="pv-head"><strong>Nebula Products</strong><span>spec v1.1</span><span>Approved</span>
+<label for="screenSwitch" class="sr" style="margin:0">Screen</label><select id="screenSwitch" style="width:auto"><option value="S-01">S-01 - Products</option><option value="S-02">S-02 - Edit product</option><option value="S-03">S-03 - Customers</option><option value="S-04">S-04 - De-activate customer</option></select></div>
+<div class="pv-body">
+<div class="app" id="pvApp">
+<nav class="sidebar" aria-label="Main"><div class="sidebar-logo"><span class="logo-name">Nebula Products</span></div><div class="sb-sec"><a class="nav-item" href="#/S-01" data-nav-uuid="1791262684219" data-nav-screen="S-01"><span class="nav-label">Products</span></a><a class="nav-item" href="#/S-03" data-nav-uuid="1791286238764" data-nav-screen="S-03"><span class="nav-label">Customers</span></a></div></nav>
+<div>
+<section data-screen-wrap="S-01" hidden>
+<main data-screen="S-01" data-form-id="e588f7ab-bbbc-4540-93c9-eb7d2fc2b0e6" data-entity="E-01" data-model="products" data-form-type="List" data-composition="Filter / Search + Card Grid">
+<div class="page-head"><h1 class="formtitle">Products</h1></div>
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card" id="pageHeaderPanel" data-section="pageHeader">
+  <div class="card-body actions-bar">
+    <!-- NCAMEO_CONTROL: button -->
+    <button type="button" class="btn btn-primary" id="addProduct" data-control-key="addProduct" data-action-create="A-01" data-tool-create="np_create_product" data-endpoint-create="EP-001" data-target-screen="S-02">Add product</button>
+  </div>
+</section>
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card" id="filtersPanel" data-section="filters">
+  <div class="card-header">Filters</div>
+  <div class="card-body row">
+<div class="col-4"><label class="form-label" for="Name">Name</label>
+<!-- NCAMEO_CONTROL: textbox -->
+<input type="text" class="form-control" id="Name" name="Name" maxlength="150" data-field="F-01.01" data-control="textbox" placeholder="Search by name"></div>
+<div class="col-4"><label class="form-label" for="Category">Category</label>
+<!-- NCAMEO_CONTROL: dropdown2 -->
+<select class="form-select" id="Category" name="Category" data-field="F-01.02" data-control="dropdown2"><option value="">Select</option><option value="PaaS">PaaS</option><option value="Managed">Managed</option></select></div>
+<div class="col-4"><label class="form-label" for="Visibility">Visibility</label>
+<!-- NCAMEO_CONTROL: dropdown2 -->
+<select class="form-select" id="Visibility" name="Visibility" data-field="F-01.05" data-control="dropdown2" data-control-key="visibilityFilter" data-action-list="A-03" data-tool-list="np_list_product" data-endpoint-list="EP-004" data-triggers=""><option value="">Select</option><option value="Public">Public</option><option value="Private">Private</option><option value="Draft">Draft</option></select></div>
+  </div>
+</section>
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card card-plain" id="productCardsPanel" data-section="productCards">
+  <!-- NCAMEO_CONTROL: cardgrid | GridView -->
+  <div class="cardgrid grid-view" id="productsGrid" data-entity="E-01" data-form-id-card="67aa70d6-44b1-433a-8430-d4332e394d0f">
+    <template id="cardTemplate">
+      <article class="pcard">
+        <header><h3 data-bind="Name"></h3><span class="badge" data-bind="Visibility"></span></header>
+        <div class="meta"><span data-bind="Category"></span><span data-bind="BillingType"></span></div>
+        <div class="price" data-bind="price"></div>
+        <button type="button" class="btn" id="editProduct" data-control-key="editProduct" data-action-get="A-02" data-tool-get="np_get_product" data-endpoint-get="EP-003" data-target-screen="S-02">Edit</button>
+      </article>
+    </template>
+  </div>
+  <div class="empty" id="emptyState" hidden>No products match the filters.</div>
+</section>
+</main>
+</section>
+<section data-screen-wrap="S-02" hidden>
+<main data-screen="S-02" data-form-id="ccb72cf7-900b-44a7-afc0-01425d21d515" data-entity="E-01" data-model="products" data-form-type="Transaction" data-composition="Panel">
+<div class="page-head drawer-head"><h1 class="formtitle">Edit product</h1>
+  <!-- NCAMEO_CONTROL: button -->
+  <button type="button" class="btn btn-icon" id="closeProduct" aria-label="Close" data-control-key="closeProduct" data-target-screen="S-01">&times;</button>
+</div>
+<form id="productForm" novalidate>
+<!-- NCAMEO_CONTROL: hidden -->
+<input type="hidden" id="ProductId" name="ProductId" data-field="F-01.15" data-control="hidden">
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card" id="productDetailsPanel" data-section="productDetails">
+  
+  <div class="card-body row">
+<div class="col-6"><label class="form-label req" for="Name">Name</label>
+<!-- NCAMEO_CONTROL: textbox -->
+<input type="text" class="form-control" id="Name" name="Name" maxlength="150" data-field="F-01.01" data-control="textbox" data-required="true" placeholder="Name">
+<div class="error" data-error-for="Name"></div></div><div class="col-6"><label class="form-label req" for="Category">Category</label>
+<!-- NCAMEO_CONTROL: dropdown2 -->
+<select class="form-select" id="Category" name="Category" data-field="F-01.02" data-control="dropdown2" data-required="true"><option value="">Select</option><option value="PaaS">PaaS</option><option value="Managed">Managed</option></select>
+<div class="error" data-error-for="Category"></div></div><div class="col-6"><label class="form-label" for="PartnerCode">Partner code</label>
+<!-- NCAMEO_CONTROL: textbox -->
+<input type="text" class="form-control" id="PartnerCode" name="PartnerCode" maxlength="50" data-field="F-01.03" data-control="textbox" placeholder="Partner code">
+<div class="error" data-error-for="PartnerCode"></div></div><div class="col-6"><label class="form-label req" for="NoOfAppsAllowed">No. of apps allowed</label>
+<!-- NCAMEO_CONTROL: number -->
+<input type="number" step="any" class="form-control" id="NoOfAppsAllowed" name="NoOfAppsAllowed" data-field="F-01.04" data-control="number" data-required="true" placeholder="0">
+<div class="error" data-error-for="NoOfAppsAllowed"></div></div><div class="col-6"><label class="form-label req" for="Visibility">Visibility</label>
+<!-- NCAMEO_CONTROL: dropdown2 -->
+<select class="form-select" id="Visibility" name="Visibility" data-field="F-01.05" data-control="dropdown2" data-required="true"><option value="">Select</option><option value="Public">Public</option><option value="Private">Private</option><option value="Draft">Draft</option></select>
+<div class="error" data-error-for="Visibility"></div></div><div class="col-6"><label class="form-label req" for="BillingType">Billing type</label>
+<!-- NCAMEO_CONTROL: dropdown2 -->
+<select class="form-select" id="BillingType" name="BillingType" data-field="F-01.06" data-control="dropdown2" data-required="true"><option value="">Select</option><option value="One time">One time</option><option value="Recurring">Recurring</option></select>
+<div class="error" data-error-for="BillingType"></div></div>
+  </div>
+</section>
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card" id="recurringPricingStripePanel" data-section="recurringPricingStripe" data-visible-field="BillingType" data-visible-equals="Recurring">
+  <div class="card-header">Recurring pricing (Stripe)</div>
+  <div class="card-body row">
+<div class="col-6"><label class="form-label" for="MonthlyStripePrice">Monthly Stripe price</label>
+<!-- NCAMEO_CONTROL: textbox -->
+<input type="text" class="form-control" id="MonthlyStripePrice" name="MonthlyStripePrice" maxlength="100" data-field="F-01.07" data-control="textbox" placeholder="Monthly Stripe price">
+<div class="error" data-error-for="MonthlyStripePrice"></div></div><div class="col-6"><label class="form-label" for="MonthlyPriceUsd">Monthly price (USD)</label>
+<!-- NCAMEO_CONTROL: number -->
+<input type="number" step="any" class="form-control" id="MonthlyPriceUsd" name="MonthlyPriceUsd" data-field="F-01.08" data-control="number" placeholder="0">
+<div class="error" data-error-for="MonthlyPriceUsd"></div></div><div class="col-6"><label class="form-label" for="YearlyStripePrice">Yearly Stripe price</label>
+<!-- NCAMEO_CONTROL: textbox -->
+<input type="text" class="form-control" id="YearlyStripePrice" name="YearlyStripePrice" maxlength="100" data-field="F-01.09" data-control="textbox" placeholder="Yearly Stripe price">
+<div class="error" data-error-for="YearlyStripePrice"></div></div><div class="col-6"><label class="form-label" for="YearlyPriceUsd">Yearly price (USD)</label>
+<!-- NCAMEO_CONTROL: number -->
+<input type="number" step="any" class="form-control" id="YearlyPriceUsd" name="YearlyPriceUsd" data-field="F-01.10" data-control="number" placeholder="0">
+<div class="error" data-error-for="YearlyPriceUsd"></div></div>
+  </div>
+</section>
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card" id="oneTimePricingPanel" data-section="oneTimePricing" data-visible-field="BillingType" data-visible-equals="One time">
+  <div class="card-header">One-time pricing</div>
+  <div class="card-body row">
+<div class="col-6"><label class="form-label" for="OneTimePriceUsd">One-time price (USD)</label>
+<!-- NCAMEO_CONTROL: number -->
+<input type="number" step="any" class="form-control" id="OneTimePriceUsd" name="OneTimePriceUsd" data-field="F-01.14" data-control="number" placeholder="0">
+<div class="error" data-error-for="OneTimePriceUsd"></div></div>
+  </div>
+</section>
+<!-- NCAMEO_CONTROL: panel -->
+<section class="card" id="descriptionAndScriptsPanel" data-section="descriptionAndScripts">
+  
+  <div class="card-body row">
+<div class="col-12"><label class="form-label" for="ShortDescription">Short description</label>
+<!-- NCAMEO_CONTROL: textarea -->
+<textarea rows="4" class="form-control" id="ShortDescription" name="ShortDescription" maxlength="3000" data-field="F-01.11" data-control="textarea" placeholder="Short description"></textarea>
+<div class="error" data-error-for="ShortDescription"></div></div><div class="col-12"><label class="form-label" for="ScriptAzure">Script (Azure)</label>
+<!-- NCAMEO_CONTROL: textarea -->
+<textarea rows="4" class="form-control" id="ScriptAzure" name="ScriptAzure" data-field="F-01.12" data-control="textarea" placeholder="Script (Azure)"></textarea>
+<div class="error" data-error-for="ScriptAzure"></div></div><div class="col-12"><label class="form-label" for="ScriptAws">Script (AWS)</label>
+<!-- NCAMEO_CONTROL: textbox -->
+<input type="text" class="form-control" id="ScriptAws" name="ScriptAws" maxlength="4000" data-field="F-01.13" data-control="textbox" placeholder="Script (AWS)">
+<div class="error" data-error-for="ScriptAws"></div></div>
+  </div>
+</section>
+
+<div class="actions">
+  <!-- NCAMEO_CONTROL: button -->
+  <button type="button" class="btn" id="cancelProduct" data-control-key="cancelProduct" data-target-screen="S-01">Cancel</button>
+  <!-- NCAMEO_CONTROL: button -->
+  <button type="submit" class="btn btn-primary" id="saveProduct" data-control-key="saveProduct" data-action-create="A-01" data-tool-create="np_create_product" data-endpoint-create="EP-001" data-action-update="A-04" data-tool-update="np_update_product" data-endpoint-update="EP-002" data-target-screen="S-01">Save product</button>
+</div>
+</form>
+</main>
+</section>
+<section data-screen-wrap="S-03" hidden>
+<main data-screen="S-03" data-form-id="6421b203-cc6c-4acf-ae40-b3c83621641e" data-entity="E-02" data-model="customers" data-form-type="List" data-composition="Filter / Search + Tabs + Split View">
+<div class="page-head"><h1 class="formtitle">Customers</h1></div>
+<!-- NCAMEO_CONTROL: cardgrid | SplitView -->
+<div class="split" id="customersSplit" data-view="SplitView" data-entity="E-02" data-form-id-search="31ed0d29-1164-44cb-8c5a-a5593bc5ef02" data-form-id-detail="6caa76d1-6ae7-4a21-be3f-bcb5243f5891" data-form-id-addedit="fcaac76e-69ab-4852-bedc-a16561ef8823">
+<!-- NCAMEO_CONTROL: panel -->
+<section data-changed="CR-001" class="card splitview-left-bar" id="customerListPanel" data-section="customerList">
+  <div class="card-body">
+    <!-- NCAMEO_CONTROL: textbox -->
+    <div class="searchinputbox"><input type="text" class="form-control" id="customerSearch" name="Name" maxlength="150" data-field="F-02.02" data-control="textbox" placeholder="Search customers" aria-label="Search customers" data-control-key="customerSearch" data-action-list="A-07" data-tool-list="np_list_customer" data-endpoint-list="EP-005" data-triggers=""></div>
+    <div class="list-tools">
+      <label class="check"><!-- NCAMEO_CONTROL: checkbox -->
+      <input type="checkbox" id="activeOnly" data-field="F-02.07" data-control="checkbox"> Show active customers only</label>
+      <!-- NCAMEO_CONTROL: button -->
+      <button type="button" class="btn" id="customerFilter" data-placeholder="true" aria-label="Filter">Filter</button>
+    </div>
+    <div class="left-card-row" id="customerItems">
+      <template id="customerItemTemplate">
+        <div class="left-card-col">
+          <div class="new-card list-card" role="button" tabindex="0" data-control-key="selectCustomer" data-action-get="A-08" data-tool-get="np_get_customer" data-endpoint-get="EP-006">
+            <div class="img-placeholder" data-bind="initials"></div>
+            <div class="new-card-texts">
+              <div class="new-card-title" data-bind="Name"></div>
+              <div class="new-card-subtitle" data-bind="ContactName"></div>
+              <span class="badge" data-bind="Status"></span>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+    <div class="empty" id="customerEmpty" hidden>No customers match.</div>
+  </div>
+</section>
+<div class="split-detail" id="customerDetail">
+<!-- NCAMEO_CONTROL: panel -->
+<section data-changed="CR-001" class="card" id="customerHeaderPanel" data-section="customerHeader">
+  <div class="card-body detail-head">
+    <div><h2 data-bind="Name"></h2>
+      <div class="meta"><span class="badge" data-bind="Status" data-field="F-02.07"></span><span data-bind="CustomerSince" data-field="F-02.08"></span></div></div>
+    <div class="actions">
+      <!-- NCAMEO_CONTROL: button -->
+      <button type="button" class="btn" id="applyPromo" data-control-key="applyPromo" data-placeholder="true">Apply promo</button>
+      <!-- NCAMEO_CONTROL: button -->
+      <button type="button" class="btn" id="deactivateCustomer" data-control-key="deactivateCustomer" data-target-screen="S-04">De-activate</button>
+    </div>
+  </div>
+</section>
+<!-- NCAMEO_CONTROL: panel -->
+<section data-changed="CR-001" class="card" id="contactCardPanel" data-section="contactCard">
+  <div class="card-header">Contact</div>
+  <div class="card-body row">
+    <div class="col-6"><span class="k">Contact name</span><span data-bind="ContactName" data-field="F-02.03"></span></div>
+    <div class="col-6"><span class="k">Email</span><span data-bind="Email" data-field="F-02.04"></span></div>
+    <div class="col-6"><span class="k">Phone</span><span data-bind="Phone" data-field="F-02.05"></span></div>
+    <div class="col-6"><span class="k">Stripe customer ID</span><span data-bind="StripeCustomerId" data-field="F-02.06"></span></div>
+  </div>
+</section>
+<!-- NCAMEO_CONTROL: panel -->
+<section data-changed="CR-001" class="card" id="customerTabsPanel" data-section="customerTabs">
+  <!-- NCAMEO_CONTROL: tabs -->
+  <div class="tabs">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item"><a class="nav-link active" role="tab" aria-selected="true" data-placeholder="true">Subscriptions</a></li>
+      <li class="nav-item"><a class="nav-link" role="tab" aria-selected="false" data-placeholder="true">Invoices</a></li>
+      <li class="nav-item"><a class="nav-link" role="tab" aria-selected="false" data-placeholder="true">Payment methods</a></li>
+    </ul>
+  </div>
+  <div class="card-body empty">Not modelled in this build (OOS-05).</div>
+</section>
+<!-- NCAMEO_CONTROL: panel -->
+<section data-changed="CR-001" class="card" id="recentInvoicesPanel" data-section="recentInvoices">
+  <div class="card-header">Recent invoices</div>
+  <div class="card-body empty">Not modelled in this build (OOS-05).</div>
+</section>
+</div>
+</div>
+</main>
+</section>
+<section data-screen-wrap="S-04" hidden>
+<main data-screen="S-04" data-form-id="75f2b668-7fab-4ee6-af5a-47a6108db840" data-entity="E-02" data-model="customers" data-form-type="Transaction" data-composition="Panel">
+<div class="page-head"><h1 class="formtitle">De-activate <span data-bind="Name"></span>?</h1></div>
+<form id="deactivateForm" class="dialog" novalidate>
+<input type="hidden" id="CustomerId" name="CustomerId" data-field="F-02.01" data-control="hidden">
+<!-- NCAMEO_CONTROL: panel -->
+<section data-changed="CR-001" class="card" id="deactivationPanel" data-section="deactivation">
+  <div class="card-body row">
+    <div class="col-12"><label class="form-label" for="DeactivationReason">Reason</label>
+    <!-- NCAMEO_CONTROL: dropdown2 -->
+    <select class="form-select" id="DeactivationReason" name="DeactivationReason" data-field="F-02.09" data-control="dropdown2"><option value="">Select</option></select></div>
+    <div class="col-12"><label class="form-label" for="DeactivationNote">Internal note</label>
+    <!-- NCAMEO_CONTROL: textarea -->
+    <textarea rows="3" class="form-control" id="DeactivationNote" name="DeactivationNote" maxlength="3000" data-field="F-02.10" data-control="textarea" placeholder="Internal note"></textarea></div>
+  </div>
+</section>
+<!-- NCAMEO_CONTROL: panel -->
+<section data-changed="CR-001" class="card" id="promoAlternativePanel" data-section="promoAlternative">
+  <div class="card-header">Or apply a promo instead</div>
+  <div class="card-body promo-row">
+    <!-- NCAMEO_CONTROL: textbox -->
+    <input type="text" class="form-control" id="promoCode" placeholder="Promo code" aria-label="Promo code" data-control="textbox">
+    <!-- NCAMEO_CONTROL: button -->
+    <button type="button" class="btn" id="applyPromoDialog" data-control-key="applyPromoDialog" data-placeholder="true">Apply</button>
+  </div>
+</section>
+<div class="error" id="deactivateError" role="alert"></div>
+<div class="actions">
+  <!-- NCAMEO_CONTROL: button -->
+  <button type="button" class="btn" id="cancelDeactivate" data-control-key="cancelDeactivate" data-target-screen="S-03">Cancel</button>
+  <!-- NCAMEO_CONTROL: button -->
+  <button type="submit" class="btn btn-primary" id="confirmDeactivate" data-control-key="confirmDeactivate" data-action-update="A-09" data-tool-update="np_update_customer" data-endpoint-update="EP-007" data-transition="T-01" data-target-screen="S-03">De-activate</button>
+</div>
+</form>
+</main>
+</section>
+
+<div class="notice" id="notice" role="status">Prototype - mock data only.</div>
+<pre id="trace"></pre>
+</div></div></div>
+<script>window.__PREVIEW__=true;window.__FIRST__="S-03";</script>
+<script>
+(function () {
+  "use strict";
+  var SPEC = {
+    version: "1.1",
+    endpoints: {"EP-001": "POST /api/products", "EP-002": "PATCH /api/products/ProductId/{ProductId}", "EP-003": "GET /api/products/ProductId/{ProductId}", "EP-004": "GET /api/products", "EP-005": "GET /api/customers", "EP-006": "GET /api/customers/CustomerId/{CustomerId}", "EP-007": "PATCH /api/customers/CustomerId/{CustomerId}"},
+    files: {"S-01": "S-01-products.html", "S-02": "S-02-edit-product.html", "S-03": "S-03-customers.html", "S-04": "S-04-de-activate-customer.html"},
+    fields: {"Name": {"id": "F-01.01", "type": "string", "required": true, "name": "Name"}, "Category": {"id": "F-01.02", "type": "enum", "required": true, "name": "Category"}, "PartnerCode": {"id": "F-01.03", "type": "string", "required": false, "name": "Partner code"}, "NoOfAppsAllowed": {"id": "F-01.04", "type": "number", "required": true, "name": "No. of apps allowed"}, "Visibility": {"id": "F-01.05", "type": "enum", "required": true, "name": "Visibility"}, "BillingType": {"id": "F-01.06", "type": "enum", "required": true, "name": "Billing type"}, "MonthlyStripePrice": {"id": "F-01.07", "type": "string", "required": false, "name": "Monthly Stripe price"}, "MonthlyPriceUsd": {"id": "F-01.08", "type": "number", "required": false, "name": "Monthly price (USD)"}, "YearlyStripePrice": {"id": "F-01.09", "type": "string", "required": false, "name": "Yearly Stripe price"}, "YearlyPriceUsd": {"id": "F-01.10", "type": "number", "required": false, "name": "Yearly price (USD)"}, "ShortDescription": {"id": "F-01.11", "type": "longtext", "required": false, "name": "Short description"}, "ScriptAzure": {"id": "F-01.12", "type": "longtext", "required": false, "name": "Script (Azure)"}, "ScriptAws": {"id": "F-01.13", "type": "string", "required": false, "name": "Script (AWS)"}, "OneTimePriceUsd": {"id": "F-01.14", "type": "number", "required": false, "name": "One-time price (USD)"}, "ProductId": {"id": "F-01.15", "type": "guid", "required": true, "name": "Product Id"}},
+    cfields: {"CustomerId": {"id": "F-02.01", "type": "guid", "required": true, "name": "Customer Id"}, "Name": {"id": "F-02.02", "type": "string", "required": true, "name": "Name"}, "ContactName": {"id": "F-02.03", "type": "string", "required": false, "name": "Contact name"}, "Email": {"id": "F-02.04", "type": "email", "required": false, "name": "Email"}, "Phone": {"id": "F-02.05", "type": "phone", "required": false, "name": "Phone"}, "StripeCustomerId": {"id": "F-02.06", "type": "string", "required": false, "name": "Stripe customer ID"}, "Status": {"id": "F-02.07", "type": "enum", "required": true, "name": "Status"}, "CustomerSince": {"id": "F-02.08", "type": "date", "required": false, "name": "Customer since"}, "DeactivationReason": {"id": "F-02.09", "type": "string", "required": false, "name": "Deactivation reason"}, "DeactivationNote": {"id": "F-02.10", "type": "longtext", "required": false, "name": "Deactivation note"}},
+    stateGuard: { T01: { from: "Active", to: "Inactive", refuse: "Customer is already inactive." } }
+  };
+  var SEED = [{"ProductId": "6513270e-269e-4d37-b2a7-4de452e6b438", "Name": "Sample Starter Platform", "Category": "PaaS", "PartnerCode": "SAMPLE-01", "NoOfAppsAllowed": 5, "Visibility": "Public", "BillingType": "Recurring", "ShortDescription": "Synthetic sample product for the prototype.", "ScriptAzure": "", "ScriptAws": "", "MonthlyStripePrice": "price_sample_m0", "MonthlyPriceUsd": 49, "YearlyStripePrice": "price_sample_y0", "YearlyPriceUsd": 490}, {"ProductId": "d23f0824-128b-4f33-8c5c-7fd0a6a3a450", "Name": "Sample Growth Platform", "Category": "PaaS", "PartnerCode": "SAMPLE-02", "NoOfAppsAllowed": 10, "Visibility": "Public", "BillingType": "Recurring", "ShortDescription": "Synthetic sample product for the prototype.", "ScriptAzure": "", "ScriptAws": "", "MonthlyStripePrice": "price_sample_m1", "MonthlyPriceUsd": 98, "YearlyStripePrice": "price_sample_y1", "YearlyPriceUsd": 980}, {"ProductId": "9531985d-5d9d-49f8-9818-e811892f902b", "Name": "Sample Managed Essentials", "Category": "Managed", "PartnerCode": "SAMPLE-03", "NoOfAppsAllowed": 15, "Visibility": "Public", "BillingType": "Recurring", "ShortDescription": "Synthetic sample product for the prototype.", "ScriptAzure": "", "ScriptAws": "", "MonthlyStripePrice": "price_sample_m2", "MonthlyPriceUsd": 147, "YearlyStripePrice": "price_sample_y2", "YearlyPriceUsd": 1470}, {"ProductId": "36f675cc-81e7-4ef5-a8e2-5d940ed90475", "Name": "Sample Managed Plus", "Category": "Managed", "PartnerCode": "SAMPLE-04", "NoOfAppsAllowed": 20, "Visibility": "Private", "BillingType": "One time", "ShortDescription": "Synthetic sample product for the prototype.", "ScriptAzure": "", "ScriptAws": "", "OneTimePriceUsd": 796}, {"ProductId": "6b0d549b-6f03-475a-9600-a35a099950d8", "Name": "Sample Enterprise Platform", "Category": "PaaS", "PartnerCode": "SAMPLE-05", "NoOfAppsAllowed": 25, "Visibility": "Draft", "BillingType": "One time", "ShortDescription": "Synthetic sample product for the prototype.", "ScriptAzure": "", "ScriptAws": "", "OneTimePriceUsd": 995}];
+  var CSEED = [{"CustomerId": "8d116ece-1738-47d9-bd9c-172411e20b8f", "Name": "Sample Customer RB", "ContactName": "Sample Contact 1", "Email": "contact1@example.com", "Phone": "+00 000 000 0001", "StripeCustomerId": "cus_sample001", "Status": "Active", "CustomerSince": "2026-01-15"}, {"CustomerId": "90c192cf-d3ac-44af-8f21-ddb66cad4a26", "Name": "Sample Customer Alpha", "ContactName": "Sample Contact 2", "Email": "contact2@example.com", "Phone": "+00 000 000 0002", "StripeCustomerId": "cus_sample002", "Status": "Active", "CustomerSince": "2025-11-02"}, {"CustomerId": "a170b338-3926-4059-b28c-105d1fb17c23", "Name": "Sample Customer Beta", "ContactName": "Sample Contact 3", "Email": "contact3@example.com", "Phone": "+00 000 000 0003", "StripeCustomerId": "cus_sample003", "Status": "Inactive", "CustomerSince": "2025-06-20"}, {"CustomerId": "0fd630f1-f29d-4da9-953f-48f1a09f76b5", "Name": "Sample Customer Gamma", "ContactName": "Sample Contact 4", "Email": "contact4@example.com", "Phone": "+00 000 000 0004", "StripeCustomerId": "cus_sample004", "Status": "Active", "CustomerSince": "2026-03-08"}];
+  var PREVIEW = !!window.__PREVIEW__;
+  var store = SEED.map(function (r) { return Object.assign({}, r); });
+  var cstore = CSEED.map(function (r) { return Object.assign({}, r); });
+  try {
+    if (!PREVIEW && window.sessionStorage) {
+      var saved = window.sessionStorage.getItem("nebula-products:store");
+      if (saved) store = JSON.parse(saved);
+      var csaved = window.sessionStorage.getItem("nebula-products:customers");
+      if (csaved) cstore = JSON.parse(csaved);
+    }
+  } catch (e) {}
+  function persist() { try { if (!PREVIEW && window.sessionStorage) { window.sessionStorage.setItem("nebula-products:store", JSON.stringify(store)); window.sessionStorage.setItem("nebula-products:customers", JSON.stringify(cstore)); } } catch (e) {} }
+  function $(id) { return document.getElementById(id); }
+  function trace(line) { var t = $("trace"); if (t) t.textContent += line + "\n"; }
+  function notice(msg, kind) { var n = $("notice"); if (n) { n.textContent = msg; n.className = "notice" + (kind ? " " + kind : ""); } }
+  function guid() {
+    if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) { var r = Math.random() * 16 | 0; return (c === "x" ? r : (r & 3 | 8)).toString(16); });
+  }
+  function clone(o) { return Object.assign({}, o); }
+
+  // ---- Mock tools: one function per agent.tools[], named exactly ----
+  var tools = {
+    np_create_product: function (rec) {
+      var row = clone(rec); row.ProductId = guid(); store.push(row); persist();
+      trace("A-01 -> np_create_product -> EP-001 " + SPEC.endpoints["EP-001"] + "  => " + row.ProductId);
+      return row;
+    },
+    np_get_product: function (id) {
+      var row = store.filter(function (r) { return r.ProductId === id; })[0] || null;
+      trace("A-02 -> np_get_product -> EP-003 " + SPEC.endpoints["EP-003"].replace("{ProductId}", id) + "  => " + (row ? row.Name : "not found"));
+      return row ? clone(row) : null;
+    },
+    np_list_product: function (filter) {
+      filter = filter || {};
+      var rows = store.filter(function (r) {
+        if (filter.Name && r.Name.toLowerCase().indexOf(filter.Name.toLowerCase()) < 0) return false;
+        if (filter.Category && r.Category !== filter.Category) return false;
+        if (filter.Visibility && r.Visibility !== filter.Visibility) return false;
+        return true;
+      });
+      trace("A-03 -> np_list_product -> EP-004 " + SPEC.endpoints["EP-004"] + "  filter=" + JSON.stringify(filter) + "  => " + rows.length + " record(s)");
+      return rows.map(clone);
+    },
+    np_update_product: function (id, changes) {
+      var row = store.filter(function (r) { return r.ProductId === id; })[0];
+      if (!row) throw new Error("Product not found.");
+      Object.assign(row, changes); persist();
+      trace("A-04 -> np_update_product -> EP-002 " + SPEC.endpoints["EP-002"].replace("{ProductId}", id) + "  => saved");
+      return clone(row);
+    }
+  };
+  tools.np_list_customer = function (filter) {
+    filter = filter || {};
+    var rows = cstore.filter(function (r) {
+      if (filter.Name && r.Name.toLowerCase().indexOf(filter.Name.toLowerCase()) < 0) return false;
+      if (filter.Status && r.Status !== filter.Status) return false;
+      return true;
+    });
+    trace("A-07 -> np_list_customer -> EP-005 " + SPEC.endpoints["EP-005"] + "  filter=" + JSON.stringify(filter) + "  => " + rows.length + " record(s)");
+    return rows.map(clone);
+  };
+  tools.np_get_customer = function (id) {
+    var row = cstore.filter(function (r) { return r.CustomerId === id; })[0] || null;
+    trace("A-08 -> np_get_customer -> EP-006 " + SPEC.endpoints["EP-006"].replace("{CustomerId}", id) + "  => " + (row ? row.Name : "not found"));
+    return row ? clone(row) : null;
+  };
+  tools.np_update_customer = function (id, changes) {
+    var row = cstore.filter(function (r) { return r.CustomerId === id; })[0];
+    if (!row) throw new Error("Customer not found.");
+    var g = SPEC.stateGuard.T01;
+    if (changes.Status === g.to) {
+      if (row.Status !== g.from) { trace("A-09 -> np_update_customer -> EP-007 refused (T-01 guard): " + g.refuse); throw new Error(g.refuse); }
+    }
+    Object.assign(row, changes); persist();
+    trace("A-09 -> np_update_customer -> EP-007 " + SPEC.endpoints["EP-007"].replace("{CustomerId}", id) + "  T-01 Active->Inactive  => saved");
+    return clone(row);
+  };
+  window.NebulaMock = { tools: tools, spec: SPEC };
+
+  // ---- Router ----
+  function go(screen, params) {
+    var q = Object.keys(params || {}).filter(function (k) { return params[k]; }).map(function (k) { return encodeURIComponent(k) + "=" + encodeURIComponent(params[k]); }).join("&");
+    if (PREVIEW) { location.hash = "#/" + screen + (q ? "?" + q : ""); }
+    else { location.href = SPEC.files[screen] + (q ? "?" + q : ""); }
+  }
+  function parseQuery(s) { var o = {}; (s || "").replace(/^\?/, "").split("&").forEach(function (p) { if (p) { var kv = p.split("="); o[decodeURIComponent(kv[0])] = decodeURIComponent(kv[1] || ""); } }); return o; }
+  function route() {
+    var h = (location.hash || "").replace(/^#\/?/, "");
+    var parts = h.split("?"); var sid = parts[0] || window.__FIRST__;
+    var wraps = document.querySelectorAll("[data-screen-wrap]");
+    var found = false;
+    Array.prototype.forEach.call(wraps, function (w) { var on = w.getAttribute("data-screen-wrap") === sid; w.hidden = !on; if (on) found = true; });
+    if (!found) { sid = window.__FIRST__; wraps[0].hidden = false; Array.prototype.forEach.call(wraps, function (w, i) { w.hidden = w.getAttribute("data-screen-wrap") !== sid; }); }
+    var sw = $("screenSwitch"); if (sw) sw.value = sid;
+    Array.prototype.forEach.call(document.querySelectorAll(".sidebar .nav-item"), function (a) { var nv = { "S-02": "S-01", "S-04": "S-03" }[sid] || sid; a.classList.toggle("active", a.getAttribute("data-nav-screen") === nv); });
+    var main = document.querySelector('[data-screen-wrap="' + sid + '"] main');
+    bind(main, parseQuery(parts[1]));
+  }
+
+  // ---- Screen binding ----
+  function bind(main, params) {
+    if (!main) return;
+    var sid = main.getAttribute("data-screen");
+    notice("Prototype - mock data only.");
+    if (sid === "S-01") bindList(main); else if (sid === "S-02") bindForm(main, params);
+    else if (sid === "S-03") bindCustomers(main, params);
+    else if (sid === "S-04") bindDeactivate(main, params);
+  }
+  function priceText(r) {
+    if (r.BillingType === "Recurring") return "$" + (r.MonthlyPriceUsd == null || r.MonthlyPriceUsd === "" ? "-" : r.MonthlyPriceUsd) + " / month";
+    return "$" + (r.OneTimePriceUsd == null || r.OneTimePriceUsd === "" ? "-" : r.OneTimePriceUsd) + " one time";
+  }
+  function bindList(main) {
+    var $ = function (id) { return main.querySelector("#" + id); };
+    var grid = $("productsGrid"), tpl = $("cardTemplate"), empty = $("emptyState");
+    function render() {
+      var rows = tools.np_list_product({ Name: $("Name").value.trim(), Category: $("Category").value, Visibility: $("Visibility").value });
+      Array.prototype.slice.call(grid.querySelectorAll(".pcard")).forEach(function (n) { n.remove(); });
+      rows.sort(function (a, b) { return a.Name.localeCompare(b.Name); }).forEach(function (r) {
+        var node = tpl.content.firstElementChild.cloneNode(true);
+        ["Name", "Category", "Visibility", "BillingType"].forEach(function (k) { var el = node.querySelector('[data-bind="' + k + '"]'); el.textContent = r[k]; if (k === "Visibility") el.setAttribute("data-v", r[k]); });
+        node.querySelector('[data-bind="price"]').textContent = priceText(r);
+        node.querySelector("button").onclick = function () { go("S-02", { ProductId: r.ProductId }); };
+        grid.appendChild(node);
+      });
+      empty.hidden = rows.length > 0;
+      notice(rows.length + " product(s) shown.");
+    }
+    ["Name", "Category", "Visibility"].forEach(function (id) { var el = $(id); el.oninput = render; el.onchange = render; });
+    $("addProduct").onclick = function () { go("S-02", {}); };
+    render();
+  }
+
+  function initials(n) { var w = String(n || "").trim().split(/\s+/).filter(Boolean); return ((w[0] || "")[0] || "") + ((w[1] || "")[0] || ""); }
+  function monthYear(d) { if (!d) return ""; var t = new Date(d + "T00:00:00"); return isNaN(t) ? d : "Customer since " + t.toLocaleDateString("en-US", { month: "short", year: "numeric" }); }
+  function fillBinds(root, rec) {
+    Array.prototype.forEach.call(root.querySelectorAll("[data-bind]"), function (el) {
+      var k = el.getAttribute("data-bind"); var v = rec ? rec[k] : "";
+      el.textContent = k === "CustomerSince" ? monthYear(v) : (v == null ? "" : v);
+      if (k === "Status") el.setAttribute("data-v", v || "");
+      if (k === "initials") el.textContent = initials(rec && rec.Name);
+    });
+  }
+  function bindCustomers(main, params) {
+    var $ = function (id) { return main.querySelector("#" + id); };
+    var items = $("customerItems"), tpl = $("customerItemTemplate"), empty = $("customerEmpty"), detail = $("customerDetail");
+    var selected = params.CustomerId || null;
+    function show(id) {
+      var rec = id ? tools.np_get_customer(id) : null;
+      selected = rec ? rec.CustomerId : null;
+      fillBinds(detail, rec);
+      var d = $("deactivateCustomer"); d.disabled = !rec || rec.Status !== "Active"; d.title = d.disabled && rec ? "Customer is already inactive." : "";
+      Array.prototype.forEach.call(items.querySelectorAll(".list-card"), function (n) { n.classList.toggle("active-card", n.getAttribute("data-id") === selected); });
+    }
+    function render() {
+      var rows = tools.np_list_customer({ Name: $("customerSearch").value.trim(), Status: $("activeOnly").checked ? "Active" : "" });
+      Array.prototype.slice.call(items.querySelectorAll(".left-card-col")).forEach(function (n) { n.remove(); });
+      rows.sort(function (a, b) { return a.Name.localeCompare(b.Name); }).forEach(function (r) {
+        var node = tpl.content.firstElementChild.cloneNode(true);
+        var card = node.querySelector(".list-card");
+        card.setAttribute("data-id", r.CustomerId); fillBinds(node, r);
+        card.onclick = function () { show(r.CustomerId); };
+        card.onkeydown = function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); show(r.CustomerId); } };
+        items.appendChild(node);
+      });
+      empty.hidden = rows.length > 0;
+      var ids = rows.map(function (r) { return r.CustomerId; });
+      if (!selected || ids.indexOf(selected) < 0) selected = ids[0] || null;
+      show(selected);
+      notice(rows.length + " customer(s) shown.");
+    }
+    $("customerSearch").oninput = render; $("activeOnly").onchange = render;
+    $("deactivateCustomer").onclick = function () { if (selected) go("S-04", { CustomerId: selected }); };
+    render();
+  }
+  function bindDeactivate(main, params) {
+    var $ = function (id) { return main.querySelector("#" + id); };
+    if (!params.CustomerId && cstore.length) params = { CustomerId: cstore[0].CustomerId };
+    var rec = params.CustomerId ? tools.np_get_customer(params.CustomerId) : null;
+    fillBinds(main, rec); $("CustomerId").value = rec ? rec.CustomerId : "";
+    $("DeactivationReason").value = ""; $("DeactivationNote").value = ""; $("promoCode").value = ""; $("deactivateError").textContent = "";
+    if (!rec) notice("Customer not found.", "err");
+    $("cancelDeactivate").onclick = function () { go("S-03", { CustomerId: params.CustomerId }); };
+    $("deactivateForm").onsubmit = function (ev) {
+      ev.preventDefault();
+      try {
+        var ch = { Status: "Inactive" }, r = $("DeactivationReason").value, n = $("DeactivationNote").value;
+        if (r) ch.DeactivationReason = r; if (n) ch.DeactivationNote = n;
+        tools.np_update_customer($("CustomerId").value, ch);
+        notice("Customer de-activated.", "ok");
+        setTimeout(function () { go("S-03", { CustomerId: $("CustomerId").value }); }, 600);
+      } catch (e) { $("deactivateError").textContent = e.message; notice(e.message, "err"); }
+    };
+  }
+
+  function bindForm(main, params) {
+    var $ = function (id) { return main.querySelector("#" + id); };
+    var form = $("productForm"), save = $("saveProduct");
+    var keys = Object.keys(SPEC.fields);
+    function el(k) { return $(k); }
+    function toggle() {
+      Array.prototype.forEach.call(form.querySelectorAll("[data-visible-field]"), function (s) {
+        s.hidden = el(s.getAttribute("data-visible-field")).value !== s.getAttribute("data-visible-equals");
+      });
+    }
+    keys.forEach(function (k) { var e = el(k); if (e && k !== "ProductId") { e.value = ""; var er = form.querySelector('[data-error-for="' + k + '"]'); if (er) er.textContent = ""; } });
+    $("ProductId").value = "";
+    var editing = false;
+    if (params.ProductId) {
+      var rec = tools.np_get_product(params.ProductId);
+      if (rec) { editing = true; keys.forEach(function (k) { var e = el(k); if (e && rec[k] != null) e.value = rec[k]; }); }
+      else notice("Product not found.", "err");
+    }
+    $("BillingType").onchange = toggle; toggle();
+    $("closeProduct").onclick = function () { go("S-01", {}); };
+    $("cancelProduct").onclick = function () { go("S-01", {}); };
+    form.onsubmit = function (ev) {
+      ev.preventDefault();
+      var ok = true, data = {};
+      keys.forEach(function (k) {
+        var e = el(k); if (!e || k === "ProductId") return;
+        var sec = e.closest("[data-visible-field]");
+        var er = form.querySelector('[data-error-for="' + k + '"]'); if (er) er.textContent = "";
+        if (sec && sec.hidden) return;
+        var v = e.value, f = SPEC.fields[k];
+        if (f.required && v === "") { if (er) er.textContent = f.name + " is required."; ok = false; return; }
+        if (f.type === "number" && v !== "") { if (isNaN(Number(v))) { if (er) er.textContent = f.name + " must be a number."; ok = false; return; } v = Number(v); }
+        data[k] = v;
+      });
+      if (!ok) { notice("Fix the highlighted fields.", "err"); return; }
+      try {
+        if (editing) tools.np_update_product($("ProductId").value || params.ProductId, data);
+        else tools.np_create_product(data);
+        notice("Product saved.", "ok");
+        setTimeout(function () { go("S-01", {}); }, 600);
+      } catch (e) { notice(e.message, "err"); }
+    };
+  }
+
+  // ---- Boot ----
+  if (PREVIEW) {
+    window.addEventListener("hashchange", route);
+    var sw = $("screenSwitch"); if (sw) sw.onchange = function () { go(sw.value, {}); };
+    route();
+  } else {
+    var m = document.querySelector("main[data-screen]");
+    bind(m, parseQuery(location.search));
+  }
+})();
+
+</script>
+</body>
+</html>

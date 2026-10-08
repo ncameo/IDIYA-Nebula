@@ -1,0 +1,98 @@
+[
+  {
+    "Id": "e588f7ab-bbbc-4540-93c9-eb7d2fc2b0e6",
+    "AppName": "Nebula Products",
+    "Formname": "Products",
+    "ImageUrl": "",
+    "IsTemplate": "False",
+    "ModelName": "ProductsModel",
+    "IsDeleted": "False",
+    "Isactive": "True",
+    "CreateDate": "2026-10-06T05:12:11.000Z",
+    "UpdateDate": "2026-10-06T05:12:11.000Z"
+  },
+  {
+    "Id": "67aa70d6-44b1-433a-8430-d4332e394d0f",
+    "AppName": "Nebula Products",
+    "Formname": "Products — Card",
+    "ImageUrl": "",
+    "IsTemplate": "False",
+    "ModelName": "Products—CardModel",
+    "IsDeleted": "False",
+    "Isactive": "True",
+    "CreateDate": "2026-10-06T05:12:11.000Z",
+    "UpdateDate": "2026-10-06T05:12:11.000Z"
+  },
+  {
+    "Id": "ccb72cf7-900b-44a7-afc0-01425d21d515",
+    "AppName": "Nebula Products",
+    "Formname": "Edit product",
+    "ImageUrl": "",
+    "IsTemplate": "False",
+    "ModelName": "EditproductModel",
+    "IsDeleted": "False",
+    "Isactive": "True",
+    "CreateDate": "2026-10-06T05:12:11.000Z",
+    "UpdateDate": "2026-10-06T05:12:11.000Z"
+  },
+  {
+    "Id": "6421b203-cc6c-4acf-ae40-b3c83621641e",
+    "AppName": "Nebula Products",
+    "Formname": "Customers",
+    "ImageUrl": "",
+    "IsTemplate": "False",
+    "ModelName": "CustomersModel",
+    "IsDeleted": "False",
+    "Isactive": "True",
+    "CreateDate": "2026-10-06T11:47:45.000Z",
+    "UpdateDate": "2026-10-06T11:47:45.000Z"
+  },
+  {
+    "Id": "31ed0d29-1164-44cb-8c5a-a5593bc5ef02",
+    "AppName": "Nebula Products",
+    "Formname": "Customers — Search",
+    "ImageUrl": "",
+    "IsTemplate": "False",
+    "ModelName": "Customers—SearchModel",
+    "IsDeleted": "False",
+    "Isactive": "True",
+    "CreateDate": "2026-10-06T11:47:45.000Z",
+    "UpdateDate": "2026-10-06T11:47:45.000Z"
+  },
+  {
+    "Id": "6caa76d1-6ae7-4a21-be3f-bcb5243f5891",
+    "AppName": "Nebula Products",
+    "Formname": "Customers — Detail",
+    "ImageUrl": "",
+    "IsTemplate": "False",
+    "ModelName": "Customers—DetailModel",
+    "IsDeleted": "False",
+    "Isactive": "True",
+    "CreateDate": "2026-10-06T11:47:45.000Z",
+    "UpdateDate": "2026-10-06T11:47:45.000Z"
+  },
+  {
+    "Id": "fcaac76e-69ab-4852-bedc-a16561ef8823",
+    "AppName": "Nebula Products",
+    "Formname": "Customers — Add/Edit",
+    "ImageUrl": "",
+    "IsTemplate": "False",
+    "ModelName": "Customers—Add/EditModel",
+    "IsDeleted": "False",
+    "Isactive": "True",
+    "CreateDate": "2026-10-06T11:47:45.000Z",
+    "UpdateDate": "2026-10-06T11:47:45.000Z"
+  },
+  {
+    "Id": "75f2b668-7fab-4ee6-af5a-47a6108db840",
+    "AppName": "Nebula Products",
+    "Formname": "De-activate customer",
+    "ImageUrl": "",
+    "IsTemplate": "False",
+    "ModelName": "De-activatecustomerModel",
+    "IsDeleted": "False",
+    "Isactive": "True",
+    "CreateDate": "2026-10-06T11:47:45.000Z",
+    "UpdateDate": "2026-10-06T11:47:45.000Z"
+  }
+]

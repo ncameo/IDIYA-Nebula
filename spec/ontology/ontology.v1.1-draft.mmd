@@ -1,0 +1,15 @@
+%% Ontology DRAFT for CR-001 (v1.1) - NOT confirmed. Nodes marked (?) are inferred from IN-03 / IN-04.
+%% Product (E-01) is unchanged and omitted here; it stays as in ontology.mmd (v1.0, Approved).
+erDiagram
+    CUSTOMER {
+        guid CustomerId PK "system; primary key (?)"
+        string Name "required; list title, e.g. RB (?)"
+        string ContactName "contact person, e.g. ROBIN Singh (?)"
+        email Email "(?)"
+        phone Phone "(?)"
+        string StripeCustomerId "e.g. cus_Q2x...9aL (?)"
+        enum Status "required; Active | Inactive (?)"
+        date CustomerSince "shown as 'Customer since Jan 2026' (?)"
+        string DeactivationReason "from De-activate dialog; options not shown (?)"
+        longtext DeactivationNote "optional internal note (?)"
+    }

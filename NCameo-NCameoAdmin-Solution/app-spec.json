@@ -1,0 +1,166 @@
+{
+  "appName": "Nebula Products",
+  "appId" : "quzlglsembkgyxy",
+  "token": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiI4OGI4ZjRiYi0xMjQwLTQyMjEtYjVmNS1mMWU4NWE0YmJhZWYiLCJpc3MiOiJodHRwczovL25jYW1lb2IyYy5iMmNsb2dpbi5jb20vYzI1N2JkMjYtNWU0Zi00MGE3LTliMDYtNDA3YWUxNzYwZjBhL3YyLjAvIiwiZXhwIjoxNzkxNTIzMjA3LCJuYmYiOjE3OTE0MzY4MDcsIm9pZCI6ImFiMzY0NGUyLWFkMDQtNDE3Zi04OTc0LTQ1NTgyYTRlZGEwYyIsInN1YiI6ImFiMzY0NGUyLWFkMDQtNDE3Zi04OTc0LTQ1NTgyYTRlZGEwYyIsIm5hbWUiOiJOQ0FNRU8gQWRtaW4iLCJnaXZlbl9uYW1lIjoiTkNBTUVPIiwiZXh0ZW5zaW9uX3JvbGVzIjoiW1xyXG4gIFwiRGV2ZWxvcGVyXCIsXHJcbiAgXCJBZG1pbmlzdHJhdG9yXCIsXHJcbiAgXCJOQ0FNRU9cIlxyXG5dIiwiZmFtaWx5X25hbWUiOiJBZG1pbiIsImV4dGVuc2lvbl9TY2hvb2xJZCI6IjAiLCJleHRlbnNpb25fVGVuYW50TmFtZSI6Im5jYW1lbyIsImV4dGVuc2lvbl9UZW5hbnRJZCI6IjAzNTYyZTEwLTJkYzctNDgyYi1iODM1LWQ5OWRlMTNmNWQyZSIsImVtYWlscyI6WyJhZG1pbkBuY2FtZW8uY29tIl0sInRmcCI6IkIyQ18xX1VzZXIiLCJub25jZSI6IjAxYTExOWY0LTFjOWEtN2VmZC05ODMxLTU2NTliMWZkODk5ZCIsInNjcCI6InVzZXIucmVhZCBwcm9maWxlIG9mZmxpbmVfYWNjZXNzIiwiYXpwIjoiODhiOGY0YmItMTI0MC00MjIxLWI1ZjUtZjFlODVhNGJiYWVmIiwidmVyIjoiMS4wIiwiaWF0IjoxNzkxNDM2ODA3fQ.S4QZdSTzj70uWpcNYX_tz-i4S9eoqqFH3LsOLf0bHmLvLC1DFRmOi5yx9Zh4x9SQvRdnw7S44QnxS6uFmglJ854WUcT76RC-3lD4KWTfLkmV6466iAKkju8l-qF1QfreM7TIjl8jQ9VTHcgoDUEE2tAQmKHy_MFy2FkdJ5Q75WTxUmQgwWh_xqfLQn87-U2Ht3J5CqAxjsjsbMLr72GiTso3PVfGYWNHgeNFpx1CiU0SU_WLXeBgcdOrCpixRbOi5RlvZybtsbP5J8XYtb0TZTgaJ0UfkzKtBQ2i2vsIm1u6LGzemFN52evvzLgAnMYMe6o3eL9HD5HiQrknOCzmhw",
+  "blobBaseUrl": "https://adminncameodevstorage.blob.core.windows.net/ncameopublic",
+  "apiBaseUrl": "https://adminncameodvapi.azurewebsites.net",
+  "roles": [],
+  "screens": [
+    {
+      "name": "Products",
+      "pluginName": "Products",
+      "key": "products",
+      "title": "Products",
+      "formId": "e588f7ab-bbbc-4540-93c9-eb7d2fc2b0e6",
+      "modelName": "ProductsModel",
+      "icon": "fa fa-cube",
+      "description": "Browse, filter and open products as cards",
+      "order": 1,
+      "showinmenu": true,
+      "parent": null,
+      "navParams": [
+        {
+          "key": "ProductId",
+          "value": ""
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "Products — Card",
+      "pluginName": "ProductsCard",
+      "key": "products-card",
+      "title": "Products — Card",
+      "formId": "67aa70d6-44b1-433a-8430-d4332e394d0f",
+      "modelName": "Products—CardModel",
+      "icon": "fa fa-th-large",
+      "description": "Card design used by the Products screen",
+      "order": 2,
+      "showinmenu": false,
+      "parent": null,
+      "navParams": [
+        {
+          "key": "ProductId",
+          "value": ""
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "Edit product",
+      "pluginName": "EditProduct",
+      "key": "edit-product",
+      "title": "Edit product",
+      "formId": "ccb72cf7-900b-44a7-afc0-01425d21d515",
+      "modelName": "EditproductModel",
+      "icon": "fa fa-pencil",
+      "description": "Add or edit a product",
+      "order": 3,
+      "showinmenu": false,
+      "parent": null,
+      "navParams": [
+        {
+          "key": "ProductId",
+          "value": ""
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "Customers",
+      "pluginName": "Customers",
+      "key": "customers",
+      "title": "Customers",
+      "formId": "6421b203-cc6c-4acf-ae40-b3c83621641e",
+      "modelName": "CustomersModel",
+      "icon": "fa fa-users",
+      "description": "Browse customers and see the selected customer's details",
+      "order": 4,
+      "showinmenu": true,
+      "parent": null,
+      "navParams": [
+        {
+          "key": "CustomerId",
+          "value": ""
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "Customers — Search",
+      "pluginName": "CustomersSearch",
+      "key": "customers-search",
+      "title": "Customers — Search",
+      "formId": "31ed0d29-1164-44cb-8c5a-a5593bc5ef02",
+      "modelName": "Customers—SearchModel",
+      "icon": "fa fa-search",
+      "description": "Search and filter for the Customers list",
+      "order": 5,
+      "showinmenu": false,
+      "parent": null,
+      "navParams": [],
+      "roles": []
+    },
+    {
+      "name": "Customers — Detail",
+      "pluginName": "CustomersDetail",
+      "key": "customers-detail",
+      "title": "Customers — Detail",
+      "formId": "6caa76d1-6ae7-4a21-be3f-bcb5243f5891",
+      "modelName": "Customers—DetailModel",
+      "icon": "fa fa-id-card",
+      "description": "Detail pane of the Customers split view",
+      "order": 6,
+      "showinmenu": false,
+      "parent": null,
+      "navParams": [
+        {
+          "key": "CustomerId",
+          "value": ""
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "Customers — Add/Edit",
+      "pluginName": "CustomersAddedit",
+      "key": "customers-addedit",
+      "title": "Customers — Add/Edit",
+      "formId": "fcaac76e-69ab-4852-bedc-a16561ef8823",
+      "modelName": "Customers—Add/EditModel",
+      "icon": "fa fa-pencil",
+      "description": "Add or edit a customer",
+      "order": 7,
+      "showinmenu": false,
+      "parent": null,
+      "navParams": [
+        {
+          "key": "CustomerId",
+          "value": ""
+        }
+      ],
+      "roles": []
+    },
+    {
+      "name": "De-activate customer",
+      "pluginName": "DeactivateCustomer",
+      "key": "deactivate-customer",
+      "title": "De-activate customer",
+      "formId": "75f2b668-7fab-4ee6-af5a-47a6108db840",
+      "modelName": "De-activatecustomerModel",
+      "icon": "fa fa-user-times",
+      "description": "Confirm de-activating a customer",
+      "order": 8,
+      "showinmenu": false,
+      "parent": null,
+      "navParams": [
+        {
+          "key": "CustomerId",
+          "value": ""
+        }
+      ],
+      "roles": []
+    }
+  ],
+  "appSlug": "NCameoAdmin"
+}

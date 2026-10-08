@@ -1,0 +1,181 @@
+{
+  "Id": "6421b203-cc6c-4acf-ae40-b3c83621641e",
+  "FormName": "",
+  "ModelName": "Customer Split View",
+  "GetEndpoint": "",
+  "GetRawQuery": "",
+  "GetEndpointParams": [],
+  "getdatasource": "",
+  "controls": [
+    {
+      "id": "38bb67f3-aa9d-4176-84a5-29bc4780dd64",
+      "key": "CustomerCard",
+      "Name": "Grid",
+      "label": "GridView",
+      "type": "cardgrid",
+      "filterresult": false,
+      "width": 12,
+      "order": 1,
+      "ResultApi": "/api/customers",
+      "ResultApiParam": [
+        {
+          "id": "053b5d59-04e9-48c5-8e48-466d02c635d9",
+          "key": "keywords",
+          "value": "keywords",
+          "ispagevarible": false,
+          "paramtype": null,
+          "formid": null
+        },
+        {
+          "id": "43cd1154-5865-4be8-9d49-bb568f769521",
+          "key": "PageSize",
+          "value": "10",
+          "paramtype": null,
+          "formid": null
+        },
+        {
+          "id": "dd93afb5-97bd-458d-ab5d-9fa16c4fec1c",
+          "key": "PageNumber",
+          "value": "1",
+          "paramtype": null,
+          "formid": null
+        }
+      ],
+      "ResultDisplayField": [
+        {
+          "DisplayName": "Name",
+          "BindingField": "Name",
+          "fieldtype": "title"
+        },
+        {
+          "DisplayName": "Contact name",
+          "BindingField": "ContactName"
+        },
+        {
+          "DisplayName": "Status",
+          "BindingField": "Status"
+        }
+      ],
+      "rawquery": "",
+      "responsefield": "data",
+      "datasource": "http",
+      "datasourcetype": "http",
+      "connection": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+      "apimethod": "get",
+      "PagingType": "server",
+      "PageSize": 10,
+      "PageSizeParam": "PageSize",
+      "PageFromParam": "PageNumber",
+      "ViewType": "splitview",
+      "noofcard": 12,
+      "cardtype": "CustomCard",
+      "hideborder": false,
+      "enablecardfromfromui": false,
+      "cardformid": "",
+      "enableadvancesearch": true,
+      "CustomAction": [
+        {
+          "id": "8ba15df4-099b-402c-9fdd-92bb57bfbbe7",
+          "actiontab": "Action",
+          "ActionName": "View",
+          "buttontype": "link",
+          "ActionType": "splitview",
+          "SidebarViewType": "otherform",
+          "sidebarformid": "6caa76d1-6ae7-4a21-be3f-bcb5243f5891",
+          "PrimaryKey": "CustomerId",
+          "RedirectUrl": "/apps/customers",
+          "webnametype": "nameonly",
+          "mobilenametype": "nameonly",
+          "markasdefaultaction": true,
+          "rules": ""
+        }
+      ],
+      "enablesidebarfilter": false,
+      "rememberlastsearched": false,
+      "filtersidebarposition": false,
+      "storeaspagesearchfromapi": false,
+      "storeaspagesearchapifield": "",
+      "advancesearchapimappingform": "31ed0d29-1164-44cb-8c5a-a5593bc5ef02",
+      "advancesearchapimapping": [
+        {
+          "id": "658e627e-69ed-48e6-b0a1-7a5d193391a6",
+          "ApiParam": "keywords",
+          "advancesearchfield": "searchfilterbox"
+        }
+      ],
+      "enabledefaultsearch": false,
+      "column": "12",
+      "actionview": "popover",
+      "showcardheader": false,
+      "hasdatasource": true
+    }
+  ],
+  "ModelJson": {
+    "CustomerCard": []
+  },
+  "FilterUIJson": {
+    "filtertype": "None",
+    "filterAddform": "",
+    "ShowAddform": false,
+    "addBtnText": "Add New",
+    "addBtnClass": "ml-2 btn-outline-primary btn-round",
+    "addBtnIcon": "fa fa-plus",
+    "ShowExport": false,
+    "CustomFilter": false,
+    "customfilterapimappingform": "",
+    "customfilterapimapping": [],
+    "exportBtnText": "Export",
+    "exportBtnClass": "ml-2 btn-outline-primary btn-round",
+    "exportBtnIcon": "fa fa-file-excel-o",
+    "searchBtnClass": "btn-outline-secondary",
+    "searchBtnIcon": "fa fa-search",
+    "applyFilterBtnClass": "btn-outline-primary",
+    "applyFilterBtnIcon": "none",
+    "applyFilterBtnText": "Apply",
+    "filterBtnClass": "ml-2 btn-outline-secondary",
+    "filterBtnIcon": "fa fa-filter",
+    "filterBubble": "bg-danger",
+    "ShowImport": false,
+    "importBtnText": "Import",
+    "importBtnClass": "ml-2 btn-outline-primary btn-round",
+    "importBtnIcon": "fa fa-cloud-upload",
+    "datasource": "http",
+    "datasourcetype": "http",
+    "ExportColumns": [],
+    "FilterApiEndpoint": "",
+    "FilterEndpointParams": [],
+    "FilterRawQuery": "",
+    "controls": [],
+    "apimethod": "get",
+    "connection": "0d94b01a-685d-40b9-b641-b086224c0a9e"
+  },
+  "FilterModelJson": {},
+  "Notification": {
+    "create": false,
+    "createmodelfiled": "",
+    "createsubject": "",
+    "isloginusercreateenable": false,
+    "updatemodelfiled": "",
+    "updatesubject": "",
+    "isloginuserupdateenable": false,
+    "deletemodelfiled": "",
+    "deletesubject": "",
+    "isloginuserdeleteenable": false,
+    "importmodelfiled": "",
+    "importsubject": "",
+    "isloginuserimportenable": false,
+    "createtemplate": "",
+    "update": false,
+    "updatetemplate": "",
+    "delete": false,
+    "deletetemplate": "",
+    "import": false,
+    "importtemplate": ""
+  },
+  "saveBtnKeyForEditMode": "",
+  "formType": "both",
+  "Formname": "Customers",
+  "Isactive": "true",
+  "CreateDate": "2026-10-06T11:47:06.0000000+00:00",
+  "UpdateDate": "2026-10-06T11:47:06.0000000+00:00"
+}
