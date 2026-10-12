@@ -1,0 +1,190 @@
+these are important instruction and should apply to plugin before start this request : 
+1. GitHub Repository
+   - Always create the project in a local folder by default.
+   - If the user explicitly provides a GitHub repository, use that repository.
+   - If no repository is provided, ask the user whether they want:
+     a) A local project folder, or
+     b) A GitHub repository.
+
+2. Repository Path
+   - Default: repo/<project-key>
+
+3. Branching
+   - Keep all code changes in the local folder by default.
+   - Do not create, switch to, or push to a work branch unless the user explicitly requests it.
+   - The user will manually push changes when required.
+   - user can modify this in future and request to check in into work branch instead of local project files updates. but make sure existing source code (local folder or git branch) should update on every change request instead of creating new project.  
+
+4. GitHub Access
+   - GitHub access is required only when the user explicitly requests a GitHub repository.
+   - Otherwise, do not request GitHub connector or GITHUB_TOKEN access.
+
+5. Nebula Application Index (idx)
+   - idx is always required.
+   - If the user does not provide an idx, automatically generate a unique 14-character idx.
+   - Example: atfqjhumzepnwyq
+
+6. Project Name
+   - Use the project name provided by the user.
+   - If not provided, ask the user for it.
+
+7. Approver
+   - Default: None.
+   - If an approver is required, ask for the approver's name and role.
+
+
+
+
+Final Product Structure modification for forms/navigation and formalist.json
+Suppose idx=atfqjhumzepnwyq then 
+all nebula forms json will store in folder= idx , where id=atfqjhumzepnwyq
+All data connections json will store in = idx + ‘dataconnections’
+
+
+idx folder will also have menu.json (navigation json rename to menu.json) and formlist.json (this list of all forms) formlist.json json structure => [
+{
+"Id":"c3f7a1d2-4b85-4e39-9c6f-d1e2f3a4b5c6", -  this formid (id of form json which should present in same folder)
+"AppName":"ProFlow",
+"Formname":"Dashboard",
+"ImageUrl":"","IsTemplate":"False",
+"ModelName":"DashboardModel",
+"IsDeleted":"False",
+"Isactive":"True",
+"CreateDate":"2026-06-30T12:07:14.526Z",
+"UpdateDate":"2026-06-30T12:07:14.526Z"
+}
+]
+
+idx and idx + ‘dataconnections’ folders should be inside ncameo folder.
+
+
+
+NCAMEO_AGENT_EDITOR_URL = "https://agentmcp.ncameo.com"
+NCAMEO_WORKBENCH_URL = "https://workbenchmcp.ncameo.com"
+NCAMEO_WORKBENCH_TOKEN & NCAMEO_WORKBENCH_TOKEN =
+"eyJhbGciOiJSUzI1NiIsImtpZCI6Ilg1ZVhrNHh5b2pORnVtMWtsMll0djhkbE5QNC1jNTdkTzZRR1RWQndhTmsiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiI4OGI4ZjRiYi0xMjQwLTQyMjEtYjVmNS1mMWU4NWE0YmJhZWYiLCJpc3MiOiJodHRwczovL25jYW1lb2IyYy5iMmNsb2dpbi5jb20vYzI1N2JkMjYtNWU0Zi00MGE3LTliMDYtNDA3YWUxNzYwZjBhL3YyLjAvIiwiZXhwIjoxNzkxMzQ3NDk3LCJuYmYiOjE3OTEyNjEwOTcsIm9pZCI6ImFiMzY0NGUyLWFkMDQtNDE3Zi04OTc0LTQ1NTgyYTRlZGEwYyIsInN1YiI6ImFiMzY0NGUyLWFkMDQtNDE3Zi04OTc0LTQ1NTgyYTRlZGEwYyIsIm5hbWUiOiJOQ0FNRU8gQWRtaW4iLCJnaXZlbl9uYW1lIjoiTkNBTUVPIiwiZXh0ZW5zaW9uX3JvbGVzIjoiW1xyXG4gIFwiRGV2ZWxvcGVyXCIsXHJcbiAgXCJBZG1pbmlzdHJhdG9yXCIsXHJcbiAgXCJOQ0FNRU9cIlxyXG5dIiwiZmFtaWx5X25hbWUiOiJBZG1pbiIsImV4dGVuc2lvbl9TY2hvb2xJZCI6IjAiLCJleHRlbnNpb25fVGVuYW50TmFtZSI6Im5jYW1lbyIsImV4dGVuc2lvbl9UZW5hbnRJZCI6IjAzNTYyZTEwLTJkYzctNDgyYi1iODM1LWQ5OWRlMTNmNWQyZSIsImVtYWlscyI6WyJhZG1pbkBuY2FtZW8uY29tIl0sInRmcCI6IkIyQ18xX1VzZXIiLCJub25jZSI6IjAxYTEwZjdiLTBhNDYtN2IyNi04ODRlLTJiZTIzMzk4NmMxMCIsInNjcCI6InVzZXIucmVhZCBwcm9maWxlIG9mZmxpbmVfYWNjZXNzIiwiYXpwIjoiODhiOGY0YmItMTI0MC00MjIxLWI1ZjUtZjFlODVhNGJiYWVmIiwidmVyIjoiMS4wIiwiaWF0IjoxNzkxMjYxMDk3fQ.Ud1rkodE0qi4raj6sBNeWSEYvF1D_jC3vJ2Kx0AhqynfCOIp-L0D8Fqap0eBTvAJ5UF45IXkzOqw3aWkl7gxo_rxr0IH7Avx6BYZzLq6__PiUIgRVfF6SroGDNFS_wjXwoFh6EgMG9ryCIM9cX2D4FI80MvQby3JS9BanyltzMuMZOokprSK8f1V_b-5oa9v0BULwA-OYnqpHpowjzLoI4UXr8g83eSuH5MAFsvRXRZu5lnnRFFy37CQRYsHM4YLDNMDIAl7cW1USvwC_Zs3PKf9dCW2_2ByPi8Z3k_BCxQbZBdbCUJwuMKj2C2oX-zYyKlMgUpuLMRO04z02XXTcA"
+
+{
+  "mcpServers": {
+    "agent-editor-mcp": {
+      "type": "http",
+      "url": "${NCAMEO_AGENT_EDITOR_URL}",
+      "headers": {
+        "Authorization": "Bearer ${NCAMEO_AGENT_EDITOR_TOKEN}"
+      }
+    },
+    "ncameo-workbench": {
+      "type": "http",
+      "url": "${NCAMEO_WORKBENCH_URL}",
+      "headers": {
+        "Authorization": "Bearer ${NCAMEO_WORKBENCH_TOKEN}"
+      }
+    }
+  }
+}
+
+आपका दोस्त  |  आपका भाई
+
+विनोद कुमार यादव 
+सरपंच पद हेतु उम्मीदवार
+________________
+ग्राम पंचायत बनेठिया
+बनेठिया,हनोतिया,जहांगीरपुरा,उम्मेदपुरा        
+
+
+
+https://passwordreset.microsoftonline.com/?ru=https%3a%2f%2frbbdemologin.ciamlogin.com%2fddc3ab14-2875-48ba-9e6a-508215fceef7%2freprocess%3fctx%3drQQIABABBAABBgIAAAADAOz_BQD0_0V2b1N0c0FydGlmYWN0cxgAAAAAAM9BbDS9Rhcdy5Xcq-HrklIKz9apwyxLTvDx0EnHk4bbLCqseScQ6Wi6lpCZnlePYr2DtZvGJWQudTwx5Pvu9T0vY-ndT3GI2-i2dxSQBkdlhHvcU5WbROLr6gNYgS-2YN9rVlJBbNdZmFtxeKBF5PlcYS2s4C0RsW94KbObZ6vXwIXLXy7hgoutjYIEitut2FR97Gszpz9UzYoUyyOq51WzvtHzLbOKC24vLBNZR-gS3YJ4RywKaaOzGdIkG0LaWDvj9TQa7Jbu8-Q9NiYaSaylo9WV0_hAbUGe3-ESskpC_bus_cIMgNUxWH9vN1Dxvu4LMYXyuB2Iopts5Mzls-1yLv3Rldsr7IFTO_EFkQ2GIUgdZ-negnuVRKdeCr_W_N_m7oR4dWPjwAgoSW9e-8MU4mw_-aO9nfQp4w3BemWINclqaKf9ZhGsKSIH4UjsmLobJ6lB29oZOqdjYkP0bxwR3sx-xxmTcAkwnt_A265uGEY6bl3uz4WEMvWjBxqd_8Pi1EbpSPnIW6__qZxAPiVuBZnpyq4DDCesGV0TwHdAomUBSJWgkVtElwKcdkzbEus3_B8GDHOTRYtbuHfafU8XtY_JKw6F6qxhM2vgnTySXOLb0M6OHtDVBosL9ielMex3o0IeSoJO9X1YR2gbL8YGAcvfv_pARQYCCLlRn6vDrIwZ7tFyS48-TlxZF0ViKT5aepZkaqydF8ZerOjsh9XMRn6knUH_nKUgvhVLZXafKePD4Yzj8ielANAfBrFkdG3HLmEL56krMcz5XFir26oLuVggUGDldkpN4sTf7GOBf1uZg-7pGjN430a3bY_2hcKeDP8-iFzY8d4Eo1V8WcHmBwmH4ljnh5wIAKKLEjJ-WpCqlUG1_1bgC1aHIS8aRWi7_NVrwLOYEgHHdWYnjsHbsxga4nh7gvC3YTA1&mkt=en-US&hosted=0&device_platform=macOS&username=arun.yadav%40ncameo.com       
+
+
+
+visit this compliance testing list was done earlier on this code : https://claude.ai/code/artifact/7e23cfb9-4d0e-4d88-939f-b0807ddd5347 and re-execute all the points and make sure there is not any change in any points status.
+
+
+datasourcetype is parent and datasource is child. Values and relationships:
+datasourcetype values are = ["ai","http","nosql","rdbms","mcp"]
+
+When datasourcetype="ai" the datasource = ["openai","azureopenai","gemini","Llama"] (select based on database choosen)
+When datasourcetype="http" the datasource = "http"
+When datasourcetype="nosql" the datasource = ["cosmosdb","chromadb","dynamodb"]  (select based on database choosen)
+When datasourcetype="rdbms" the datasource = ["mysql","sqlite","mysql1"]  (select based on database choosen)
+When datasourcetype="mcp" the datasource = "mcp"  (select based on database choosen)
+
+Based on datasourcetype and datasource selected by user following rules and mandatory properties should be provide by user if details are sensitive then these all details should come from environment variable in project : see information and update the plugin accordingly. : 
+
+Important Note : This is just a example do not hardcode values (values will come based on user requirement and form functionality) and property names can be different for different controls and forms : 
+For Add/Edit Product :  
+ "primarykey" : "id"
+ "datasource": "cosmosdb",
+      "connection": "77e4a829-fc80-4fc5-8ddc-67250a4772da",
+      "method": "create",
+ "model": "Product",
+  "datasourcetype": "nosql",
+"updateparamlist": [
+        {
+          "id": "432958fe-f2dd-4120-9fce-c686c50bee3e",
+          "key": "id",
+          "value": "id",
+          "paramtype": null,
+          "formid": null
+        }
+      ],
+      "updatedatasource": "cosmosdb",
+      "updateconnection": "77e4a829-fc80-4fc5-8ddc-67250a4772da",
+      "updatemethod": "update",
+
+For Product List : 
+ "datasource": "cosmosdb",
+      "connection": "77e4a829-fc80-4fc5-8ddc-67250a4772da",
+      "method": "read",
+  "model": "Product",
+  "apifieldforresponse": "data",  
+ "datasourcetype": "nosql",
+
+For Single Product Details :
+ "GetEndpointParams": [
+    {
+      "key": "id",
+      "value": "id",
+      "ispagevarible": false,
+      "paramtype": "querystring",
+      "id": "e2360bda-334e-46bd-a10b-a8ac305800b4"
+    }
+  ],
+  "getdatasource": "cosmosdb",
+ "getdatasourcetype": "nosql",
+  "getmodel": "Product",
+  "getconnection": "77e4a829-fc80-4fc5-8ddc-67250a4772da",
+  "getresponsefield": "data",
+ "getmethod": "get",
+
+
+ncameo
+NCameo
+usersdev
+gocameomodel
+ib0KEiPaXy2AAOrNsYHIUVXOnWOC2Ud1iAfXQoDYvaFGParYOsfHCgYFKgGCflO0kHusgxYfvIsetDi647LzKw==
+
+Formname
+ModelName
+
+
+Modify plugin as per instruction and regenerate forms :
+While configuring APIs for each form or control, ensure that a corresponding `dataconfigid` property is added alongside each API connection property.
+
+**Rules:**
+
+1. **Match the API connection property:** Identify each connection property, including properties with the `get`, `update`, or `action` prefixes.
+2. **Add `dataconfigid` at the same level:** Add a `dataconfigid` property at the same level as the corresponding connection property in the form or control configuration. If the connection property has a prefix, the corresponding `dataconfigid` property must use the same prefix.
+3. **Assign a GUID:** The value of each `dataconfigid` property must be a valid GUID.
+4. **Preserve the GUID:** Once a GUID has been generated and assigned to a `dataconfigid` property, it must remain unchanged. Even if a user updates or modifies the form or control through a request, the existing GUID must be preserved.
+5. **Generate only when missing:** Generate a new GUID only when the corresponding `dataconfigid` does not already exist. Never replace an existing GUID during subsequent updates.
+
+**Example:**
+
+If a form or control contains a `connection` property, add `dataconfigid` at the same level. If it contains prefixed connection properties such as `getconnection`, `updateconnection`, or `actionconnection`, add the corresponding `getdataconfigid`, `updatedataconfigid`, or `actiondataconfigid` property at the same level.
+
+The key requirement is that every API connection has a corresponding GUID-based `dataconfigid`, and that GUID remains stable throughout all subsequent form or control modifications.
+
+"getdataconfigid": "4e2c5c9d-e155-4b06-bdf3-db1979e13d5b",
+"updatedataconfigid": "a48f5785-69d8-44c7-b0c0-524ef6def8ce",
+      

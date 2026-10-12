@@ -16,7 +16,7 @@
       "filterresult": false,
       "width": 12,
       "order": 1,
-      "ResultApi": "/api/customers",
+      "ResultApi": "",
       "ResultApiParam": [
         {
           "id": "053b5d59-04e9-48c5-8e48-466d02c635d9",
@@ -58,9 +58,12 @@
       ],
       "rawquery": "",
       "responsefield": "data",
-      "datasource": "http",
-      "datasourcetype": "http",
+      "datasource": "cosmosdb",
+      "datasourcetype": "nosql",
       "connection": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+      "dataconfigid": "6e8ddfda-82da-4af1-b0d2-183da9723fa3",
+      "method": "read",
+      "model": "Customer",
       "apimethod": "get",
       "PagingType": "server",
       "PageSize": 10,
@@ -82,7 +85,7 @@
           "ActionType": "splitview",
           "SidebarViewType": "otherform",
           "sidebarformid": "6caa76d1-6ae7-4a21-be3f-bcb5243f5891",
-          "PrimaryKey": "CustomerId",
+          "PrimaryKey": "id",
           "RedirectUrl": "/apps/customers",
           "webnametype": "nameonly",
           "mobilenametype": "nameonly",
@@ -139,15 +142,19 @@
     "importBtnText": "Import",
     "importBtnClass": "ml-2 btn-outline-primary btn-round",
     "importBtnIcon": "fa fa-cloud-upload",
-    "datasource": "http",
-    "datasourcetype": "http",
+    "datasource": "cosmosdb",
+    "datasourcetype": "nosql",
     "ExportColumns": [],
     "FilterApiEndpoint": "",
     "FilterEndpointParams": [],
     "FilterRawQuery": "",
     "controls": [],
     "apimethod": "get",
-    "connection": "0d94b01a-685d-40b9-b641-b086224c0a9e"
+    "connection": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+    "dataconfigid": "3e247ec1-4fa7-45f5-ba4f-86efdd1d8f5d",
+    "method": "read",
+    "model": "Customer",
+    "responsefield": "data"
   },
   "FilterModelJson": {},
   "Notification": {
@@ -177,5 +184,5 @@
   "Formname": "Customers",
   "Isactive": "true",
   "CreateDate": "2026-10-06T11:47:06.0000000+00:00",
-  "UpdateDate": "2026-10-06T11:47:06.0000000+00:00"
+  "UpdateDate": "2026-10-10T09:00:00.0000000+00:00"
 }

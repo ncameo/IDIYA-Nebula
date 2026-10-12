@@ -9,7 +9,7 @@
   "controls": [
     {
       "id": "e6561b32-2883-4436-a9d2-f0413ac9ce23",
-      "key": "CustomerId",
+      "key": "id",
       "type": "hidden",
       "sourcetype": "pagevariable",
       "modelvalue": "CustomerId",
@@ -148,6 +148,7 @@
           "showArrow": false,
           "datasource": "",
           "connection": null,
+          "dataconfigid": "6a75ccb2-b1ef-4693-a8f6-20d3f3f06fac",
           "method": "",
           "headers": [],
           "enablerowquery": false,
@@ -163,6 +164,7 @@
           "datasourcetype": "",
           "actiondatasource": "",
           "actionconnection": null,
+          "actiondataconfigid": "d3ecac4d-54b5-4fec-8eb1-9a05da6a1313",
           "actionmethod": "",
           "api": "",
           "actionheaders": [],
@@ -546,6 +548,7 @@
           "updateparamlist": [],
           "updatedatasource": "",
           "updateconnection": null,
+          "updatedataconfigid": "603c59f4-1bd6-4423-a10b-d77deeae7159",
           "updatemethod": "",
           "updateheaders": [],
           "updateworkflowname": null,
@@ -562,6 +565,7 @@
           "rowquery": "",
           "datasource": "",
           "connection": null,
+          "dataconfigid": "b9adc567-e6a7-415c-82d6-e66e6691dd63",
           "method": "",
           "headers": [],
           "workflowname": null,
@@ -570,8 +574,7 @@
           "function": null,
           "sprocname": "",
           "payload": "",
-          "datasourcetype": "",
-          "showhelptext": false
+          "datasourcetype": ""
         }
       ],
       "column": 1,
@@ -853,6 +856,7 @@
       "updateparamlist": [],
       "updatedatasource": "",
       "updateconnection": null,
+      "updatedataconfigid": "6496edf1-ad15-48ed-a1c1-772498afdc76",
       "updatemethod": "",
       "updateheaders": [],
       "updateworkflowname": null,
@@ -869,6 +873,7 @@
       "rowquery": "",
       "datasource": "",
       "connection": null,
+      "dataconfigid": "06df7f33-6d9a-4765-8e11-6e94fdc8d63f",
       "method": "",
       "headers": [],
       "workflowname": null,
@@ -877,8 +882,7 @@
       "function": null,
       "sprocname": "",
       "payload": "",
-      "datasourcetype": "",
-      "showhelptext": false
+      "datasourcetype": ""
     },
     {
       "key": "confirmDeactivate",
@@ -910,7 +914,7 @@
       "tooltip": "",
       "tooltipplacement": "top",
       "buttonredirecturl": "",
-      "PrimaryKey": "CustomerId",
+      "PrimaryKey": "id",
       "primarynode": "",
       "buttonredirecttype": null,
       "querystringparams": [],
@@ -920,7 +924,7 @@
       "isprimarynodefromresponse": false,
       "isexternalurlfromapidata": false,
       "submitSteps": "Others",
-      "primarykey": "CustomerId",
+      "primarykey": "id",
       "tabaction": "Create",
       "createapiform": "",
       "enablelogcreate": false,
@@ -1080,20 +1084,23 @@
       "mobileIconSize": null,
       "mobileIconWidth": null,
       "mobileStyles": "",
-      "updateApi": "/api/customers/CustomerId/{CustomerId}",
+      "updateApi": "",
       "updateparamlist": [
         {
-          "key": "CustomerId",
-          "value": "CustomerId"
+          "id": "eb4a03d6-f2d8-42c7-bd18-77cbaa8d23e9",
+          "key": "id",
+          "value": "id",
+          "paramtype": null,
+          "formid": null
         }
       ],
-      "updatedatasource": "http",
-      "updatedatasourcetype": "http",
+      "updatedatasource": "cosmosdb",
       "updateconnection": "0d94b01a-685d-40b9-b641-b086224c0a9e",
-      "updatemethod": "patch",
+      "updatedataconfigid": "af217d51-26e1-4d04-b6af-2f8a4d083691",
+      "updatemethod": "update",
       "updateheaders": [],
       "updateworkflowname": null,
-      "updatemodel": "",
+      "updatemodel": "Customer",
       "updatequery": "",
       "updatefunction": null,
       "updateresponsefield": "",
@@ -1101,11 +1108,12 @@
       "enablerowquery": false,
       "updatesprocname": "",
       "updatepayload": "",
+      "updatedatasourcetype": "nosql",
       "Api": "",
       "rowquery": "",
-      "datasource": "http",
-      "datasourcetype": "http",
-      "connection": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+      "datasource": "",
+      "connection": "",
+      "dataconfigid": "f3559800-a92a-4a68-b8df-32d0cc5d2fb2",
       "method": "",
       "headers": [],
       "workflowname": null,
@@ -1114,11 +1122,11 @@
       "function": null,
       "sprocname": "",
       "payload": "",
-      "showhelptext": false
+      "datasourcetype": ""
     }
   ],
   "ModelJson": {
-    "CustomerId": null,
+    "id": null,
     "Status": "Inactive",
     "DeactivationReason": "",
     "DeactivationNote": "",
@@ -1186,5 +1194,5 @@
   "Formname": "De-activate customer",
   "Isactive": "true",
   "CreateDate": "2026-10-06T11:47:06.0000000+00:00",
-  "UpdateDate": "2026-10-06T11:47:06.0000000+00:00"
+  "UpdateDate": "2026-10-12T00:00:00.0000000+00:00"
 }

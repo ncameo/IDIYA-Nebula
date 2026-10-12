@@ -9,7 +9,7 @@
   "controls": [
     {
       "id": "96d0c22f-8dbf-48ea-b6a7-9452690529bf",
-      "key": "CustomerId",
+      "key": "id",
       "type": "hidden",
       "sourcetype": "static",
       "modelvalue": "",
@@ -370,6 +370,7 @@
           "showArrow": false,
           "datasource": "",
           "connection": null,
+          "dataconfigid": "917b28ac-0e61-43e8-928e-5dfcf7b35f1d",
           "method": "",
           "headers": [],
           "enablerowquery": false,
@@ -385,6 +386,7 @@
           "datasourcetype": "",
           "actiondatasource": "",
           "actionconnection": null,
+          "actiondataconfigid": "bf0a573a-b858-4d1a-801c-4aad35d62098",
           "actionmethod": "",
           "api": "",
           "actionheaders": [],
@@ -477,7 +479,7 @@
     }
   ],
   "ModelJson": {
-    "CustomerId": null,
+    "id": null,
     "Name": "",
     "ContactName": "",
     "Email": "",
@@ -548,5 +550,5 @@
   "Formname": "Customers — Add/Edit",
   "Isactive": "true",
   "CreateDate": "2026-10-06T11:47:06.0000000+00:00",
-  "UpdateDate": "2026-10-06T11:47:06.0000000+00:00"
+  "UpdateDate": "2026-10-10T09:00:00.0000000+00:00"
 }

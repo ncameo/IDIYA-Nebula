@@ -13,14 +13,15 @@
 //   NCAMEO_IDX           tenant idx (default: quzlglsembkgyxy)
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 
-const FORMS_DIR = "/Users/arunyadav/MyProjects/nebula-products/ncameo/quzlglsembkgyxy";
+const appSpec = JSON.parse(readFileSync(new URL("../app-spec.json", import.meta.url), "utf8"));
+const IDX = process.env.NCAMEO_IDX || appSpec.idx || "quzlglsembkgyxy";
+
+const FORMS_DIR = `/Users/arunyadav/MyProjects/nebula-products/ncameo/${IDX}`;
 // Datasource records ({id}.json) live next to the forms folder; binding-profile.json there is skipped.
 const DATASOURCES_DIR = `${FORMS_DIR}dataconnections`;
 const FORM_FILE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\.json$/i;
 
-const appSpec = JSON.parse(readFileSync(new URL("../app-spec.json", import.meta.url), "utf8"));
 const BASE_URL = (process.env.NCAMEO_API_BASE_URL || appSpec.apiBaseUrl).replace(/\/+$/, "");
-const IDX = process.env.NCAMEO_IDX || appSpec.idx || "quzlglsembkgyxy";
 const TOKEN = process.env.NCAMEO_TOKEN || appSpec.token || null;
 
 const args = process.argv.slice(2);

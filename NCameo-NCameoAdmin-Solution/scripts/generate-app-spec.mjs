@@ -2,7 +2,10 @@
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
-const FORMS_DIR = "/Users/arunyadav/MyProjects/nebula-products/ncameo/quzlglsembkgyxy";
+const appSpec = JSON.parse(readFileSync(new URL("../app-spec.json", import.meta.url), "utf8"));
+const IDX = process.env.NCAMEO_IDX || appSpec.idx || "quzlglsembkgyxy";
+
+const FORMS_DIR = `/Users/arunyadav/MyProjects/nebula-products/ncameo/${IDX}`;
 const specPath = fileURLToPath(new URL("../app-spec.json", import.meta.url));
 
 const menu = JSON.parse(readFileSync(`${FORMS_DIR}/menu.json`, "utf8"));

@@ -1,0 +1,120 @@
+{
+  "migration_id": "0001_initial",
+  "cr": null,
+  "spec_from": null,
+  "spec_to": "1.1",
+  "generated": "do not edit",
+  "operations": [
+    {
+      "op": "createDatabase",
+      "name": "${NCAMEO_DATABASE}",
+      "idempotent": true
+    },
+    {
+      "op": "createContainer",
+      "database": "${NCAMEO_DATABASE}",
+      "id": "products",
+      "partitionKey": {
+        "paths": [
+          "/pk"
+        ],
+        "kind": "Hash",
+        "version": 2
+      },
+      "indexingPolicy": {
+        "indexingMode": "consistent",
+        "automatic": true,
+        "includedPaths": [
+          {
+            "path": "/*"
+          }
+        ],
+        "excludedPaths": [
+          {
+            "path": "/scriptAzure/?"
+          },
+          {
+            "path": "/shortDescription/?"
+          },
+          {
+            "path": "/\"_etag\"/?"
+          }
+        ]
+      },
+      "uniqueKeyPolicy": {
+        "uniqueKeys": []
+      },
+      "idempotent": true
+    },
+    {
+      "op": "createContainer",
+      "database": "${NCAMEO_DATABASE}",
+      "id": "customers",
+      "partitionKey": {
+        "paths": [
+          "/pk"
+        ],
+        "kind": "Hash",
+        "version": 2
+      },
+      "indexingPolicy": {
+        "indexingMode": "consistent",
+        "automatic": true,
+        "includedPaths": [
+          {
+            "path": "/*"
+          }
+        ],
+        "excludedPaths": [
+          {
+            "path": "/deactivationNote/?"
+          },
+          {
+            "path": "/\"_etag\"/?"
+          }
+        ]
+      },
+      "uniqueKeyPolicy": {
+        "uniqueKeys": []
+      },
+      "idempotent": true
+    },
+    {
+      "op": "createStoredProcedure",
+      "container": "customers",
+      "id": "sp_set_status",
+      "body": "db/guard/customers/sp_set_status.js",
+      "idempotent": "replace"
+    },
+    {
+      "op": "createTrigger",
+      "container": "customers",
+      "id": "trg_customers_status_guard",
+      "type": "pre",
+      "operation": "replace",
+      "body": "db/guard/customers/trg_customers_status_guard.js",
+      "idempotent": "replace"
+    },
+    {
+      "op": "createContainer",
+      "database": "${NCAMEO_DATABASE}",
+      "id": "__nebula_migrations",
+      "partitionKey": {
+        "paths": [
+          "/id"
+        ],
+        "kind": "Hash",
+        "version": 2
+      },
+      "idempotent": true
+    }
+  ],
+  "checksum": "d0d0854f7925e63a9c6530e941ca0e8d124ef5bf43ce0da8e93e011824859c21",
+  "tracking_document": {
+    "container": "__nebula_migrations",
+    "id": "0001_initial",
+    "cr": null,
+    "spec_to": "1.1",
+    "checksum": "d0d0854f7925e63a9c6530e941ca0e8d124ef5bf43ce0da8e93e011824859c21"
+  }
+}

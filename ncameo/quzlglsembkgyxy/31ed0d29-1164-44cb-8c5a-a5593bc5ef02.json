@@ -308,6 +308,7 @@
       "updateparamlist": [],
       "updatedatasource": "",
       "updateconnection": null,
+      "updatedataconfigid": "a48f5785-69d8-44c7-b0c0-524ef6def8ce",
       "updatemethod": "",
       "updateheaders": [],
       "updateworkflowname": null,
@@ -324,6 +325,7 @@
       "rowquery": "",
       "datasource": "",
       "connection": null,
+      "dataconfigid": "fde9cd67-5205-49d1-b658-174af6bfbc9d",
       "method": "",
       "headers": [],
       "workflowname": null,
@@ -332,8 +334,7 @@
       "function": null,
       "sprocname": "",
       "payload": "",
-      "datasourcetype": "",
-      "showhelptext": false
+      "datasourcetype": ""
     }
   ],
   "ModelJson": {
@@ -402,5 +403,5 @@
   "Formname": "Customers — Search",
   "Isactive": "true",
   "CreateDate": "2026-10-06T11:47:06.0000000+00:00",
-  "UpdateDate": "2026-10-06T11:47:06.0000000+00:00"
+  "UpdateDate": "2026-10-10T09:00:00.0000000+00:00"
 }

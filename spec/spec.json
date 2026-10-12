@@ -47,6 +47,12 @@
         "date": "2026-10-08",
         "cr": "CR-001",
         "summary": "Theme sampled from the screenshots (IN-01..IN-04) and recorded as spec.theme; replaces the default palette. Requested by the user."
+      },
+      {
+        "version": "1.1",
+        "date": "2026-10-10",
+        "cr": "CR-001",
+        "summary": "Forms bind through the platform nosql/cosmosdb DataSource (model + verb, no REST/DAB): data_store.access.ncameo_binding http -> nosql. Requested by the user."
       }
     ],
     "approved_at": "2026-10-06T05:02:10Z"
@@ -60,17 +66,16 @@
     "model_naming_convention": "camelCase_plural",
     "access": {
       "crud_mcp": {
-        "server": "sql-mcp-server",
-        "product": "Data API builder (NoSQL)",
-        "config": "db/mcp/dab-config.json",
-        "mcp_path": "/mcp",
-        "rest_path": "/api"
+        "server": "none",
+        "product": "NCAMEO framework (nosql / cosmosdb DataSource)",
+        "config": null,
+        "mcp_path": null,
+        "rest_path": null
       },
-      "ncameo_binding": "http",
-      "rest_base_url_env": "NP_DAB_BASE_URL",
+      "ncameo_binding": "nosql",
       "agent_base_url_env": "NP_AGENT_BASE_URL"
     },
-    "caveat": "DAB NoSQL support to be verified for both REST and MCP before BUILD.",
+    "caveat": "Data API builder has no REST for Cosmos NoSQL; forms bind through the platform's nosql/cosmosdb DataSource by model + verb (build-forms cosmosdb-binding.md). Agent access to the data is an open item.",
     "confidence": "user-confirmed",
     "source": {
       "interview": [

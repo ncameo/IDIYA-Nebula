@@ -2,56 +2,39 @@
   "Id": "6caa76d1-6ae7-4a21-be3f-bcb5243f5891",
   "FormName": "",
   "ModelName": "Customer Detail",
-  "GetEndpoint": "/api/customers/CustomerId/{CustomerId}",
+  "GetEndpoint": "",
   "GetRawQuery": "",
   "GetEndpointParams": [
     {
-      "id": "374d196a-bf38-4c3a-8a58-2b791324443a",
       "key": "id",
       "value": "id",
       "ispagevarible": false,
-      "paramtype": null,
-      "formid": null
-    },
-    {
-      "id": "87876fe5-ddfb-48c3-814d-c831b8eea39f",
-      "key": "CustomerId",
-      "value": "id",
-      "ispagevarible": false,
-      "paramtype": null,
-      "formid": null
+      "paramtype": "querystring",
+      "id": "374d196a-bf38-4c3a-8a58-2b791324443a"
     }
   ],
-  "getdatasource": "http",
-  "getdatasourcetype": "http",
+  "getdatasource": "cosmosdb",
+  "getdatasourcetype": "nosql",
   "getmethod": "get",
   "getEndpointParams": [
     {
-      "id": "374d196a-bf38-4c3a-8a58-2b791324443a",
       "key": "id",
       "value": "id",
       "ispagevarible": false,
-      "paramtype": null,
-      "formid": null
-    },
-    {
-      "id": "87876fe5-ddfb-48c3-814d-c831b8eea39f",
-      "key": "CustomerId",
-      "value": "id",
-      "ispagevarible": false,
-      "paramtype": null,
-      "formid": null
+      "paramtype": "querystring",
+      "id": "374d196a-bf38-4c3a-8a58-2b791324443a"
     }
   ],
   "getquery": "",
-  "getmodel": "customers",
+  "getmodel": "Customer",
   "getconnection": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+  "getdataconfigid": "4e2c5c9d-e155-4b06-bdf3-db1979e13d5b",
   "getresponsefield": "data",
   "getpayload": "",
   "controls": [
     {
       "id": "58f1c990-8a34-40dc-bc5f-b86966747c6a",
-      "key": "CustomerId",
+      "key": "id",
       "type": "hidden",
       "sourcetype": "static",
       "modelvalue": "",
@@ -533,6 +516,7 @@
           "updateparamlist": [],
           "updatedatasource": "",
           "updateconnection": null,
+          "updatedataconfigid": "6829367e-89d1-4662-945f-e6c79bf8273e",
           "updatemethod": "",
           "updateheaders": [],
           "updateworkflowname": null,
@@ -549,6 +533,7 @@
           "rowquery": "",
           "datasource": "",
           "connection": null,
+          "dataconfigid": "4e17bae1-8f81-4f44-bb73-f997e1d6678b",
           "method": "",
           "headers": [],
           "workflowname": null,
@@ -557,8 +542,7 @@
           "function": null,
           "sprocname": "",
           "payload": "",
-          "datasourcetype": "",
-          "showhelptext": false
+          "datasourcetype": ""
         },
         {
           "key": "deactivateCustomer",
@@ -590,7 +574,7 @@
           "tooltip": "",
           "tooltipplacement": "top",
           "buttonredirecturl": "",
-          "PrimaryKey": "CustomerId",
+          "PrimaryKey": "id",
           "primarynode": "",
           "buttonredirecttype": null,
           "querystringparams": [],
@@ -764,6 +748,7 @@
           "updateparamlist": [],
           "updatedatasource": "",
           "updateconnection": null,
+          "updatedataconfigid": "a72db366-62ee-45ea-9d34-fdc0a321e7e0",
           "updatemethod": "",
           "updateheaders": [],
           "updateworkflowname": null,
@@ -780,6 +765,7 @@
           "rowquery": "",
           "datasource": "",
           "connection": null,
+          "dataconfigid": "bf4f40fd-2f89-4a6c-973a-431b3e9703ec",
           "method": "",
           "headers": [],
           "workflowname": null,
@@ -788,8 +774,7 @@
           "function": null,
           "sprocname": "",
           "payload": "",
-          "datasourcetype": "",
-          "showhelptext": false
+          "datasourcetype": ""
         }
       ],
       "column": 1,
@@ -1790,7 +1775,7 @@
     "Email": "",
     "Phone": "",
     "StripeCustomerId": "",
-    "CustomerId": null
+    "id": null
   },
   "FilterUIJson": {
     "filtertype": "None",
@@ -1854,5 +1839,5 @@
   "Formname": "Customers — Detail",
   "Isactive": "true",
   "CreateDate": "2026-10-06T11:47:06.0000000+00:00",
-  "UpdateDate": "2026-10-06T11:47:06.0000000+00:00"
+  "UpdateDate": "2026-10-10T09:00:00.0000000+00:00"
 }
