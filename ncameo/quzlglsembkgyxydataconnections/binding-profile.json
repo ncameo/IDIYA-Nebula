@@ -7,7 +7,12 @@
   "connectionName": "Cosmos DB",
   "idx": "quzlglsembkgyxy",
   "responsefield": "data",
-  "pageSize": 10,
+  "pageSize": 20,
+  "sort": {
+    "field": "Name",
+    "direction": "asc",
+    "rule": "entity display-name field (no date field in the list sections)"
+  },
   "paging": {
     "type": "server",
     "pageSizeParam": "PageSize",
@@ -50,7 +55,7 @@
       "datasource": "cosmosdb",
       "datasourcetype": "nosql",
       "responsefield": "data",
-      "pageSize": 10,
+      "pageSize": 20,
       "paging": {
         "type": "server",
         "pageSizeParam": "PageSize",
@@ -111,7 +116,7 @@
       "datasource": "cosmosdb",
       "datasourcetype": "nosql",
       "responsefield": "data",
-      "pageSize": 10,
+      "pageSize": 20,
       "paging": {
         "type": "server",
         "pageSizeParam": "PageSize",

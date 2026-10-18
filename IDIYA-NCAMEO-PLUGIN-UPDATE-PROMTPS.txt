@@ -187,4 +187,171 @@ The key requirement is that every API connection has a corresponding GUID-based 
 
 "getdataconfigid": "4e2c5c9d-e155-4b06-bdf3-db1979e13d5b",
 "updatedataconfigid": "a48f5785-69d8-44c7-b0c0-524ef6def8ce",
-      
+ 
+
+
+
+# Update the Plugin to Manage API Data Configuration JSON Files
+
+Understand the following requirements, update the existing plugin accordingly, and implement the logic to manage the `dataconfig` JSON files for each API configuration.
+
+## 1. Extract API Configuration Data
+
+After setting up the `dataconfigid` key and assigning its value, extract the complete API configuration data for each API configured in the form or its controls.
+
+Create an object of each API configuration of each form and its controls.
+
+**Example:** Suppose a form has API configurations in three places:
+
+1. **Form level:** A `get` API configuration.
+2. **Button control:** A Create API configuration.
+3. **Dropdown control:** An API configuration used to fetch data.
+
+In this case, the form's API configuration must generate three objects, one for each API configuration.
+
+Each object must include all relevant API configuration properties, regardless of whether they currently have values. Examples include `apiurl`, `method`, `model`, `parameters`, `headers`, `connection`, `payload`, and other properties supported by the existing configuration structure.
+
+Each object must also contain an `id` property whose value matches its corresponding `dataconfigid`.
+
+## 2. Include `modeljson` in Each API Configuration Object
+
+Each API configuration object must include a `modeljson` property representing the payload structure expected by the API request.
+
+The `modeljson` must match the corresponding API request payload structure and must be extracted from the existing form or control configuration wherever applicable.
+
+The following example illustrates the expected structure. It is a reference example only; the property names and values may vary depending on the actual API configuration.
+
+```json
+{
+  "id": "4e2c5c9d-e155-4b06-bdf3-db1979e13d5b",
+  "apiurl": "",
+  "parameters": [
+    {
+      "key": "id",
+      "value": "id",
+      "ispagevarible": false,
+      "paramtype": "querystring",
+      "id": "374d196a-bf38-4c3a-8a58-2b791324443a"
+    }
+  ],
+  "query": "",
+  "datasource": "cosmosdb",
+  "method": "get",
+  "headers": [],
+  "model": "Customer",
+  "connection": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+  "responsefield": "data",
+  "payload": "",
+  "realtime": false,
+  "sprocname": "",
+  "datasourcetype": "nosql",
+  "dupescheck": [],
+  "schema": "",
+  "businessdescription": "",
+  "rules": "",
+  "listofquestions": "",
+  "samplequery": "",
+  "databaseconnection": null,
+  "responsetype": null,
+  "tablename": "",
+  "workflowagent": null,
+  "agentfromdata": "",
+  "dataconfigid": "4e2c5c9d-e155-4b06-bdf3-db1979e13d5b",
+  "rawquery": "",
+  "enablerowquery": false,
+  "agentdocurl": [],
+  "modeljson": {
+    "Name": "",
+    "Status": "",
+    "CustomerSince": null,
+    "ContactName": "",
+    "Email": "",
+    "Phone": "",
+    "StripeCustomerId": "",
+    "id": "",
+    "customerNameLabel": "",
+    "customerStatusLabel": "",
+    "customerSinceLabel": "",
+    "contactNameLabel": "",
+    "emailLabel": "",
+    "phoneLabel": "",
+    "stripeCustomerIdLabel": "",
+    "customerTabStrip": "Subscriptions"
+  }
+}
+```
+
+**Important:** The `id` and `dataconfigid` values in each object must be identical. The `modeljson` must correspond to that specific API configuration rather than being copied indiscriminately from another API.
+
+## 3. Save Individual API Configuration Files
+
+Store the extracted API configuration objects in the following folder structure:
+
+`ncameo/"idx + dataconfig"/`
+
+Save each API configuration as an individual JSON file, using its `dataconfigid` as the filename.
+
+For example:
+
+```text
+ncameo/
+└── idx + dataconfig/
+    ├── 4e2c5c9d-e155-4b06-bdf3-db1979e13d5b.json
+    ├── <second-dataconfigid>.json
+    ├── <third-dataconfigid>.json
+    └── dataconfigurationlist.json
+```
+
+The folder name should follow the existing plugin's conventions for constructing the `idx + dataconfig` path.
+
+Each individual JSON file must contain the complete API configuration object, including its `id`, `dataconfigid`, and `modeljson` properties.
+
+## 4. Create `dataconfigurationlist.json`
+
+In the same folder, create or update a file named `dataconfigurationlist.json`.
+
+This file must contain an array of metadata objects representing the individual API configuration files created for the form. Each entry must reference the corresponding configuration through its `id`, which must match the `dataconfigid` and the filename of the associated JSON file.
+
+Use the following structure as a reference:
+
+```json
+[
+  {
+    "id": "4e2c5c9d-e155-4b06-bdf3-db1979e13d5b",
+    "name": [You can assign unique name which can be generated type of api, forename,],
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-10T06:50:43.1428112+00:00",
+    "updatedate": "2026-10-10T06:50:43.1428161+00:00",
+    "model": null
+  }
+]
+```
+
+The dates above are examples. Generate appropriate timestamps when creating or updating records, following the existing plugin's conventions.
+
+Ensure that every newly created API configuration file has a corresponding entry in `dataconfigurationlist.json`. When updating an existing configuration, update its metadata as appropriate without creating duplicate entries.
+
+## 5. Preserve `dataconfigid` Values
+
+Follow the existing `dataconfigid` rules:
+
+- Generate a GUID only when a configuration does not already have a `dataconfigid`.
+- Preserve the existing GUID when a form or control is modified or updated.
+- Keep the `id`, `dataconfigid`, and individual JSON filename consistent.
+- Do not generate a new GUID merely because an API configuration or its associated form or control has changed.
+
+## 6. Expected Plugin Behavior
+
+Modify the existing plugin so that it automatically:
+
+1. Identifies all API configurations across the form and its controls.
+2. Ensures that each API configuration has a stable `dataconfigid`.
+3. Extracts the complete configuration, including properties with empty, null, or default values.
+4. Includes the appropriate `modeljson` for each API request.
+5. Creates one JSON file per API configuration.
+6. Creates or updates `dataconfigurationlist.json` with the corresponding metadata entries.
+7. Keeps the configuration files and metadata list synchronized when forms or controls are created, updated, or modified.
+
+**Implementation requirement:** Review the existing plugin's code and data structures before making changes. Reuse the current API configuration properties, naming conventions, folder structure, and persistence logic wherever possible. Do not introduce a separate configuration format or modify unrelated functionality.

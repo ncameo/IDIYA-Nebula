@@ -1,0 +1,632 @@
+[
+  {
+    "id": "25e96bdc-bf6a-43e6-9570-cef3a5e3820b",
+    "name": "Customers — Search - form - get (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "b11642cb-bd40-47b7-a854-bc1341655cce",
+    "name": "Customers — Search - searchfilterbox - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "fde9cd67-5205-49d1-b658-174af6bfbc9d",
+    "name": "Customers — Search - customerFilter - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "a48f5785-69d8-44c7-b0c0-524ef6def8ce",
+    "name": "Customers — Search - customerFilter - update (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "021e7812-38ba-494e-a24f-ef2bd1b47f90",
+    "name": "Customers — Search - FilterUIJson - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "2e445152-7c24-4774-96e3-58fe97612262",
+    "name": "Customers - form - get (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "6e8ddfda-82da-4af1-b0d2-183da9723fa3",
+    "name": "Customers - CustomerCard - read",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-18T14:54:08.7554390+00:00",
+    "model": null
+  },
+  {
+    "id": "3e247ec1-4fa7-45f5-ba4f-86efdd1d8f5d",
+    "name": "Customers - FilterUIJson - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-16T17:28:46.6036730+00:00",
+    "model": null
+  },
+  {
+    "id": "bff00fd2-832f-40d0-8e12-4c79e9f34599",
+    "name": "Products — Card - form - get (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "57ba35a3-0ac5-4ade-af64-79e39b2c1143",
+    "name": "Products — Card - FilterUIJson - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "4e2c5c9d-e155-4b06-bdf3-db1979e13d5b",
+    "name": "Customers — Detail - form - get",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-16T17:29:27.2444260+00:00",
+    "model": null
+  },
+  {
+    "id": "4e17bae1-8f81-4f44-bb73-f997e1d6678b",
+    "name": "Customers — Detail - applyPromo - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-16T17:29:27.2444260+00:00",
+    "model": null
+  },
+  {
+    "id": "6829367e-89d1-4662-945f-e6c79bf8273e",
+    "name": "Customers — Detail - applyPromo - update (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-16T17:29:27.2444260+00:00",
+    "model": null
+  },
+  {
+    "id": "bf4f40fd-2f89-4a6c-973a-431b3e9703ec",
+    "name": "Customers — Detail - deactivateCustomer - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-16T17:29:27.2444260+00:00",
+    "model": null
+  },
+  {
+    "id": "a72db366-62ee-45ea-9d34-fdc0a321e7e0",
+    "name": "Customers — Detail - deactivateCustomer - update (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-16T17:29:27.2444260+00:00",
+    "model": null
+  },
+  {
+    "id": "944e1990-ff09-451f-99de-7109b6aa2113",
+    "name": "Customers — Detail - FilterUIJson - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "de45e587-0b70-4aad-a284-aa77dcfb6c0e",
+    "name": "De-activate customer - form - get (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "6a75ccb2-b1ef-4693-a8f6-20d3f3f06fac",
+    "name": "De-activate customer - DeactivationReason - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "d3ecac4d-54b5-4fec-8eb1-9a05da6a1313",
+    "name": "De-activate customer - DeactivationReason - action (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "64fae6d8-79f9-4021-ae9a-fb96c32e991a",
+    "name": "De-activate customer - promoCode - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "b9adc567-e6a7-415c-82d6-e66e6691dd63",
+    "name": "De-activate customer - applyPromoDialog - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "603c59f4-1bd6-4423-a10b-d77deeae7159",
+    "name": "De-activate customer - applyPromoDialog - update (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "06df7f33-6d9a-4765-8e11-6e94fdc8d63f",
+    "name": "De-activate customer - cancelDeactivate - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "6496edf1-ad15-48ed-a1c1-772498afdc76",
+    "name": "De-activate customer - cancelDeactivate - update (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "f3559800-a92a-4a68-b8df-32d0cc5d2fb2",
+    "name": "De-activate customer - confirmDeactivate - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "af217d51-26e1-4d04-b6af-2f8a4d083691",
+    "name": "De-activate customer - confirmDeactivate - update",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "4194861b-7fb3-47e1-b565-61c02a457a35",
+    "name": "De-activate customer - FilterUIJson - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "f6dab927-fa29-4daa-bcb1-8e8fbbbe3711",
+    "name": "Edit product - form - get",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "1177a254-78b9-45e0-b4df-bb3e93cc66c8",
+    "name": "Edit product - closeProduct - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "20001a26-6256-4617-bc0b-453560987162",
+    "name": "Edit product - closeProduct - update (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "9ec511f3-4ce1-457b-8cc8-4a206dc40f5d",
+    "name": "Edit product - Name - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "ec502778-80d6-4a84-a9ec-5b8c40790fdc",
+    "name": "Edit product - Category - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "609e0765-bc9a-4e74-be53-1a242d5eb961",
+    "name": "Edit product - Category - action (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "f2e47d60-4526-4ad9-9fde-17ca6fbe4c97",
+    "name": "Edit product - PartnerCode - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "8ddc57f0-0c84-479b-a518-026aac6508ee",
+    "name": "Edit product - Visibility - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "671cb8b8-171b-44ad-b459-8ebeb014da4a",
+    "name": "Edit product - Visibility - action (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "9bd07888-d0e8-49aa-9af3-1c96369745d8",
+    "name": "Edit product - BillingType - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "d415b8f7-133f-47c8-8e89-8e8e134743a1",
+    "name": "Edit product - BillingType - action (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "c31be0db-4a1e-4bc9-9a95-55eaef66f523",
+    "name": "Edit product - MonthlyStripePrice - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "6a08b212-bbc6-4d0a-a387-6bc3634c75c5",
+    "name": "Edit product - YearlyStripePrice - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "eb5f55b9-54b6-4829-b5ad-ec554a5ee6fc",
+    "name": "Edit product - ScriptAws - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "7baef54f-aa1b-4748-aed3-20927847371b",
+    "name": "Edit product - cancelProduct - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "ef799f8e-fdfa-4e2f-bdcb-42806b127ebe",
+    "name": "Edit product - cancelProduct - update (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "d4d27a5e-747a-4ce6-8e63-6b0b4ae30479",
+    "name": "Edit product - saveProduct - create",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "bc841905-454b-4a19-be38-eafe8778736b",
+    "name": "Edit product - saveProduct - update",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "48cc2b63-3ecb-4326-b5e9-6a8e12fd4729",
+    "name": "Edit product - FilterUIJson - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "80da25f8-1fc6-41f5-b93b-0018f3bb2ab7",
+    "name": "Products - form - get (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "13d107d4-347b-43ca-bbb6-6c17a5282d85",
+    "name": "Products - addProduct - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "0acab83b-73d1-445c-ba9e-430dd92910d2",
+    "name": "Products - addProduct - update (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "a62f9bda-9e6b-4b0e-b1ec-07e6d99e7a45",
+    "name": "Products - Name - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "c4b38ec1-c8d7-4a9c-96c8-704151b2e089",
+    "name": "Products - Category - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "3252eb49-9fc5-4d54-99d6-4d8e4dbb5226",
+    "name": "Products - Category - action (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "9e6a57e2-bf3d-4a80-9635-d97163850ce5",
+    "name": "Products - Visibility - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "e17375c6-f3cb-4e80-8a6a-efc930b23c04",
+    "name": "Products - Visibility - action (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "2f054b83-ec05-4878-9b26-a5a5fde6b2a6",
+    "name": "Products - GridView - read",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "7c041028-91ec-4d9b-953d-e1a09c10b030",
+    "name": "Products - FilterUIJson - read",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "55beac81-2c18-49e4-8701-4361e527961d",
+    "name": "Customers — Add/Edit - form - get (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "6b999ead-47c3-4198-805a-8d4422a6fe99",
+    "name": "Customers — Add/Edit - Name - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "b09b800b-3df0-4753-95ab-fcf1ac7352e0",
+    "name": "Customers — Add/Edit - ContactName - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "8796673c-6c37-4e3b-a807-183a00ef4b78",
+    "name": "Customers — Add/Edit - StripeCustomerId - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  },
+  {
+    "id": "917b28ac-0e61-43e8-928e-5dfcf7b35f1d",
+    "name": "Customers — Add/Edit - Status - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "bf0a573a-b858-4d1a-801c-4aad35d62098",
+    "name": "Customers — Add/Edit - Status - action (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-12T23:11:20.4546400+00:00",
+    "updatedate": "2026-10-12T23:11:20.4546400+00:00",
+    "model": null
+  },
+  {
+    "id": "5dd22ec5-3406-47a9-9cb0-06c710eb9d77",
+    "name": "Customers — Add/Edit - FilterUIJson - primary (unbound)",
+    "description": null,
+    "isactive": null,
+    "isdeleted": null,
+    "createdate": "2026-10-16T17:27:37.3002500+00:00",
+    "updatedate": "2026-10-16T17:27:37.3002500+00:00",
+    "model": null
+  }
+]

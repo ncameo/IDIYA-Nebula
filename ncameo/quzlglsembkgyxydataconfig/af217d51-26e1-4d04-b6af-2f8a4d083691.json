@@ -1,0 +1,46 @@
+{
+  "id": "af217d51-26e1-4d04-b6af-2f8a4d083691",
+  "apiurl": "",
+  "parameters": [
+    {
+      "id": "eb4a03d6-f2d8-42c7-bd18-77cbaa8d23e9",
+      "key": "id",
+      "value": "id",
+      "paramtype": null,
+      "formid": null
+    }
+  ],
+  "query": "",
+  "datasource": "cosmosdb",
+  "method": "update",
+  "headers": [],
+  "model": "Customer",
+  "connection": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+  "responsefield": "",
+  "payload": "",
+  "realtime": false,
+  "sprocname": "",
+  "datasourcetype": "nosql",
+  "dupescheck": [],
+  "schema": "",
+  "businessdescription": "",
+  "rules": "",
+  "listofquestions": "",
+  "samplequery": "",
+  "databaseconnection": null,
+  "responsetype": null,
+  "tablename": "",
+  "workflowagent": null,
+  "agentfromdata": "",
+  "dataconfigid": "af217d51-26e1-4d04-b6af-2f8a4d083691",
+  "rawquery": "",
+  "enablerowquery": false,
+  "agentdocurl": [],
+  "modeljson": {
+    "id": null,
+    "Status": "Inactive",
+    "DeactivationReason": "",
+    "DeactivationNote": "",
+    "promoCode": ""
+  }
+}

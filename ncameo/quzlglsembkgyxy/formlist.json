@@ -9,7 +9,7 @@
     "IsDeleted": "False",
     "Isactive": "True",
     "CreateDate": "2026-10-06T05:12:11.000Z",
-    "UpdateDate": "2026-10-12T00:00:00.0000000+00:00"
+    "UpdateDate": "2026-10-16T00:00:00.000Z"
   },
   {
     "Id": "67aa70d6-44b1-433a-8430-d4332e394d0f",
@@ -21,7 +21,7 @@
     "IsDeleted": "False",
     "Isactive": "True",
     "CreateDate": "2026-10-06T05:12:11.000Z",
-    "UpdateDate": "2026-10-10T05:43:54.000Z"
+    "UpdateDate": "2026-10-16T00:00:00.000Z"
   },
   {
     "Id": "ccb72cf7-900b-44a7-afc0-01425d21d515",
@@ -33,7 +33,7 @@
     "IsDeleted": "False",
     "Isactive": "True",
     "CreateDate": "2026-10-06T05:12:11.000Z",
-    "UpdateDate": "2026-10-12T00:00:00.0000000+00:00"
+    "UpdateDate": "2026-10-16T00:00:00.000Z"
   },
   {
     "Id": "6421b203-cc6c-4acf-ae40-b3c83621641e",
@@ -45,7 +45,7 @@
     "IsDeleted": "False",
     "Isactive": "True",
     "CreateDate": "2026-10-06T11:47:45.000Z",
-    "UpdateDate": "2026-10-10T05:43:54.000Z"
+    "UpdateDate": "2026-10-17T00:00:00.000Z"
   },
   {
     "Id": "31ed0d29-1164-44cb-8c5a-a5593bc5ef02",
@@ -57,7 +57,7 @@
     "IsDeleted": "False",
     "Isactive": "True",
     "CreateDate": "2026-10-06T11:47:45.000Z",
-    "UpdateDate": "2026-10-10T05:43:54.000Z"
+    "UpdateDate": "2026-10-17T00:00:00.000Z"
   },
   {
     "Id": "6caa76d1-6ae7-4a21-be3f-bcb5243f5891",
@@ -69,7 +69,7 @@
     "IsDeleted": "False",
     "Isactive": "True",
     "CreateDate": "2026-10-06T11:47:45.000Z",
-    "UpdateDate": "2026-10-10T05:43:54.000Z"
+    "UpdateDate": "2026-10-17T00:00:00.000Z"
   },
   {
     "Id": "fcaac76e-69ab-4852-bedc-a16561ef8823",
@@ -81,7 +81,7 @@
     "IsDeleted": "False",
     "Isactive": "True",
     "CreateDate": "2026-10-06T11:47:45.000Z",
-    "UpdateDate": "2026-10-10T05:43:54.000Z"
+    "UpdateDate": "2026-10-17T00:00:00.000Z"
   },
   {
     "Id": "75f2b668-7fab-4ee6-af5a-47a6108db840",
@@ -93,6 +93,6 @@
     "IsDeleted": "False",
     "Isactive": "True",
     "CreateDate": "2026-10-06T11:47:45.000Z",
-    "UpdateDate": "2026-10-12T00:00:00.0000000+00:00"
+    "UpdateDate": "2026-10-17T00:00:00.000Z"
   }
 ]

@@ -1,0 +1,43 @@
+{
+  "id": "4e2c5c9d-e155-4b06-bdf3-db1979e13d5b",
+  "apiurl": "",
+  "parameters": [
+    {
+      "id": "374d196a-bf38-4c3a-8a58-2b791324443a",
+      "key": "id",
+      "value": "id",
+      "ispagevarible": false,
+      "paramtype": null,
+      "formid": null
+    }
+  ],
+  "query": "",
+  "datasource": "cosmosdb",
+  "method": "get",
+  "headers": [],
+  "model": "Customer",
+  "connection": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+  "responsefield": "data",
+  "payload": "",
+  "realtime": false,
+  "sprocname": "",
+  "datasourcetype": "nosql",
+  "dupescheck": [],
+  "schema": "",
+  "businessdescription": "",
+  "rules": "",
+  "listofquestions": "",
+  "samplequery": "",
+  "databaseconnection": null,
+  "responsetype": null,
+  "tablename": "",
+  "workflowagent": null,
+  "agentfromdata": "",
+  "dataconfigid": "4e2c5c9d-e155-4b06-bdf3-db1979e13d5b",
+  "rawquery": "",
+  "enablerowquery": false,
+  "agentdocurl": [],
+  "modeljson": {
+    "id": null
+  }
+}

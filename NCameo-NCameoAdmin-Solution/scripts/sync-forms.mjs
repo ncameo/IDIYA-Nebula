@@ -1,4 +1,6 @@
 // Adds, updates or deletes NCameo datasources, forms and the menu through /api/Datasource, /api/Forms and /api/Menu.
+// Before the forms, every API configuration (ncameo/{idx}dataconfig/dataconfigurationlist.json, payload {id}.json)
+// is saved to /api/DataConfiguration.
 //
 //   node scripts/sync-forms.mjs push [formId ...]   add or update datasources, forms (all {formId}.json when none given) and the menu
 //   node scripts/sync-forms.mjs datasources [id ...] add or update datasources only (ncameo/{idx}dataconnections/{id}.json)
@@ -69,11 +71,65 @@ async function exists(path, query) {
   }
 }
 
+// API configuration records: dataconfigurationlist.json lists them and each one's payload is {id}.json.
+const DATACONFIG_DIR = `${FORMS_DIR}dataconfig`;
+let dataConfigurationList;
+
+function loadDataConfigurationList() {
+  if (dataConfigurationList === undefined) {
+    const file = `${DATACONFIG_DIR}/dataconfigurationlist.json`;
+    dataConfigurationList = existsSync(file) ? JSON.parse(readFileSync(file, "utf8")) : [];
+  }
+  return dataConfigurationList;
+}
+
+// Every API configuration in dataconfigurationlist.json, each loaded from its {id}.json.
+function apiConfigurations() {
+  return loadDataConfigurationList().map((entry) => {
+    const file = `${DATACONFIG_DIR}/${entry.id}.json`;
+    if (!existsSync(file)) throw new Error(`${entry.id}.json not found in ${DATACONFIG_DIR}`);
+    return JSON.parse(readFileSync(file, "utf8"));
+  });
+}
+
+// ControlService().ApiResponse success rule: arrays and strings succeed; objects succeed unless
+// status is "error" or statusCode is set to something other than 200/201 (the API returns 0).
+function isApiSuccess(res) {
+  if (Array.isArray(res) || typeof res === "string") return true;
+  if (!res || typeof res !== "object") return dryRun;
+  return res.status !== "error" && (!res.statusCode || res.statusCode === 200 || res.statusCode === 201);
+}
+
+// POSTs every {id}.json, unchanged, to /api/DataConfiguration?idx= (as the workbench's SaveForm does
+// before saving a form). Runs once per sync, before the first form; any failure stops the sync.
+let apiConfigurationsSaved;
+
+function saveApiConfigurations() {
+  apiConfigurationsSaved ??= (async () => {
+    const configurations = apiConfigurations();
+    const results = await Promise.all(
+      configurations.map((apiConfiguration) =>
+        request("POST", "/api/DataConfiguration", { idx: IDX }, apiConfiguration)
+          .then(isApiSuccess)
+          .catch((err) => {
+            console.error(`API configuration ${apiConfiguration.id}: ${err.message}`);
+            return false;
+          })
+      )
+    );
+    const failed = results.filter((ok) => !ok).length;
+    if (failed) throw new Error(`saving API configuration failed (${failed} of ${configurations.length}), forms not saved`);
+    console.log(`saved    ${configurations.length} API configuration(s)`);
+  })();
+  return apiConfigurationsSaved;
+}
+
 async function upsertForm(id) {
   const file = `${id}.json`;
   if (!existsSync(`${FORMS_DIR}/${file}`)) throw new Error(`${file} not found in ${FORMS_DIR}`);
   const form = readJson(file);
   const formId = form.Id || form.id || id;
+  await saveApiConfigurations();
   const found = await exists("/api/Forms", { id: formId, idx: IDX });
   await request(found ? "PUT" : "POST", "/api/Forms", { idx: IDX }, form);
   console.log(`${found ? "updated" : "added"}  form ${formId} (${form.Formname || form.FormName || ""})`);

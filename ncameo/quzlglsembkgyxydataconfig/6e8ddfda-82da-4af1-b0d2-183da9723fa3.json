@@ -1,0 +1,61 @@
+{
+  "id": "6e8ddfda-82da-4af1-b0d2-183da9723fa3",
+  "apiurl": "",
+  "parameters": [
+    {
+      "id": "053b5d59-04e9-48c5-8e48-466d02c635d9",
+      "key": "keywords",
+      "value": "keywords",
+      "paramtype": null,
+      "formid": null
+    },
+    {
+      "id": "43cd1154-5865-4be8-9d49-bb568f769521",
+      "key": "PageSize",
+      "value": "20",
+      "paramtype": null,
+      "formid": null
+    },
+    {
+      "id": "dd93afb5-97bd-458d-ab5d-9fa16c4fec1c",
+      "key": "PageNumber",
+      "value": "0",
+      "paramtype": null,
+      "formid": null
+    },
+    {
+      "id": "f776a0ec-1c31-4082-ba27-d3b0eba2741b",
+      "key": "activeOnly",
+      "value": "activeOnly",
+      "paramtype": null,
+      "formid": null
+    }
+  ],
+  "query": "SELECT VALUE {\n    \"id\": c.id,\n    \"Name\": c.Name,\n    \"Status\": c.Status\n}\nFROM c\nWHERE (\n    '@keywords' = '' OR '@keywords' = 'keywords' OR '@keywords' = 'null'\n    OR CONTAINS(LOWER(c.Name), LOWER('@keywords'))\n)\nORDER BY c.Name ASC",
+  "datasource": "cosmosdb",
+  "method": "read",
+  "headers": [],
+  "model": "Customer",
+  "connection": "0d94b01a-685d-40b9-b641-b086224c0a9e",
+  "responsefield": "data",
+  "payload": "",
+  "realtime": false,
+  "sprocname": "",
+  "datasourcetype": "nosql",
+  "dupescheck": [],
+  "schema": "",
+  "businessdescription": "",
+  "rules": "",
+  "listofquestions": "",
+  "samplequery": "",
+  "databaseconnection": null,
+  "responsetype": null,
+  "tablename": "",
+  "workflowagent": null,
+  "agentfromdata": "",
+  "dataconfigid": "6e8ddfda-82da-4af1-b0d2-183da9723fa3",
+  "rawquery": "",
+  "enablerowquery": false,
+  "agentdocurl": [],
+  "modeljson": {}
+}
